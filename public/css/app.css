@@ -3,9 +3,16 @@
  * Code licensed under the Apache License v2.0.
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
+
+.navbar-brand{
+    font-family: 'Pacifico', cursive;
+    font-size: 30px;
+}
 
 body {
     margin-top: 50px; /* Required margin for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    font-family: 'Pacifico', cursive;
 }
 
 .image-bg-fluid-height,

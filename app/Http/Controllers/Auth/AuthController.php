@@ -20,7 +20,11 @@ class AuthController extends Controller
     | a simple trait to add these behaviors. Why don't you explore it?
     |
     */
-
+    /**
+     * Caminho para login alterado para /entrar
+     * @loginPath string
+     */
+    protected $loginPath = 'entrar';
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
     /**
@@ -29,6 +33,7 @@ class AuthController extends Controller
      * @var string
      */
     protected $redirectTo = '/';
+
 
     /**
      * Create a new authentication controller instance.
