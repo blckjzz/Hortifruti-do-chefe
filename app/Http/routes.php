@@ -14,8 +14,23 @@
 //Route::get('/', function () {
 //    return view('welcome');
 //});
-Route::get('/','SiteController@index');
+
+/**
+ * Rotas site
+ */
+Route::get('/','SiteController@viewIndex');
+Route::get('/sobre','SiteController@viewSobre');
+Route::get('/orcamento','SiteController@viewOrcamento');
+Route::get('/contato','SiteController@viewContato');
+
+/**
+ * Rotas Painel de Admnistração
+ */
+Route::resource('produto', 'ProdutoController');
 
 Route::auth();
 
-Route::get('/home', 'HomeController@index');
+
+
+
+
