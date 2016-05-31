@@ -7,11 +7,13 @@
 @import url(https://fonts.googleapis.com/css?family=Poiret+One);
 
 .navbar-brand{
-    font-family: 'Pacifico', cursive;
+    font-family: 'Poiret One', cursive;
+    /*font-family: 'Pacifico', cursive;*/
     font-size: 30px;
 }
-.navbar-inverse{
 
+.panel-default {
+    margin-top: 50px;
 }
 
 body {

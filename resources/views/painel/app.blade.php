@@ -45,55 +45,51 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{ url('/') }}">Hortifruti do chefe</a>
+            <a class="navbar-brand" href="{{ url('/') }}">Hortifruti do cheff - Administração</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li>
-                    <a href="">Sobre o Cheff</a>
-                </li>
-                <li>
-                    <a href="">Solicite seu Orçamento</a>
-                </li>
-                <li>
-                    <a href="">Contato</a>
-                </li>
+                {{--<li>--}}
+                    {{--<a href="">Sobre o Chefe</a>--}}
+                {{--</li>--}}
+                {{--<li>--}}
+                    {{--<a href="">Solicite seu Orçamento</a>--}}
+                {{--</li>--}}
+                {{--<li>--}}
+                    {{--<a href="">Contato</a>--}}
+                {{--</li>--}}
+            </ul>
+
+            <!-- Right Side Of Navbar -->
+            <ul class="nav navbar-nav navbar-right">
+                <!-- Authentication Links -->
+                @if (Auth::guest())
+                    <li><a href="{{ url('/login') }}">Entrar</a></li>
+                    {{--<li><a href="{{ url('/register') }}">Register</a></li>--}}
+                @else
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            {{ Auth::user()->name }} <span class="caret"></span>
+                        </a>
+
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Sair</a></li>
+                        </ul>
+                    </li>
+                @endif
             </ul>
         </div>
         <!-- /.navbar-collapse -->
     </div>
-    <!-- /.container -->
 </nav>
-<div id="fullpage">
-    <div class="section">
-        @include('site.section1')
-    </div>
-
-    <div class="section">
-        @include('site.section2')
-    </div>
-    <div class="section">
-        @include('site.section3')
-    </div>
-    <div class="section">
-        @include('site.section4')
-    </div>
-
-    <!-- jQuery -->
-    <script src="{{ URL::asset('js/jquery.js')}}"></script>
-    <!-- Bootstrap Core JavaScript -->
-    <script src="{{ URL::asset('js/bootstrap.min.js')}}"></script>
-    <script src="{{ URL::asset('fullpage/javascript.fullPage.js') }}"></script>
-    <script>
-        fullpage.initialize('#fullpage', {
-            anchors: ['inicio', 'sobre', 'orcamento', 'contato', 'rodape'],
-            menu: '#menu',
-            css3: true
-        });
-    </script>
+<div class="content">
+    @include('painel._message')
+    @yield('content')
 </div>
-
 </body>
 
 </html>
+
+
+

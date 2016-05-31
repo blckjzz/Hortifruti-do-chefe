@@ -25,14 +25,14 @@
             <div class="text-center">
                 <p> Hortifruti do Chefe {{ date('Y') }} &copy; Todos direitos reservados </p>
                 <p>
+                    <i class="fa fa-facebook-official" aria-hidden="true"></i>
                     <a href="{{ URL::to('http://facebook.com/HortifrutiDoChefe') }}" target="_blank">
-                        <i class="fa fa-facebook-official" aria-hidden="true"></i>
                         facebook
                     </a>
                 </p>
                 <p>
+                    <i class="fa fa-twitter" aria-hidden="true"></i>
                     <a href="{{ URL::to('http://twitter.com/Hortifrutidochefe') }}">
-                        <i class="fa fa-twitter" aria-hidden="true"></i>
                         Twitter
                     </a>
                 </p>

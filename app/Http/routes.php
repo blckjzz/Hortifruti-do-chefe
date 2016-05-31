@@ -30,7 +30,4 @@ Route::resource('produto', 'ProdutoController');
 
 Route::auth();
 
-
-
-
-
+Route::get('/home', 'HomeController@index');

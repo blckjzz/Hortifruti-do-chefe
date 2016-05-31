@@ -20,11 +20,6 @@ class AuthController extends Controller
     | a simple trait to add these behaviors. Why don't you explore it?
     |
     */
-    /**
-     * Caminho para login alterado para /entrar
-     * @loginPath string
-     */
-    protected $loginPath = 'entrar';
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
     /**
@@ -57,6 +52,7 @@ class AuthController extends Controller
             'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
+            'usuario' => 'required|min:6|unique:users',
         ]);
     }
 
@@ -69,9 +65,13 @@ class AuthController extends Controller
     protected function create(array $data)
     {
         return User::create([
+            // adicionar campo do nome do usuario
+            //'usuario' => $data['usuario']
             'name' => $data['name'],
             'email' => $data['email'],
-            'password' => bcrypt($data['password']),
+            'password' => bcrypt($data['password'])
+
+            ,
         ]);
     }
 }
