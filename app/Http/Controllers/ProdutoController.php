@@ -8,6 +8,13 @@ use hortifruti\Http\Requests;
 
 class ProdutoController extends Controller
 {
+
+    public function  __construct(){
+
+        $this->middleware('auth');
+        $this->middleware('admin');
+
+    }
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +22,7 @@ class ProdutoController extends Controller
      */
     public function index()
     {
-        //
+        return "teste de index";
     }
 
     /**

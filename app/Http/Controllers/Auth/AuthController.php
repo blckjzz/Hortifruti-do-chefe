@@ -27,7 +27,7 @@ class AuthController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
+    protected $redirectTo = '/painel';
 
 
     /**
@@ -52,7 +52,7 @@ class AuthController extends Controller
             'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
-            'usuario' => 'required|min:6|unique:users',
+//            'usuario' => 'required|min:6|unique:users',
         ]);
     }
 
@@ -69,8 +69,7 @@ class AuthController extends Controller
             //'usuario' => $data['usuario']
             'name' => $data['name'],
             'email' => $data['email'],
-            'password' => bcrypt($data['password'])
-
+            'senha' => bcrypt($data['password'])
             ,
         ]);
     }
