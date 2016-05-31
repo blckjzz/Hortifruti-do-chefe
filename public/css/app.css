@@ -4,15 +4,38 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 @import url(https://fonts.googleapis.com/css?family=Pacifico);
+@import url(https://fonts.googleapis.com/css?family=Poiret+One);
 
 .navbar-brand{
     font-family: 'Pacifico', cursive;
     font-size: 30px;
 }
+.navbar-inverse{
+
+}
 
 body {
     margin-top: 50px; /* Required margin for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
-    font-family: 'Pacifico', cursive;
+    font-family: 'Poiret One', cursive;
+    font-weight: bolder;
+}
+.section-heading {
+    font-size: 40px;
+}
+
+.lead section-lead{
+    font-size: 30px;
+}
+
+.section-paragraph{
+    font-size: 25px;
+}
+a{
+    color:#4cae4c;
+}
+footer{
+    border-top:1px dashed #4cae4c;
+    padding-top: 20px;
 }
 
 .image-bg-fluid-height,
@@ -25,21 +48,31 @@ body {
 }
 
 .image-bg-fluid-height {
-	background: url('../images/tomates.jpg') no-repeat center center scroll;
-    padding: 100px 0;
+	background: url('../images/logo.png')  center center scroll;
+    /*background-color: #99FF00;*/
+    padding: 50px 0;
+    border-bottom: 1px dashed #4cae4c;
 }
 
 .image-bg-fixed-height-1 { 
-	background: url('../images/tomates.jpg') no-repeat -765px -556px scroll;
-    height: 600px;
+	/*background: url('../images/tomates.jpg') no-repeat -765px -556px scroll;*/
+    background-color: #4cae4c;
+    height: 400px;
 }
 .image-bg-fixed-height-2 { 
-    background: url('../images/vegetais_3nv.jpg') no-repeat center center scroll;
-    height: 600px;
+    /*background: url('../images/vegetais_3nv.jpg') no-repeat center center scroll;*/
+    background-color: #FFCC00;
+    height: 400px;
 }
 .image-bg-fixed-height-3 { 
-    background: url('../images/laranja-inteira.jpg') no-repeat center center scroll;
-    height: 600px;
+    /*background: url('../images/laranja-inteira.jpg') no-repeat center center scroll;*/
+    background-color: #3333FF;
+    height: 400px;
+}
+.image-bg-fixed-height-4 {
+    /*background: url('../images/laranja-inteira.jpg') no-repeat center center scroll;*/
+    background-color: #ff8000;
+    height: 400px;
 }
 
 .img-center {

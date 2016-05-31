@@ -16,96 +16,84 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ URL::asset('css/app.css') }}">
 
+    <link rel="stylesheet" href="{{ URL::asset('font-awesome/css/font-awesome.min.css')}} ">
+
+
     {{--<link rel="stylesheet" href="{{ URL::asset('fullpage/javascript.fullPage.css') }}">--}}
 
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+            <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
 </head>
 
 <body>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="{{ url('/') }}">Hortifruti do chefe</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="">Sobre</a>
-                    </li>
-                    <li>
-                        <a href="">Orçamento</a>
-                    </li>
-                    <li>
-                        <a href="">Contato</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{{ url('/') }}">Hortifruti do chefe</a>
         </div>
-        <!-- /.container -->
-    </nav>
-    <div id="fullpage">
-
-            <div class="section " id="section0">
-                <div class="content">
-                    @include('site.section1')
-                </div>
-            </div>
-            <div class="section " id="section1">
-                <div class="content">
-                    @include('site.section2')
-                </div>
-            </div>
-            <div class="section" id="section2">
-                <div class="content">
-                    @include('site.section3')
-                </div>
-            </div>
-
-
-    <!-- Footer -->
-    <footer class="section" id="section3">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>Copyright &copy; Your Website 2014</p>
-                </div>
-            </div>
-            <!-- /.row -->
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="">Sobre o Chefe</a>
+                </li>
+                <li>
+                    <a href="">Solicite seu Orçamento</a>
+                </li>
+                <li>
+                    <a href="">Contato</a>
+                </li>
+            </ul>
         </div>
-        <!-- /.container -->
-    </footer>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<div id="fullpage">
+    <div class="section">
+        @include('site.section1')
+    </div>
+
+    <div class="section">
+        @include('site.section2')
+    </div>
+    <div class="section">
+        @include('site.section3')
+    </div>
+    <div class="section">
+        @include('site.section4')
+    </div>
 
     <!-- jQuery -->
     <script src="{{ URL::asset('js/jquery.js')}}"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="{{ URL::asset('js/bootstrap.min.js')}}"></script>
-    <script src="{{ URL::asset('fullpage/javascript.fullPage.js') }}"> </script>
+    <script src="{{ URL::asset('fullpage/javascript.fullPage.js') }}"></script>
     <script>
         fullpage.initialize('#fullpage', {
-            anchors: ['inicio', 'sobre', 'contato','','orçamento',],
+            anchors: ['inicio', 'sobre', 'orcamento', 'contato', 'rodape'],
             menu: '#menu',
-            css3:true
+            css3: true
         });
     </script>
-    </div>
+</div>
+
 </body>
 
 </html>
