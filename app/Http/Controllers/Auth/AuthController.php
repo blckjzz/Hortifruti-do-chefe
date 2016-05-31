@@ -22,14 +22,15 @@ class AuthController extends Controller
     */
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
+
     /**
      * Where to redirect users after login / registration.
      *
      * @var string
      */
     protected $redirectTo = '/painel';
-
-
+    protected $redirectAfterLogout = '/';
+    protected $loginPath = '/painel/entrar';
     /**
      * Create a new authentication controller instance.
      *
@@ -69,7 +70,7 @@ class AuthController extends Controller
             //'usuario' => $data['usuario']
             'name' => $data['name'],
             'email' => $data['email'],
-            'senha' => bcrypt($data['password'])
+            'password' => bcrypt($data['password'])
             ,
         ]);
     }

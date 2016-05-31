@@ -22,12 +22,20 @@ Route::get('/','SiteController@viewIndex');
 Route::get('/sobre','SiteController@viewSobre');
 Route::get('/orcamento','SiteController@viewOrcamento');
 Route::get('/contato','SiteController@viewContato');
+//Route::get('/home', 'HomeController@index');
 
 /**
  * Rotas Painel de Admnistração
  */
-Route::auth();
-Route::resource('produto', 'ProdutoController');
-Route::get('/home', 'HomeController@index');
 
+Route::resource('produto', 'ProdutoController');
 Route::get('/painel','ProdutoController@index');
+
+/**
+ * Rotas de autenticação alteradas
+ */
+Route::get('/painel/entrar','Auth\AuthController@showLoginForm');
+Route::post('/painel/entrar','Auth\AuthController@login');
+Route::get('/painel/sair','Auth\AuthController@logout');
+Route::get('/painel/registrar','Auth\AuthController@showRegistrationForm');
+Route::post('/painel/registrar','Auth\AuthController@register');
