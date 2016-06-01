@@ -13,7 +13,7 @@ class CreateTipoProdutoTable extends Migration
     public function up()
     {
         Schema::create('tipo_produto', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id_tipo_produto');
             $table->string('nome');
         });
     }
@@ -25,6 +25,6 @@ class CreateTipoProdutoTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('tipo_produto');
     }
 }

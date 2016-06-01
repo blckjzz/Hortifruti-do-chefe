@@ -12,11 +12,11 @@ class CreateNivelAcessoTable extends Migration
      */
     public function up()
     {
-        Schema::create('nivel_acesso', function (Blueprint $table) {
-            $table->increments('id_nivel_acesso');
-            $table->string('descricao', 45);
-            $table->timestamps();
-        });
+//        Schema::create('nivel_acesso', function (Blueprint $table) {
+//            $table->increments('id_nivel_acesso');
+//            $table->string('descricao', 45);
+//            $table->timestamps();
+//        });
     }
 
     /**

@@ -1,0 +1,4 @@
+INSERT INTO `base_hortifruti`.`tipo_produto` (`id_tipo_produto`, `nome`) VALUES ('1', 'Frutas');
+INSERT INTO `base_hortifruti`.`tipo_produto` (`id_tipo_produto`, `nome`) VALUES ('2', 'Ovos');
+INSERT INTO `base_hortifruti`.`tipo_produto` (`id_tipo_produto`, `nome`) VALUES ('3', 'Legumes');
+INSERT INTO `base_hortifruti`.`tipo_produto` (`id_tipo_produto`, `nome`) VALUES ('4', 'Verduras');

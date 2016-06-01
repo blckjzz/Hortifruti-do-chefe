@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProdutosTable extends Migration
+class CreateProdutoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,10 +15,14 @@ class CreateProdutosTable extends Migration
         Schema::create('produtos', function (Blueprint $table) {
             $table->increments('id_produto');
             $table->string('nome');
+            $table->string('ncm');
+            $table->double('valor_unidade');
             $table->double('valor_kg');
             $table->double('valor_caixa');
-            $table->double('valor_bdj');
+            $table->double('valor_bandeja');
             $table->double('valor_duzia');
+            $table->integer('fk_tipo_produto')->unsigned();
+            $table->foreign('fk_tipo_produto')->references('id_tipo_produto')->on('tipo_produto');
             $table->timestamps();
         });
     }
@@ -30,6 +34,6 @@ class CreateProdutosTable extends Migration
      */
     public function down()
     {
-        Schema::down('produtos');
+        Schema::drop('produtos');
     }
 }
