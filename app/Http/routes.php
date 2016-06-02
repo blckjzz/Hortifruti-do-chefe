@@ -29,7 +29,7 @@ Route::get('/contato','SiteController@viewContato');
  */
 
 Route::resource('produto', 'ProdutoController');
-Route::get('/painel','ProdutoController@index');
+Route::get('/painel/listagem','ProdutoController@listarProdutos');
 
 /**
  * Rotas de autenticação alteradas

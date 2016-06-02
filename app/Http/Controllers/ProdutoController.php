@@ -2,6 +2,7 @@
 
 namespace hortifruti\Http\Controllers;
 
+use hortifruti\Produto;
 use Illuminate\Http\Request;
 
 use hortifruti\Http\Requests;
@@ -20,9 +21,11 @@ class ProdutoController extends Controller
      *
      * @return Response
      */
-    public function index()
+    public function listarProdutos()
     {
-        return "teste de index";
+
+        $produtos = Produto::all(); //agrupar pelo tipo 'fruta,verdura' para separar na view
+        return view('painel.lista_produtos',compact('produtos'));
     }
 
     /**

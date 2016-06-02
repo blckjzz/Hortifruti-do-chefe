@@ -83,7 +83,7 @@
         <!-- /.navbar-collapse -->
     </div>
 </nav>
-<div class="content">
+<div class="container">
     @include('painel._message')
     @yield('content')
 </div>
