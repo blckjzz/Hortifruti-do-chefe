@@ -28,6 +28,7 @@ class ProdutoController extends Controller
         return view('painel.lista_produtos',compact('produtos'));
     }
 
+
     /**
      * Show the form for creating a new resource.
      *

@@ -29,13 +29,17 @@ Route::get('/contato','SiteController@viewContato');
  */
 
 Route::resource('produto', 'ProdutoController');
+Route::get('/painel',function(){
+    return view('painel.home_painel');
+})->middleware('auth');
 Route::get('/painel/listagem','ProdutoController@listarProdutos');
 
 /**
  * Rotas de autenticação alteradas
  */
+
 Route::get('/painel/entrar','Auth\AuthController@showLoginForm');
 Route::post('/painel/entrar','Auth\AuthController@login');
 Route::get('/painel/sair','Auth\AuthController@logout');
-Route::get('/painel/registrar','Auth\AuthController@showRegistrationForm');
-Route::post('/painel/registrar','Auth\AuthController@register');
+Route::get('/painel/registrar','Auth\AuthController@showRegistrationForm')->middleware('auth');
+Route::post('/painel/registrar','Auth\AuthController@register')->middleware('auth');
