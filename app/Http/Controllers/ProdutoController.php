@@ -2,10 +2,10 @@
 
 namespace hortifruti\Http\Controllers;
 
+use hortifruti\Http\Requests\StoreProdutoRequest;
 use hortifruti\Produto;
+use hortifruti\TipoProduto;
 use Illuminate\Http\Request;
-
-use hortifruti\Http\Requests;
 
 class ProdutoController extends Controller
 {
@@ -36,17 +36,21 @@ class ProdutoController extends Controller
      */
     public function create()
     {
-        //
+        $title = 'Adicionar produto';
+        $tiposProduto = TipoProduto::all()->pluck('nome','id_tipo_produto');
+        return view('painel._form_criar_produto',compact('title','tiposProduto'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @return Response
-     */
-    public function store()
+
+    public function store(StoreProdutoRequest $request)
     {
-        //
+        $tipo = new TipoProduto();
+        $tipo->id_tipo_produto = $request->input('tipo');
+        $produto = new Produto($request->all());
+        $produto->save($tipo);
+
+
+        return redirect()->action('ProdutoController@listarProdutos')->with('successMessage', '$produto->nome foi adicionado com sucesso');
     }
 
     /**

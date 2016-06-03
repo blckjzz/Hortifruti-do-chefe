@@ -28,7 +28,9 @@ Route::get('/contato','SiteController@viewContato');
  * Rotas Painel de Admnistração
  */
 
-Route::resource('produto', 'ProdutoController');
+Route::get('/painel/novoproduto', 'ProdutoController@create');
+Route::post('/painel/novoproduto', 'ProdutoController@store');
+
 Route::get('/painel',function(){
     return view('painel.home_painel');
 })->middleware('auth');

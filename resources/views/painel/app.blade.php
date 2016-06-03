@@ -85,7 +85,12 @@
 </nav>
 <div class="container">
     @include('painel._message')
+    <h1>
+        @yield('title')
+    </h1>
+    @include('errors.list')
     @yield('content')
+
 </div>
 </body>
 
