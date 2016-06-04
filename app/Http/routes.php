@@ -27,21 +27,30 @@ Route::get('/contato','SiteController@viewContato');
 /**
  * Rotas Painel de Admnistração
  */
-
+Route::get('/painel/listagem','ProdutoController@listarProdutos');
 Route::get('/painel/novoproduto', 'ProdutoController@create');
 Route::post('/painel/novoproduto', 'ProdutoController@store');
+Route::get('/painel/mostrar/{id}','ProdutoController@show');
+Route::get('/painel/editar/{id}', 'ProdutoController@edit');
+Route::get('/painel/deletar/{id}', 'ProdutoController@destroy');
+Route::post('/painel/atualizar/{id}','ProdutoController@update');
 
+//exibe home
 Route::get('/painel',function(){
-    return view('painel.home_painel');
+    return view('painel.home_admin_painel');
 })->middleware('auth');
-Route::get('/painel/listagem','ProdutoController@listarProdutos');
+
 
 /**
  * Rotas de autenticação alteradas
  */
-
 Route::get('/painel/entrar','Auth\AuthController@showLoginForm');
 Route::post('/painel/entrar','Auth\AuthController@login');
 Route::get('/painel/sair','Auth\AuthController@logout');
-Route::get('/painel/registrar','Auth\AuthController@showRegistrationForm')->middleware('auth');
-Route::post('/painel/registrar','Auth\AuthController@register')->middleware('auth');
+/*
+ * ROTAS DE REGISTRO DE USUÁRIOS
+ * */
+
+Route::get('/painel/registrar','Auth\AuthController@showRegistrationForm');
+Route::post('/painel/registrar','Auth\AuthController@register');
+

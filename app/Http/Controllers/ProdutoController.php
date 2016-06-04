@@ -10,12 +10,14 @@ use Illuminate\Http\Request;
 class ProdutoController extends Controller
 {
 
-    public function  __construct(){
+    public function __construct()
+    {
 
         $this->middleware('auth');
-        $this->middleware('admin');
+        $this->middleware('admin',['except' => ['listarProdutos']]);
 
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -24,8 +26,9 @@ class ProdutoController extends Controller
     public function listarProdutos()
     {
 
+        $title = 'Listagem de Produtos';
         $produtos = Produto::all(); //agrupar pelo tipo 'fruta,verdura' para separar na view
-        return view('painel.lista_produtos',compact('produtos'));
+        return view('painel.lista_produtos', compact('produtos', 'title'));
     }
 
 
@@ -37,31 +40,34 @@ class ProdutoController extends Controller
     public function create()
     {
         $title = 'Adicionar produto';
-        $tiposProduto = TipoProduto::all()->pluck('nome','id_tipo_produto');
-        return view('painel._form_criar_produto',compact('title','tiposProduto'));
+        $tiposProduto = TipoProduto::all()->pluck('nome', 'id_tipo_produto');
+        $produto = new Produto();
+        return view('painel._form_produto', compact('title', 'tiposProduto', 'produto'));
     }
 
 
     public function store(StoreProdutoRequest $request)
     {
-        $tipo = new TipoProduto();
-        $tipo->id_tipo_produto = $request->input('tipo');
         $produto = new Produto($request->all());
-        $produto->save($tipo);
-
-
-        return redirect()->action('ProdutoController@listarProdutos')->with('successMessage', '$produto->nome foi adicionado com sucesso');
+        $tipoProduto = $request->input('tipo');
+        $produto->tipo()->associate($tipoProduto);
+        $produto->save();
+        return redirect()->action('ProdutoController@listarProdutos')->
+        with('successMessage', $produto->nome . ' foi adicionado com sucesso');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int $id
+     * @param  int $id_produto
      * @return Response
      */
-    public function show($id)
+    public function show($id_produto)
     {
-        //
+        $produto = Produto::find($id_produto);
+        $tiposProduto = $produto->tipo()->pluck('nome', 'id_tipo_produto');
+        $title = 'Detalhes ' . $produto->nome;
+        return view('painel.detalhe_produto', compact('produto', 'title', 'tiposProduto'));
     }
 
     /**
@@ -72,18 +78,23 @@ class ProdutoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $produto = Produto::find($id);
+        $title = 'Editar Produto -  ' . $produto->nome;
+        $tiposProduto = TipoProduto::all()->pluck('nome', 'id_tipo_produto');
+        return view('painel._form_produto', compact('title', 'tiposProduto', 'produto'));
     }
 
     /**
-     * Update the specified resource in storage.
-     *
-     * @param  int $id
-     * @return Response
+     * @param $id
+     * @param StoreProdutoRequest $request
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function update($id)
+    public function update($id, StoreProdutoRequest $request)
     {
-        //
+        $produto = Produto::find($id);
+        $produto->update($request->all());
+        return redirect()->action('ProdutoController@listarProdutos')
+            ->with('warningMessage', $produto->nome . ' foi alterado.');
     }
 
     /**
@@ -94,6 +105,7 @@ class ProdutoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $produto = Produto::find($id);
+        /*$produto->delete();*/
     }
 }

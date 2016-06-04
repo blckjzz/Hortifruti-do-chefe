@@ -19,12 +19,11 @@ class Authenticate
     {
         if (Auth::guard($guard)->guest()) {
             if ($request->ajax() || $request->wantsJson()) {
-                return response('Unauthorized.', 401);
+                return response('Não autorizado.', 401);
             } else {
                 return redirect()->guest('/painel/entrar');
             }
         }
-
         return $next($request);
     }
 }

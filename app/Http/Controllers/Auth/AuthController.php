@@ -30,7 +30,6 @@ class AuthController extends Controller
      */
     protected $redirectTo = '/painel';
     protected $redirectAfterLogout = '/';
-    protected $loginPath = '/painel/entrar';
     /**
      * Create a new authentication controller instance.
      *
