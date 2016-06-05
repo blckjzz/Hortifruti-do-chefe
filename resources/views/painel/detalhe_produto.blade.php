@@ -1,4 +1,4 @@
-@extends('painel.app')
+@extends('painel.admin_panel')
 @section('title',$title)
 @section('content')
     <div class="row">

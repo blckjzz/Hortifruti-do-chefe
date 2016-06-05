@@ -13,6 +13,12 @@ class SiteController extends Controller
         return view('site.home');
     }
 
+    public function painelHome()
+    {
+        $title = 'Painel de Administração';
+        return view('painel.home',compact('title'));
+    }
+
     public function viewSobre ()
     {
         return 'viewSobre';

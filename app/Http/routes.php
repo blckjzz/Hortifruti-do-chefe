@@ -11,21 +11,30 @@
 |
 */
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
 
-/**
- * Rotas site
+
+/*
+ + ============================ +
+ + ROTAS SITE                   +
+ + ============================ +
  */
 Route::get('/','SiteController@viewIndex');
 Route::get('/sobre','SiteController@viewSobre');
 Route::get('/orcamento','SiteController@viewOrcamento');
 Route::get('/contato','SiteController@viewContato');
-//Route::get('/home', 'HomeController@index');
 
-/**
- * Rotas Painel de Admnistração
+
+/*
+ + ============================ +
+ + EXIBE HOME DO PAINEL         +
+ + ============================ +
+ */
+Route::get('/painel','SiteController@painelHome')->middleware('auth');
+
+/*
+ + ============================ +
+ + ROTAS PAINEL DE ADMNISTRAÇÃO +
+ + ============================ +
  */
 Route::get('/painel/listagem','ProdutoController@listarProdutos');
 Route::get('/painel/novoproduto', 'ProdutoController@create');
@@ -35,21 +44,22 @@ Route::get('/painel/editar/{id}', 'ProdutoController@edit');
 Route::get('/painel/deletar/{id}', 'ProdutoController@destroy');
 Route::post('/painel/atualizar/{id}','ProdutoController@update');
 
-//exibe home
-Route::get('/painel',function(){
-    return view('painel.home_admin_painel');
-})->middleware('auth');
 
 
-/**
- * Rotas de autenticação alteradas
+/*
+ + ============================ +
+ + ROTAS AUTENTICAÇÃO           +
+ + ============================ +
  */
 Route::get('/painel/entrar','Auth\AuthController@showLoginForm');
 Route::post('/painel/entrar','Auth\AuthController@login');
 Route::get('/painel/sair','Auth\AuthController@logout');
+
 /*
- * ROTAS DE REGISTRO DE USUÁRIOS
- * */
+ + ============================ +
+ + ROTAS CADASTRO DE USUARIOS   +
+ + ============================ +
+ */
 
 Route::get('/painel/registrar','Auth\AuthController@showRegistrationForm');
 Route::post('/painel/registrar','Auth\AuthController@register');
