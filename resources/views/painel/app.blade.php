@@ -49,7 +49,9 @@
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            @if(Auth::user())
             <ul class="nav navbar-nav">
+
                 <li>
                     <a href="{{ action('ProdutoController@listarProdutos') }}">Produtos</a>
                 </li>
@@ -63,12 +65,13 @@
                     {{--<a href="">Contato</a>--}}
                 {{--</li>--}}
             </ul>
+            @endif
 
             <!-- Right Side Of Navbar -->
             <ul class="nav navbar-nav navbar-right">
                 <!-- Authentication Links -->
                 @if (Auth::guest())
-                    <li><a href="{{ url('/login') }}">Entrar</a></li>
+                    <li><a href="{{ url('/painel/entrar') }}">Entrar</a></li>
                     {{--<li><a href="{{ url('/register') }}">Register</a></li>--}}
                 @else
                     <li class="dropdown">
@@ -86,13 +89,18 @@
         <!-- /.navbar-collapse -->
     </div>
 </nav>
-<div class="container">
+<div class="container" id="app">
     @include('painel._message')
     <h1>
         @yield('title')
     </h1>
     @include('errors.list')
     @yield('content')
+
+
+    <!--vue js -->
+    <script src="{{asset('js/vue.js')}}"></script>
+    <script src="{{asset('/js/app.js')}}"></script>
 
 </div>
 </body>
