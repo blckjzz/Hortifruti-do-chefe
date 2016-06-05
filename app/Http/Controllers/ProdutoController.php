@@ -28,7 +28,7 @@ class ProdutoController extends Controller
 
         $title = 'Listagem de Produtos';
         $produtos = Produto::all(); //agrupar pelo tipo 'fruta,verdura' para separar na view
-        return view('painel.lista_produtos', compact('produtos', 'title'));
+        return view('painel.produto_listagem', compact('produtos', 'title'));
     }
 
 
@@ -42,7 +42,7 @@ class ProdutoController extends Controller
         $title = 'Adicionar produto';
         $tiposProduto = TipoProduto::all()->pluck('nome', 'id_tipo_produto');
         $produto = new Produto();
-        return view('painel._form_produto', compact('title', 'tiposProduto', 'produto'));
+        return view('painel.produto_novo', compact('title', 'tiposProduto', 'produto'));
     }
 
 
@@ -67,7 +67,7 @@ class ProdutoController extends Controller
         $produto = Produto::find($id_produto);
         $tiposProduto = $produto->tipo()->pluck('nome', 'id_tipo_produto');
         $title = 'Detalhes ' . $produto->nome;
-        return view('painel.detalhe_produto', compact('produto', 'title', 'tiposProduto'));
+        return view('painel.produto_detalhe', compact('produto', 'title', 'tiposProduto'));
     }
 
     /**
@@ -81,7 +81,7 @@ class ProdutoController extends Controller
         $produto = Produto::find($id);
         $title = 'Editar Produto -  ' . $produto->nome;
         $tiposProduto = TipoProduto::all()->pluck('nome', 'id_tipo_produto');
-        return view('painel._form_produto', compact('title', 'tiposProduto', 'produto'));
+        return view('painel.produto_editar', compact('title', 'tiposProduto', 'produto'));
     }
 
     /**
@@ -106,6 +106,8 @@ class ProdutoController extends Controller
     public function destroy($id)
     {
         $produto = Produto::find($id);
-        /*$produto->delete();*/
+        $produto->delete();
+        return redirect()->action('ProdutoController@listarProdutos')
+            ->with('warningMessage', $produto->nome.' foi removido.');
     }
 }

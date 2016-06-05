@@ -33,7 +33,7 @@
                     <ul class="nav navbar-nav">
 
                         {{--<li>--}}
-                            {{--<a href="{{ action('ProdutoController@listarProdutos') }}">Produtos</a>--}}
+                        {{--<a href="{{ action('ProdutoController@listarProdutos') }}">Produtos</a>--}}
                         {{--</li>--}}
                         {{--<li>--}}
                         {{--<a href=""></a>--}}
@@ -52,12 +52,14 @@
                             {{--<li><a href="{{ url('/register') }}">Register</a></li>--}}
                         @else
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                   aria-expanded="false">
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
-                                    <li><a href="{{ action('Auth\AuthController@logout') }}"><i class="fa fa-btn fa-sign-out"></i>Sair</a></li>
+                                    <li><a href="{{ action('Auth\AuthController@logout') }}"><i
+                                                    class="fa fa-btn fa-sign-out"></i>Sair</a></li>
                                 </ul>
                             </li>
                         @endif
@@ -73,18 +75,25 @@
 
 
                 <li>
-                    <a href="{{ action('SiteController@painelHome') }}"><i class="fa fa-desktop "></i> Página Inicial </a>
+                    <a href="{{ action('SiteController@painelHome') }}"><i class="fa fa-desktop "></i> Página Inicial
+                    </a>
                 </li>
 
+                <li>
+                    <a href="#"><i class="fa fa-user-md "></i>Verificar pedidos</a>
+                </li>
 
                 <li>
-                    <a href="{{ action('ProdutoController@listarProdutos') }}"><i class="fa fa-table "></i>Listagem de Produtos </a>
+                    <a href="{{ action('ProdutoController@listarProdutos') }}"><i class="fa fa-table "></i>Listagem de
+                        Produtos </a>
                 </li>
                 <li>
-                    <a href="{{ action('ProdutoController@create') }}"><i class="fa fa-plus-circle "></i>Adicionar Produto </a>
+                    <a href="{{ action('ProdutoController@create') }}"><i class="fa fa-plus-circle "></i>Adicionar
+                        Produto </a>
                 </li>
                 <li>
-                    <a href="{{ action('Auth\AuthController@showRegistrationForm') }}"><i class="fa fa-user-md "></i>Cadastrar Usuário</a>
+                    <a href="{{ action('Auth\AuthController@showRegistrationForm') }}"><i class="fa fa-user-md "></i>Cadastrar
+                        Usuário</a>
                 </li>
 
             </ul>
@@ -129,11 +138,21 @@
 <!-- /. WRAPPER  -->
 <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
 <!-- JQUERY SCRIPTS -->
-<script src="admin-panel/assets/js/jquery-1.10.2.js"></script>
+<script src="{{  asset('admin-panel/assets/js/jquery-1.10.2.js') }}"></script>
 <!-- BOOTSTRAP SCRIPTS -->
-<script src="admin-panel/assets/js/bootstrap.min.js"></script>
+<script src="{{  asset('admin-panel/assets/js/bootstrap.min.js') }}"></script>
 <!-- CUSTOM SCRIPTS -->
-<script src="admin-panel/assets/js/custom.js"></script>
+<script src="{{  asset('admin-panel/assets/js/custom.js') }}"></script>
+
+<!--vue js -->
+<script src="{{asset('js/vue.js')}}"></script>
+<script src="{{asset('/js/app.js')}}"></script>
+<script src="{{ asset('js/jquery.maskMoney.js')}}"></script>
+
+<!--SCRIPT FORMATAR CAMPOS COM CLASSE .VALOR-->
+<script type="text/javascript">$(".valor").maskMoney({prefix:'R$ ',
+        allowNegative: true, thousands:'.', decimal:',', affixesStay: false});
+</script>
 
 </body>
 </html>
