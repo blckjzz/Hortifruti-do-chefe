@@ -5,11 +5,19 @@
  */
 @import url(https://fonts.googleapis.com/css?family=Pacifico);
 @import url(https://fonts.googleapis.com/css?family=Poiret+One);
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+@import url(https://fonts.googleapis.com/css?family=Quicksand);
 
-.navbar-brand{
+.navbar-inverse .navbar-brand{
     font-family: 'Poiret One', cursive;
     /*font-family: 'Pacifico', cursive;*/
     font-size: 30px;
+    color: #FFFFFF;
+    padding-top: 20px;
+}
+
+.navbar-inverse .navbar-nav > li > a{
+    color: #FFFFFF;
 }
 
 .panel-default {
@@ -18,7 +26,9 @@
 
 body {
     margin-top: 50px; /* Required margin for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
-    font-family: 'Poiret One', cursive;
+    /*font-family: 'Poiret One', cursive;*/
+    /*font-family: 'Pacifico', cursive;*/
+    font-family: 'Quicksand', sans-serif;
     font-weight: bolder;
 }
 .section-heading {

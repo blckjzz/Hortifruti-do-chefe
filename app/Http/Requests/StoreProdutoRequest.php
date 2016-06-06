@@ -24,8 +24,8 @@ class StoreProdutoRequest extends Request
     public function rules()
     {
         return [
-            'nome' => 'required',
-            'ncm' => 'required',
+            'nome' => 'required|min:5',
+            'ncm' => 'required|min:7',
             'tipo' => 'required',
         ];
     }

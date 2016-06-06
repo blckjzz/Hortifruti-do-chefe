@@ -39,7 +39,7 @@ class ProdutoController extends Controller
      */
     public function create()
     {
-        $title = 'Adicionar produto';
+        $title = 'Cadastro de produto';
         $tiposProduto = TipoProduto::all()->pluck('nome', 'id_tipo_produto');
         $produto = new Produto();
         return view('painel.produto_novo', compact('title', 'tiposProduto', 'produto'));

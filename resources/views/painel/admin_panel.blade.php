@@ -4,11 +4,14 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Hortifruti do Cheff - Administração </title>
-    <link href="../../admin-panel/assets/css/bootstrap.css" rel="stylesheet"/>
+
     <!-- FONTAWESOME STYLES-->
     <link href="../../admin-panel/assets/css/font-awesome.css" rel="stylesheet"/>
     <!-- CUSTOM STYLES-->
+    <link href="../../admin-panel/assets/css/bootstrap.css" rel="stylesheet"/>
     <link href="../../admin-panel/assets/css/custom.css" rel="stylesheet"/>
+    <link href="../../css/app.css" rel="stylesheet"/>
+
 </head>
 <body>
 
@@ -82,18 +85,23 @@
                 <li>
                     <a href="#"><i class="fa fa-user-md "></i>Verificar pedidos</a>
                 </li>
+                <li>
+                    <a href="#"><i class="fa fa-shopping-cart"></i>Montar pedido</a>
+
+                </li>
 
                 <li>
                     <a href="{{ action('ProdutoController@listarProdutos') }}"><i class="fa fa-table "></i>Listagem de
                         Produtos </a>
                 </li>
+
                 <li>
-                    <a href="{{ action('ProdutoController@create') }}"><i class="fa fa-plus-circle "></i>Adicionar
-                        Produto </a>
+                    <a href="{{ action('ProdutoController@create') }}"><i class="fa fa-plus-circle "></i>Cadastrar produto </a>
+
                 </li>
                 <li>
                     <a href="{{ action('Auth\AuthController@showRegistrationForm') }}"><i class="fa fa-user-md "></i>Cadastrar
-                        Usuário</a>
+                        usuário</a>
                 </li>
 
             </ul>
@@ -128,8 +136,7 @@
 
     <div class="row">
         <div class="col-lg-12">
-            &copy; 2014 yourdomain.com | Design by: <a href="http://binarytheme.com" style="color:#fff;"
-                                                       target="_blank">www.binarytheme.com</a>
+            &copy;
         </div>
     </div>
 </div>
@@ -148,10 +155,26 @@
 <script src="{{asset('js/vue.js')}}"></script>
 <script src="{{asset('/js/app.js')}}"></script>
 <script src="{{ asset('js/jquery.maskMoney.js')}}"></script>
-
+<script src="{{ asset('js/jquery.mask.js')}}"></script>
 <!--SCRIPT FORMATAR CAMPOS COM CLASSE .VALOR-->
-<script type="text/javascript">$(".valor").maskMoney({prefix:'R$ ',
-        allowNegative: true, thousands:'.', decimal:',', affixesStay: false});
+<script type="text/javascript">
+    $(".valor").maskMoney(
+            {
+                prefix: 'R$ ',
+                allowNegative: true,
+                thousands: '.',
+                decimal: ',',
+                affixesStay: false
+            });
+    $().mask();
+
+    $(document).ready(function(){
+        $('#ncm').mask('9999999.999999', {placeholder: "9999999.99999"});
+    });
+
+    $(document).ready(function(){
+        $('#nome').mask({pattern: /[A-Za-z0-9]/},{placeholder: "Nome do produto..."});
+    });
 </script>
 
 </body>

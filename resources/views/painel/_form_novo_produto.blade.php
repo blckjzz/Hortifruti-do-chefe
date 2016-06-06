@@ -21,7 +21,7 @@
 
     <div class="col-md-3 form-group">
         {!! Form::label('ncm', 'Ncm')  !!}
-        {!! Form::text('ncm' , $produto->ncm , ['class' => 'form-control',]) !!}
+        {!! Form::text('ncm' , $produto->ncm , ['class' => 'form-control ncm',]) !!}
     </div>
 </div>
 <div class="row">
