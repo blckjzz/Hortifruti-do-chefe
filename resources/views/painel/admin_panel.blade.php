@@ -102,8 +102,8 @@
 
                 </li>
                 <li>
-                    <a href="{{ action('Auth\AuthController@showRegistrationForm') }}"><i class="fa fa-user-md "></i>Cadastrar
-                        usuário</a>
+                    <a href="{{ action('ClienteController@create') }}"><i class="fa fa-user-md "></i>Cadastrar
+                        cliente</a>
                 </li>
 
             </ul>

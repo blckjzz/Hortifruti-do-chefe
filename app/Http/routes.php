@@ -53,7 +53,13 @@ Route::post('/painel/atualizar/{id}','ProdutoController@update');
 Route::get('/painel/novopedido','PedidoController@showPedidoForm');
 Route::post('/painel/novopedido','PedidoController@store');
 
-
+/*
+ + ============================ +
+ + ROTAS CADASTRO CLIENTE +
+ + ============================ +
+ */
+Route::get('/painel/cadastro-cliente','ClienteController@create');
+Route::post('/painel/cadastro-cliente','ClienteController@store');
 
 /*
  + ============================ +
@@ -64,12 +70,13 @@ Route::get('/painel/entrar','Auth\AuthController@showLoginForm');
 Route::post('/painel/entrar','Auth\AuthController@login');
 Route::get('/painel/sair','Auth\AuthController@logout');
 
+
 /*
  + ============================ +
- + ROTAS CADASTRO DE USUARIOS   +
+ + ROTAS CADASTRO DE DEFAULT LARAVEL
  + ============================ +
  */
 
-Route::get('/painel/registrar','Auth\AuthController@showRegistrationForm');
-Route::post('/painel/registrar','Auth\AuthController@register');
+Route::get('/painel/registrar','Auth\AuthController@showRegistrationForm'); // remover do blade
+//Route::post('/painel/registrar','Auth\AuthController@register');
 

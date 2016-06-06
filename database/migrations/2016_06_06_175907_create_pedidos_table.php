@@ -12,10 +12,10 @@ class CreatePedidosTable extends Migration
      */
     public function up()
     {
-        Schema::create('pedido', function (Blueprint $table) {
+        Schema::create('pedidos', function (Blueprint $table) {
             $table->increments('id_pedido');
-            $table->integer('id_cliente')->unsigned();
-            $table->foreign('id_cliente')->references('id_cliente')->on('clientes');
+            $table->integer('fk_id_cliente')->unsigned();
+            $table->foreign('fk_id_cliente')->references('id_cliente')->on('clientes');
             $table->string('ncm');
             $table->double('qtd_unidade');
             $table->double('qtd_kg');
