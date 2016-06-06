@@ -11,7 +11,7 @@
 .navbar-inverse .navbar-brand{
     font-family: 'Poiret One', cursive;
     /*font-family: 'Pacifico', cursive;*/
-    font-size: 30px;
+    /*font-size: 30px;*/
     color: #FFFFFF;
     padding-top: 20px;
 }
@@ -42,9 +42,11 @@ body {
 .section-paragraph{
     font-size: 25px;
 }
+
 a{
     color:#4cae4c;
 }
+
 footer{
     border-top:1px dashed #4cae4c;
     padding-top: 20px;

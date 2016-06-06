@@ -86,7 +86,8 @@
                     <a href="#"><i class="fa fa-user-md "></i>Verificar pedidos</a>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-shopping-cart"></i>Montar pedido</a>
+                    <a href="{{ action('PedidoController@showPedidoForm') }}"><i class="fa fa-shopping-cart"></i>Montar
+                        pedido</a>
 
                 </li>
 
@@ -96,7 +97,8 @@
                 </li>
 
                 <li>
-                    <a href="{{ action('ProdutoController@create') }}"><i class="fa fa-plus-circle "></i>Cadastrar produto </a>
+                    <a href="{{ action('ProdutoController@create') }}"><i class="fa fa-plus-circle "></i>Cadastrar
+                        produto </a>
 
                 </li>
                 <li>
@@ -132,8 +134,6 @@
     <!-- /. PAGE WRAPPER  -->
 </div>
 <div class="footer">
-
-
     <div class="row">
         <div class="col-lg-12">
             &copy;
@@ -168,12 +168,12 @@
             });
     $().mask();
 
-    $(document).ready(function(){
+    $(document).ready(function () {
         $('#ncm').mask('9999999.999999', {placeholder: "9999999.99999"});
     });
 
-    $(document).ready(function(){
-        $('#nome').mask({pattern: /[A-Za-z0-9]/},{placeholder: "Nome do produto..."});
+    $(document).ready(function () {
+        $('#nome').mask({pattern: /[A-Za-z0-9]/}, {placeholder: "Nome do produto..."});
     });
 </script>
 

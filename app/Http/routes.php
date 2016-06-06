@@ -44,6 +44,15 @@ Route::get('/painel/editar/{id}', 'ProdutoController@edit');
 Route::get('/painel/deletar/{id}', 'ProdutoController@destroy');
 Route::post('/painel/atualizar/{id}','ProdutoController@update');
 
+/*
+ + ============================ +
+ + ROTAS PAINEL DE ORÇAMENTO +
+ + ============================ +
+ */
+
+Route::get('/painel/novopedido','PedidoController@showPedidoForm');
+Route::post('/painel/novopedido','PedidoController@store');
+
 
 
 /*
