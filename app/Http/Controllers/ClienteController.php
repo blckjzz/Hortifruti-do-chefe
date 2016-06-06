@@ -7,6 +7,7 @@ use hortifruti\Http\Requests;
 use hortifruti\TipoEstabelecimento;
 use Illuminate\Http\Request;
 use hortifruti\Http\Requests\StoreClienteRequest;
+use Symfony\Component\Finder\Exception\AccessDeniedException;
 
 class ClienteController extends Controller
 {
@@ -17,7 +18,11 @@ class ClienteController extends Controller
      */
     public function listarClientes()
     {
-        return Cliente::all();
+        $title = 'Listagem de clientes';
+        $clientes = Cliente::all();
+//        return view('painel.cliente.home',compact('title'));
+//        return view('painel.cliente.listagem_clientes', compact('title'));
+        return view('painel.cliente.listagem_clientes',compact('title','clientes'));
     }
 
     /**
@@ -40,12 +45,11 @@ class ClienteController extends Controller
      */
     public function store(StoreClienteRequest $request)
     {
-        $cliente = new Cliente;
-        $cliente = $request->all();
-        $cliente->tipoEstabelecimento($request->input('fk_tipo_estabelecimento'));
-        dd($cliente);
-        $cliente->save($request->all());
-        return redirect()->action('ClienteController@listarClientes')->with('sucessMessage', $cliente->nome-cliente.' foi cadastrado com sucesso');
+        $cliente = new Cliente($request->all());
+        $cliente->tipoEstabelecimento()->associate($request->input('tipo_estabelecimento'));
+//        dd($cliente);
+        $cliente->save();
+        return redirect()->action('ClienteController@listarClientes')->with('sucessMessage', $cliente->nome_cliente .' foi cadastrado com sucesso');
     }
 
     /**
@@ -90,6 +94,10 @@ class ClienteController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $cliente = Cliente::find($id);
+        $cliente->delete();
+        return redirect()->action('ClienteController@listarClientes')
+            -> with('warningMessage','O cadastro do '. $cliente->nome_cliente . ' foi removido ');
+
     }
 }

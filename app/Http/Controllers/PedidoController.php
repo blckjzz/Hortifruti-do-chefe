@@ -18,7 +18,7 @@ class PedidoController extends Controller
     {
         $produtos = Produto::all();
         $title = 'Montar pedido';
-        return view('painel.montar_pedido', compact('title', 'produtos'));
+        return view('painel.pedido.montar_pedido', compact('title', 'produtos'));
     }
 
 //    /**

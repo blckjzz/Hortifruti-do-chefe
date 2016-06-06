@@ -12,6 +12,6 @@ class TipoEstabelecimento extends Model
 
     public function cliente()
     {
-        return $this->belongsTo('hortifruti\Cliente');
+        return $this->hasMany('hortifruti\Cliente');
     }
 }

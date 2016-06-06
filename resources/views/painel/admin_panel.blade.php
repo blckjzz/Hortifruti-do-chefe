@@ -86,7 +86,7 @@
                     <a href="#"><i class="fa fa-user-md "></i>Verificar pedidos</a>
                 </li>
                 <li>
-                    <a href="{{ action('PedidoController@showPedidoForm') }}"><i class="fa fa-shopping-cart"></i>Montar
+                    <a href="{{ action('PedidoController@showPedidoForm') }}"><i class="fa fa-shopping-cart"></i>Tirar
                         pedido</a>
 
                 </li>
@@ -105,6 +105,10 @@
                     <a href="{{ action('ClienteController@create') }}"><i class="fa fa-user-md "></i>Cadastrar
                         cliente</a>
                 </li>
+                <li>
+                    <a href="{{ action('ClienteController@listarClientes') }}"><i class="fa fa-users"></i>Listagem de clientes</a>
+
+                </li>
 
             </ul>
         </div>
@@ -114,10 +118,11 @@
     <div id="page-wrapper">
         <div id="page-inner">
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-12 text-center">
                     <h1>
                         @yield('title')
                     </h1>
+                    <a href="{{ URL::previous() }}" class="btn btn-default pull-right">Voltar</a>
                     @include('painel._message')
                     @include('errors.list')
 
@@ -175,6 +180,9 @@
     $(document).ready(function () {
         $('#nome').mask({pattern: /[A-Za-z0-9]/}, {placeholder: "Nome do produto..."});
     });
+    $('#cnpj').mask('00.000.000/0000-00', {placeholder: "00.000.000/0000-00"});
+    $('#telefone').mask('(00) 00000-0000');
+    $('#nome_cliente').mask({pattern: /[A-Za-z0-9]/},{placeholder: "Nome do cliente..."});
 </script>
 
 </body>

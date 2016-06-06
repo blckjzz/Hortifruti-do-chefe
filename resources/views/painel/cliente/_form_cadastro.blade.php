@@ -8,14 +8,14 @@
     <div class="col-md-6">
         <div class="form-group">
             {!! Form::label('tipo', 'Tipo')  !!}
-            {!! Form::select('fk_tipo_estabelecimento', $tipoEstabelecimento , null , ['class'=> 'form-control','placeholder' => '----Selecione---']) !!}
+            {!! Form::select('tipo_estabelecimento', $tipoEstabelecimento , null , ['class'=> 'form-control','placeholder' => '----Selecione---']) !!}
         </div>
     </div>
 </div>
 <div class="row">
     <div class="col-md-3 form-group">
         {!! Form::label('nome', 'Nome')  !!}
-        {!! Form::text('nome-cliente', null , ['class'=>'form-control',]) !!}
+        {!! Form::text('nome_cliente', null , ['class'=>'form-control','id'=>'nome_cliente']) !!}
     </div>
 
 

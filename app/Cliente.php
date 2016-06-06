@@ -8,11 +8,12 @@ class Cliente extends Model
 {
     protected $table = 'clientes';
     protected $primaryKey = 'id_cliente';
-    protected $fillable = ['cnpj' , 'nome_cliente','telefone', 'logradouro', 'numero', 'bairro','ponto_referencia', 'fk_tipo_estabelecimento'];
+    protected $fillable = ['cnpj' , 'nome_cliente','fk_tipo_estabelecimento','telefone', 'logradouro', 'numero', 'bairro','ponto_referencia'];
 
     public function tipoEstabelecimento()
     {
-        return $this->hasMany('hortifruti\TipoEstabelecimento', 'id_tipo_estabelecimento', 'fk_tipo_estabelecimento');
+        return $this->belongsTo('hortifruti\TipoEstabelecimento','fk_tipo_estabelecimento');
     }
+
 
 }

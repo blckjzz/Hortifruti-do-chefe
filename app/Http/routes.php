@@ -12,37 +12,44 @@
 */
 
 
-
 /*
  + ============================ +
  + ROTAS SITE                   +
  + ============================ +
  */
-Route::get('/','SiteController@viewIndex');
-Route::get('/sobre','SiteController@viewSobre');
-Route::get('/orcamento','SiteController@viewOrcamento');
-Route::get('/contato','SiteController@viewContato');
+Route::get('/', 'SiteController@viewIndex');
+Route::get('/sobre', 'SiteController@viewSobre');
+Route::get('/orcamento', 'SiteController@viewOrcamento');
+Route::get('/contato', 'SiteController@viewContato');
 
+/*
+ + ============================ +
+ + ROTAS AUTENTICAÇÃO/LOGOUT    +
+ + ============================ +
+ */
+Route::get('/painel/entrar', 'Auth\AuthController@showLoginForm');
+Route::post('/painel/entrar', 'Auth\AuthController@login');
+Route::get('/painel/sair', 'Auth\AuthController@logout');
 
 /*
  + ============================ +
  + EXIBE HOME DO PAINEL         +
  + ============================ +
  */
-Route::get('/painel','SiteController@painelHome')->middleware('auth');
+Route::get('/painel', 'SiteController@painelHome')->middleware('auth');
 
 /*
- + ============================ +
- + ROTAS PAINEL DE ADMNISTRAÇÃO +
- + ============================ +
+ + ====================================== +
+ + ROTAS PAINEL DE ADMNISTRAÇÃO - PRODUTO +
+ + ====================================== +
  */
-Route::get('/painel/listagem','ProdutoController@listarProdutos');
+Route::get('/painel/listagem', 'ProdutoController@listarProdutos');
 Route::get('/painel/novoproduto', 'ProdutoController@create');
 Route::post('/painel/novoproduto', 'ProdutoController@store');
-Route::get('/painel/mostrar/{id}','ProdutoController@show');
+Route::get('/painel/mostrar/{id}', 'ProdutoController@show');
 Route::get('/painel/editar/{id}', 'ProdutoController@edit');
 Route::get('/painel/deletar/{id}', 'ProdutoController@destroy');
-Route::post('/painel/atualizar/{id}','ProdutoController@update');
+Route::post('/painel/atualizar/{id}', 'ProdutoController@update');
 
 /*
  + ============================ +
@@ -50,25 +57,20 @@ Route::post('/painel/atualizar/{id}','ProdutoController@update');
  + ============================ +
  */
 
-Route::get('/painel/novopedido','PedidoController@showPedidoForm');
-Route::post('/painel/novopedido','PedidoController@store');
+Route::get('/painel/novopedido', 'PedidoController@showPedidoForm');
+Route::post('/painel/novopedido', 'PedidoController@store');
 
 /*
  + ============================ +
- + ROTAS CADASTRO CLIENTE +
+ + ROTAS CLIENTE +
  + ============================ +
  */
-Route::get('/painel/cadastro-cliente','ClienteController@create');
-Route::post('/painel/cadastro-cliente','ClienteController@store');
-
-/*
- + ============================ +
- + ROTAS AUTENTICAÇÃO           +
- + ============================ +
- */
-Route::get('/painel/entrar','Auth\AuthController@showLoginForm');
-Route::post('/painel/entrar','Auth\AuthController@login');
-Route::get('/painel/sair','Auth\AuthController@logout');
+Route::get('/painel/cadastro-cliente', 'ClienteController@create');
+Route::post('/painel/cadastro-cliente', 'ClienteController@store');
+Route::get('/painel/lista-clientes', 'ClienteController@listarClientes');
+Route::get('/painel/mostrar-cliente/{id}', 'ClienteController@show');
+Route::get('/painel/editar-cliente/{id}', 'ClienteController@edit');
+Route::get('/painel/apagar-cliente/{id}', 'ClienteController@destroy');
 
 
 /*
@@ -77,6 +79,6 @@ Route::get('/painel/sair','Auth\AuthController@logout');
  + ============================ +
  */
 
-Route::get('/painel/registrar','Auth\AuthController@showRegistrationForm'); // remover do blade
+Route::get('/painel/registrar', 'Auth\AuthController@showRegistrationForm'); // remover do blade
 //Route::post('/painel/registrar','Auth\AuthController@register');
 

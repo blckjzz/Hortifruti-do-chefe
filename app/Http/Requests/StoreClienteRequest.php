@@ -24,8 +24,9 @@ class StoreClienteRequest extends Request
     public function rules()
     {
         return [
-            'nome-cliente' => 'required|min:5',
+            'nome_cliente' => 'required|min:5',
             'cnpj' => 'required|min:11|numeric',
+            'tipo_estabelecimento' => 'required',
         ];
     }
 }

@@ -12,11 +12,11 @@ class Pedido extends Model
 
     public function cliente()
     {
-        return $this->hasMany('hortifruti\Cliente','id_cliente','fk_id_cliente');
+        return $this->belongsTo('hortifruti\Cliente','id_cliente','fk_id_cliente');
     }
 
-    public function produto()
-    {
-        return $this->hasMany('hortifruti\Produto','id_produto','fk_id_produto');
-    }
+//    public function produto()
+//    {
+//        return $this->hasMany('hortifruti\Produto','id_produto','fk_id_produto');
+//    }
 }
