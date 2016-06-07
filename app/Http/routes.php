@@ -52,12 +52,13 @@ Route::get('/painel/deletar/{id}', 'ProdutoController@destroy');
 Route::post('/painel/atualizar/{id}', 'ProdutoController@update');
 
 /*
- + ============================ +
- + ROTAS PAINEL DE ORÇAMENTO +
- + ============================ +
+ + ==================================+
+ + ROTAS PAINEL DE ORÇAMENTO         +
+ + ==================================+
  */
 
 Route::get('/painel/novopedido', 'PedidoController@showPedidoForm');
+Route::post('/painel/resumo-pedido', 'PedidoController@mostraResumoPedido');
 Route::post('/painel/novopedido', 'PedidoController@store');
 
 /*
@@ -74,9 +75,9 @@ Route::get('/painel/apagar-cliente/{id}', 'ClienteController@destroy');
 
 
 /*
- + ============================ +
- + ROTAS CADASTRO DE DEFAULT LARAVEL
- + ============================ +
+ + ================================= +
+ + ROTAS CADASTRO DE DEFAULT LARAVEL +
+ + ================================= +
  */
 
 Route::get('/painel/registrar', 'Auth\AuthController@showRegistrationForm'); // remover do blade

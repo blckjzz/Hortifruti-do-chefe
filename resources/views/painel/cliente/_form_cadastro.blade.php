@@ -8,7 +8,7 @@
     <div class="col-md-6">
         <div class="form-group">
             {!! Form::label('tipo', 'Tipo')  !!}
-            {!! Form::select('tipo_estabelecimento', $tipoEstabelecimento , null , ['class'=> 'form-control','placeholder' => '----Selecione---']) !!}
+            {!! Form::select('tipo_estabelecimento', $tipoEstabelecimento , null , ['class'=> 'form-control','placeholder' => 'Selecione']) !!}
         </div>
     </div>
 </div>

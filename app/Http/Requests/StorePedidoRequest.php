@@ -4,7 +4,7 @@ namespace hortifruti\Http\Requests;
 
 use hortifruti\Http\Requests\Request;
 
-class StoreClienteRequest extends Request
+class StorePedidoRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,9 +24,7 @@ class StoreClienteRequest extends Request
     public function rules()
     {
         return [
-            'nome_cliente' => 'required|min:5',
-            'cnpj' => 'required|min:11',
-            'tipo_estabelecimento' => 'required',
+            'cliente' => 'required',
         ];
     }
 }

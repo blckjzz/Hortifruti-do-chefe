@@ -2,10 +2,12 @@
 
 namespace hortifruti\Http\Controllers;
 
+use hortifruti\Cliente;
+use hortifruti\Pedido;
 use Illuminate\Http\Request;
-
 use hortifruti\Http\Requests;
 use hortifruti\Produto;
+use hortifruti\Http\Requests\StorePedidoRequest;
 
 class PedidoController extends Controller
 {
@@ -17,8 +19,10 @@ class PedidoController extends Controller
     public function showPedidoForm()
     {
         $produtos = Produto::all();
+        $clientes = Cliente::all()->pluck('nome_cliente','id_cliente');
+        $pedido = new Pedido();
         $title = 'Montar pedido';
-        return view('painel.pedido.montar_pedido', compact('title', 'produtos'));
+        return view('painel.pedido.montar_pedido', compact('title', 'produtos','clientes','pedido'));
     }
 
 //    /**
@@ -34,13 +38,35 @@ class PedidoController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param StorePedidoRequest $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function mostraResumoPedido(StorePedidoRequest $request)
     {
-        $produtosPedido = $request->all();
-        dd($produtosPedido);
+        dd($idProdutosSelecionados = $request->input('selecionados'));
+        foreach($idProdutosSelecionados as $id){
+            $produtosSelecionados = $request->only("produto[$id]");
+        }
+        dd($produtosSelecionados);
+        //produtrar dentro do array produtos o indice equivalente ao id dos produtos selecionados
+
+
+
+        dd();
+        dd($request->all());
+        $title = 'Resumo do pedido ';
+        return view('painel.pedido.resumo_pedido',compact('title'));
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param StorePedidoRequest $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(StorePedidoRequest $request)
+    {
+        dd($request->all());
     }
 
     /**
