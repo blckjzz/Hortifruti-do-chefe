@@ -25,6 +25,7 @@ class StorePedidoRequest extends Request
     {
         return [
             'cliente' => 'required',
+            ''
         ];
     }
 }
