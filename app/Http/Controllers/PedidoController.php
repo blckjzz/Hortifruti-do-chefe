@@ -49,7 +49,6 @@ class PedidoController extends Controller
      */
     public function mostraResumoPedido(StorePedidoRequest $request)
     {
-
         //todos produtos recuperados via post
         $todosProdutos = $request->input('produto');
         //produtrar dentro do array produtos o indice equivalente ao id dos produtos selecionados
@@ -58,42 +57,22 @@ class PedidoController extends Controller
         if (empty($idProdutosSelecionados)) {
             return redirect()->back()->with('warningMessage', 'Favor, selecionar ao menos um produto');
         } else {
-//            //recupera todos produtos selecionados do banco
-//            $produtosDoBanco = new Produto();
-//            $produtosDoBanco = Produto::findMany($idProdutosSelecionados);
-
             // recebe a quantidade de cada produto e constroi um array com suas quantidades
-            foreach ($idProdutosSelecionados as $id) {
-                $idProdutoQtds[$id] = $todosProdutos[$id]; // array com id e qtds para cada produto
-            }
+//            foreach ($idProdutosSelecionados as $id) {
+//                $idProdutoQtds[$id] = $todosProdutos[$id]; // array com id e qtds para cada produto
+//            }
 
-            dd($idProdutoQtds);
-//            dd($idProdutoQtds); // array com id e qtds para cada produto
-            $pedido[] = new Pedido();
 
-            var_dump($idProdutoQtds);
-            //idProdutosQtd: indice do array = id do produto
-            //idProdutosQtd: valores
-            foreach ($idProdutoQtds as $id) {
-                print_r($id);
+            var_dump($idProdutosSelecionados);
+            //cria pedido
+            $pedido = new Pedido();
+            foreach($idProdutosSelecionados as $idProd){
+                $produto  = Produto::find($idProd);
+                $pedido->produtos()->save($produto);
             }
-//            $pedido[]->qtd_unidade = $id[qtd_unidade];
-//            $pedido[]->qtd_kg = $id[qtd_kg];
-//            $pedido[]->qtd_caixa = $id[qtd_caixa];
-//            $pedido[]->qtd_bandeja = $id[qtd_bandeja];
-//            $pedido[]->qtd_duzia = $id[qtd_duzia];
-//            $pedido->qtd_unidade = $id->qtd_unidade;
-//            $pedido->qtd_kg = $id->qtd_kg;
-//            $pedido->qtd_caixa = $id->qtd_caixa;
-//            $pedido->qtd_bandeja = $id->qtd_bandeja;
-//            $pedido->qtd_duzia = $id->qtd_duzia;
-//             ['fk_id_cliente','fk_tipo_produto', 'ncm', 'qtd_unidade', 'qtd_kg', 'qtd_caixa', 'qtd_bandeja', 'qtd_duzia'];
-            //   associar produto ao pedido  e associar as qtds
-            //associa pedido ao cliente
-                $pedido->cliente()->associate($request->input('cliente'));
 
             $title = 'Resumo do pedido ';
-            return view('painel.pedido.resumo_pedido', compact('title', 'produtosDoBanco', 'idProdutoQtds'));
+            return view('painel.pedido.resumo_pedido', compact('title'));
         }
     }
 

@@ -16,12 +16,8 @@ class Pedido extends Model
         return $this->hasMany('hortifruti\Cliente','fk_id_cliente');
     }
 
-    public function produto()
-    {
-        return $this->hasMany('hortifruti\Produto','id_produto','fk_id_produto');
+    public function produtos(){
+        return $this->belongsToMany('hortifruti\Produto', 'item_pedido', 'fk_id_pedido', 'fk_id_produto');
     }
 
-    public function itemPedido(){
-        return $this->belongsToMany('hortifruti\Produto', 'hortifruti\ItemPedido', 'user_id', 'role_id');
-    }
 }

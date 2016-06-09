@@ -14,8 +14,11 @@ class Produto extends Model
     {
         return $this->belongsTo('hortifruti\TipoProduto', 'fk_tipo_produto','id_tipo_produto');
     }
-    public function pedido()
+
+
+//    model do produto
+    public function pedidos()
     {
-        return $this->belongsTo('hortifruti\Pedido');
+        return $this->belongsToMany('hortifruti\Pedido', 'item_pedido', 'fk_id_produto', 'fk_id_pedido');
     }
 }
