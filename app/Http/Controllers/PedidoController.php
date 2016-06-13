@@ -65,12 +65,19 @@ class PedidoController extends Controller
 
             var_dump($idProdutosSelecionados);
             //cria pedido
-            $pedido = new Pedido();
+
+
+            $pedido= Pedido::create([
+                'fk_id_cliente' => \Input::get('cliente'),
+                'fk_tipo_produto'
+            ]);
+
             foreach($idProdutosSelecionados as $idProd){
+                $pedido->cliente()->
                 $produto  = Produto::find($idProd);
                 $pedido->produtos()->save($produto);
             }
-
+            dd(Pedido::findAll());
             $title = 'Resumo do pedido ';
             return view('painel.pedido.resumo_pedido', compact('title'));
         }
