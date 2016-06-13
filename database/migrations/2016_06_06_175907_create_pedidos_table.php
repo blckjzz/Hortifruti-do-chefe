@@ -16,12 +16,6 @@ class CreatePedidosTable extends Migration
             $table->increments('id_pedido');
             $table->integer('fk_id_cliente')->unsigned();
             $table->foreign('fk_id_cliente')->references('id_cliente')->on('clientes');
-            $table->string('ncm');
-            $table->double('qtd_unidade');
-            $table->double('qtd_kg');
-            $table->double('qtd_caixa');
-            $table->double('qtd_bandeja');
-            $table->double('qtd_duzia');
             $table->integer('fk_tipo_produto')->unsigned();
             $table->foreign('fk_tipo_produto')->references('id_tipo_produto')->on('tipo_produto');
             $table->timestamps();
@@ -35,6 +29,6 @@ class CreatePedidosTable extends Migration
      */
     public function down()
     {
-        Schema::drop();
+        Schema::drop('pedidos');
     }
 }
