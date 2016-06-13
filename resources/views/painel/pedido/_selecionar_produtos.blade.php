@@ -19,7 +19,6 @@
                     <tr>
                         <th>Nome</th>
                         <th>Ncm</th>
-                        <th colspan="5">Quantidade do produto</th>
                         <th>Selecionar produto</th>
 
                     </tr>
@@ -29,31 +28,9 @@
                         <tr>
                             <td>{{$p->nome}}</td>
                             <td>{{$p->ncm}}</td>
-
-                            <td>
-                                {!!  Form::label("$p->id_produto[qtd_unidade]",'Quantidade Unidades') !!}
-                                {!!  Form::number("produto[$p->id_produto][qtd_unidade]", null , ['class'=> 'form-control']) !!}
-                            </td>
-                            <td>
-                                {!! Form::label("$p->id_produto[qtd_kg]",'Quantidade KG') !!}
-                                {!!  Form::number("produto[$p->id_produto][qtd_kg]", null , ['class'=> 'form-control']) !!}
-                            </td>
-                            <td>
-                                {!! Form::label("$p->id_produto[qtd_caixa]",'Quantidade Caixas') !!}
-                                {!!  Form::number("produto[$p->id_produto][qtd_caixa]",null , ['class'=> 'form-control']) !!}
-                            </td>
-                            <td>
-                                {!! Form::label("$p->id_produto[qtd_bandeja]",'Quantidade Bandejas') !!}
-                                {!!  Form::number("produto[$p->id_produto][qtd_bandeja]", null , ['class'=> 'form-control']) !!}
-                            </td>
-                            <td>
-                                {!! Form::label("$p->id_produto[qtd_duzia]",'Quantidade Duzias') !!}
-                                {!! Form::number("produto[$p->id_produto][qtd_duzia]", null , ['class'=> 'form-control']) !!}
-                            </td>
                             <td class="text-center">
                                 {!!  Form::checkbox("selecionados[]",$p->id_produto) !!}
                             </td>
-                            {{--qtd_unidade', 'qtd_kg', 'qtd_caixa', 'qtd_bandeja', 'qtd_duzia'];--}}
                         </tr>
                     @endforeach
                 </table>

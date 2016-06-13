@@ -3,11 +3,13 @@
 namespace hortifruti\Http\Controllers;
 
 use hortifruti\Cliente;
+use hortifruti\ItemPedido;
 use hortifruti\Pedido;
 use Illuminate\Http\Request;
 use hortifruti\Http\Requests;
 use hortifruti\Produto;
 use hortifruti\Http\Requests\StorePedidoRequest;
+use Illuminate\Support\Facades\Input;
 
 class PedidoController extends Controller
 {
@@ -31,14 +33,14 @@ class PedidoController extends Controller
         return view('painel.pedido.montar_pedido', compact('title', 'produtos', 'clientes', 'pedido'));
     }
 
-//    /**
-//     * Show the form for creating a new resource.
-//     *
-//     * @return \Illuminate\Http\Response
-//     */
+
 //    public function create()
 //    {
+//        $pedido = Pedido::create([
+//            'fk_id_cliente' => \Input::get('cliente')
+//        ]);
 //
+//        return view('painel')
 //    }
 
     /**
@@ -62,24 +64,17 @@ class PedidoController extends Controller
 //                $idProdutoQtds[$id] = $todosProdutos[$id]; // array com id e qtds para cada produto
 //            }
 
-
-            var_dump($idProdutosSelecionados);
-            //cria pedido
-
-
-            $pedido= Pedido::create([
-                'fk_id_cliente' => \Input::get('cliente'),
-                'fk_tipo_produto'
+            $pedido = Pedido::create([
+                'fk_id_cliente' => $request->input("cliente")
             ]);
 
-            foreach($idProdutosSelecionados as $idProd){
-                $pedido->cliente()->
-                $produto  = Produto::find($idProd);
-                $pedido->produtos()->save($produto);
+            foreach ($idProdutosSelecionados as $idProd) {
+                $produto = Produto::find($idProd);
+                $pedido->produtos()->attach($produto);
+                $pedido->save();
             }
-            dd(Pedido::findAll());
             $title = 'Resumo do pedido ';
-            return view('painel.pedido.resumo_pedido', compact('title'));
+            return view('painel.pedido.resumo_pedido', compact('title','pedido'));
         }
     }
 

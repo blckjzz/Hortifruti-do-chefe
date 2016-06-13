@@ -10,13 +10,11 @@
                 <table class="table table-striped">
                     <thead>
                     <tr>
-                       <th>Produto</th>
+                        <th>Produto</th>
                     </tr>
                     </thead>
+                        {{ print_r($pedido->toArray())  }}
                     <tbody>
-                    @foreach($produtosSelecionados as $p)
-
-                    @endforeach
                 </table>
             </div>
         </div>

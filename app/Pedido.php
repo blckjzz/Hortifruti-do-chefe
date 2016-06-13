@@ -15,8 +15,8 @@ class Pedido extends Model
         return $this->hasMany('hortifruti\Cliente','fk_id_cliente');
     }
 
+    //    $this->belongsToMany('relacao', 'nome da tabela pivot', 'key ref. books em pivot', 'key ref. author em pivot')
     public function produtos(){
         return $this->belongsToMany('hortifruti\Produto', 'item_pedido', 'fk_id_pedido', 'fk_id_produto');
     }
-
 }
