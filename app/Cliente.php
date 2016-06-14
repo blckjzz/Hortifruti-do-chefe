@@ -16,9 +16,10 @@ class Cliente extends Model
         return $this->belongsTo('hortifruti\TipoEstabelecimento','fk_tipo_estabelecimento');
     }
 
-
-    public function itemPedido(){
-        return $this->belongsToMany('App\Role', 'user_roles', 'user_id', 'role_id');
+    public function pedidos(){
+        return $this->HasMany('hortifruti\Pedido');
     }
+
+
 
 }

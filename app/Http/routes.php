@@ -57,9 +57,9 @@ Route::post('/painel/atualizar/{id}', 'ProdutoController@update');
  + ==================================+
  */
 
-Route::get('/painel/novopedido', 'PedidoController@showPedidoForm');
+Route::get('/painel/novo-pedido', 'PedidoController@showPedidoForm');
+Route::post('/painel/novo-pedido/{pedido}', 'PedidoController@store');
 Route::post('/painel/resumo-pedido', 'PedidoController@mostraResumoPedido');
-Route::post('/painel/novopedido', 'PedidoController@store');
 
 /*
  + ============================ +

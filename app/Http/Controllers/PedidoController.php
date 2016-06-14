@@ -13,11 +13,6 @@ use Illuminate\Support\Facades\Input;
 
 class PedidoController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
 
     public function __construct()
     {
@@ -34,21 +29,6 @@ class PedidoController extends Controller
     }
 
 
-//    public function create()
-//    {
-//        $pedido = Pedido::create([
-//            'fk_id_cliente' => \Input::get('cliente')
-//        ]);
-//
-//        return view('painel')
-//    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param StorePedidoRequest $request
-     * @return \Illuminate\Http\Response
-     */
     public function mostraResumoPedido(StorePedidoRequest $request)
     {
         //todos produtos recuperados via post
@@ -59,11 +39,6 @@ class PedidoController extends Controller
         if (empty($idProdutosSelecionados)) {
             return redirect()->back()->with('warningMessage', 'Favor, selecionar ao menos um produto');
         } else {
-            // recebe a quantidade de cada produto e constroi um array com suas quantidades
-//            foreach ($idProdutosSelecionados as $id) {
-//                $idProdutoQtds[$id] = $todosProdutos[$id]; // array com id e qtds para cada produto
-//            }
-
             $pedido = Pedido::create([
                 'fk_id_cliente' => $request->input("cliente")
             ]);
@@ -78,15 +53,25 @@ class PedidoController extends Controller
         }
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param StorePedidoRequest $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(StorePedidoRequest $request)
+
+
+    public function store(StorePedidoRequest $request,$pedido)
     {
-        dd($request->all());
+        $p = Pedido::find($pedido);
+        $quantidades = $request->input('quantidade');
+        foreach($quantidades as $qtd)
+        {
+            var_dump($quantidades);
+            $produto = Produto::find($qtd);
+            dd($quantidades[$produto->id_produto]);
+            $pedido->pivot->qtd_kg = $quantidades[$produto->id_produto];
+            $pedido->pivot->qtd_caixa = $qtd[qtd_caixa] ;
+            $pedido->pivot->qtd_bandeja = $qtd[qtd_bandeja] ;
+            $pedido->pivot->qtd_duzia = $qtd[qtd_duzia] ;
+            $pedido->pivot->qtd_unidade =  $qtd[qtd_unidade];
+            dd($produto);
+            dd($pedido);
+        }
     }
 
     /**

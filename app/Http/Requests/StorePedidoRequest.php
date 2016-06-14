@@ -24,8 +24,7 @@ class StorePedidoRequest extends Request
     public function rules()
     {
         return [
-            'cliente' => 'required',
-            ''
+
         ];
     }
 }

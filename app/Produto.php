@@ -16,9 +16,8 @@ class Produto extends Model
     }
 
 
-//    model do produto
     public function pedidos()
     {
-        return $this->belongsToMany('hortifruti\Pedido', 'item_pedido', 'fk_id_produto', 'fk_id_pedido');
+        return $this->belongsToMany('hortifruti\Pedido', 'item_pedido', 'fk_id_produto', 'fk_id_pedido')->withPivot('qtd_kg','qtd_caixa','qtd_bandeja','qtd_duzia');
     }
 }
