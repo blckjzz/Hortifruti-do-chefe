@@ -22,7 +22,7 @@
                         <th>CNPJ</th>
                         <th>Realizado em</th>
                         <th>Há</th>
-                        <th>#</th>
+                        <th>Ações</th>
                     </tr>
                     </thead>
                     <tbody>

@@ -23,7 +23,7 @@ class PedidoController extends Controller
     {
         $title = 'Consulta de pedidos';
         $pedidos = Pedido::all();
-        return view('painel.pedido.listagem_pedidos',compact('title','pedidos'));
+        return view('painel.pedido.listagem_pedidos', compact('title', 'pedidos'));
     }
 
     public function showPedidoForm()
@@ -65,7 +65,7 @@ class PedidoController extends Controller
     {
         $pedido = Pedido::find($idPedido);
         $quantidades = $request->input('quantidade');
-        var_dump($quantidades);
+
         foreach ($pedido->produtos as $produto) {
             $produto->pivot->qtd_kg = $quantidades[$produto->id_produto]['qtd_kg'];
             $produto->pivot->qtd_caixa = $quantidades[$produto->id_produto]['qtd_caixa'];
@@ -74,7 +74,8 @@ class PedidoController extends Controller
             $produto->pivot->qtd_unidade = $quantidades[$produto->id_produto]['qtd_unidade'];
             $pedido->save();
         }
-        return redirect()->action('PedidoController@consultar-pedidos')->with('sucessMessage', $pedido->cliente->nome_cliente . ' foi cadastrado com sucesso');
+        return redirect()->action('PedidoController@consultarPedidos')->
+        with('successMessage', 'O pedido do cliente: ' . $pedido->cliente->nome_cliente . ' foi registrado com sucesso');
     }
 
 
