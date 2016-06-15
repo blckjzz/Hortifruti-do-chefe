@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-md-9 col-sm-offset-1">
+    <div class="col-md-10">
         {{--{!! Form::open(array('action' => array('PedidoController@store',$pedido), 'class'=>'form')) !!}--}}
         {{--<div class="row">--}}
         {{--<div class="col-md-3 pull-right">--}}
@@ -7,28 +7,28 @@
         {{--</div>--}}
         {{--</div>--}}
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-11">
                 <h2>Pedidos realizados</h2>
                 <hr>
             </div>
         </div>
         <div id="produtos" class="row">
             <div>
-                <table class="table table-striped">
+                <table class="col-sm-offset-1 table table-hover table-bordered">
                     <thead>
                     <tr>
-                        <th class="col-md-2">Número do pedido</th>
-                        <th>Cliente</th>
-                        <th>CNPJ</th>
-                        <th>Realizado em</th>
-                        <th>Há</th>
-                        <th>Ações</th>
+                        <th class="col-sm-1" >Nº</th>
+                        <th class="col-md-2">Cliente</th>
+                        <th class="col-md-2">CNPJ</th>
+                        <th class="col-md-2">Realizado em</th>
+                        <th class="col-md-2">Há</th>
+                        <th class="col-md-2">Ações</th>
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($pedidos as $pedido)
+                    @foreach($pedidos->sortBy('created_at') as $pedido)
                         <tr>
-                            <td class="text-center">
+                            <td>
                                 {{$pedido->id_pedido }}
                             </td>
                             <td>

@@ -1,35 +1,35 @@
 {!! Form::open(array('action' => 'PedidoController@mostraResumoPedido', 'method' => 'POST')) !!}
 <div class="row">
-    <div class="col-md-7 col-sm-offset-1">
+    <div class="col-md-10 col-sm-offset-1">
         <div class="row">
-            <div class="col-md-3">
-                {!! Form::submit('Realizar pedido', ['class'=>'btn btn-primary']) !!}
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-5">
+            <div class="col-md-1">
                 {!! Form::label('cliente','Clientes') !!}
+            </div>
+            <div class="col-md-5">
                 {!! Form::select('cliente',$clientes,  null , ['class'=> 'form-control','placeholder' => 'Selecione']) !!}
+            </div>
+            <div class="col-md-3 pull-right">
+                {!! Form::submit('Realizar pedido', ['class'=>'btn btn-primary']) !!}
             </div>
         </div>
         <div id="produtos" class="row">
             <div>
-                <table class="table table-striped">
+                <table class="table table-bordered table-hover">
                     <thead>
                     <tr>
-                        <th>Nome</th>
-                        <th>Ncm</th>
-                        <th>Selecionar produto</th>
+                        <th class="col-md-3">Nome</th>
+                        <th class="col-md-2">Ncm</th>
+                        <th class="col-md-1">Selecionar produto</th>
 
                     </tr>
                     </thead>
                     <tbody>
                     @foreach($produtos as $p)
                         <tr>
-                            <td>{{$p->nome}}</td>
+                            <td>{!! Form::label($p->id_produto,$p->nome)  !!}</td>
                             <td>{{$p->ncm}}</td>
                             <td class="text-center">
-                                {!!  Form::checkbox("selecionados[]",$p->id_produto) !!}
+                                {!!  Form::checkbox("selecionados[]",$p->id_produto,null, ['id' => $p->id_produto]) !!}
                             </td>
                         </tr>
                     @endforeach
