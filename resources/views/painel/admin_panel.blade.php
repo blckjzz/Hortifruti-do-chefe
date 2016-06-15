@@ -78,12 +78,12 @@
 
 
                 <li>
-                    <a href="{{ action('SiteController@painelHome') }}"><i class="fa fa-desktop "></i> Página Inicial
+                    <a href="{{ action('SiteController@painelHome') }}"><i class="fa fa-home"></i> Página Inicial
                     </a>
                 </li>
 
                 <li>
-                    <a href="#"><i class="fa fa-user-md "></i>Verificar pedidos</a>
+                    <a href=" {{ action('PedidoController@consultarPedidos') }} "><i class="fa fa-user-md "></i>Consultar pedidos</a>
                 </li>
                 <li>
                     <a href="{{ action('PedidoController@showPedidoForm') }}"><i class="fa fa-shopping-cart"></i>Tirar

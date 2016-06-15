@@ -2,41 +2,59 @@
     <div class="col-md-9 col-sm-offset-1">
         {{--{!! Form::open(array('action' => array('PedidoController@store',$pedido), 'class'=>'form')) !!}--}}
         {{--<div class="row">--}}
-            {{--<div class="col-md-3 pull-right">--}}
-                {{--{!! Form::submit('Confirmar pedido', ['class'=>'btn btn-primary']) !!}--}}
-            {{--</div>--}}
+        {{--<div class="col-md-3 pull-right">--}}
+        {{--{!! Form::submit('Confirmar pedido', ['class'=>'btn btn-primary']) !!}--}}
+        {{--</div>--}}
         {{--</div>--}}
         <div class="row">
-            <table class="table table-striped">
-                <thead>
-                <th> Cliente</th>
-                <th> CNPJ</th>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>{{ $pedido->cliente->nome_cliente }}</td>
-                    <td>{{ $pedido->cliente->cnpj }}</td>
-                </tr>
-                </tbody>
-            </table>
+            <div class="col-md-12">
+                <h2>Pedidos realizados</h2>
+                <hr>
+            </div>
         </div>
         <div id="produtos" class="row">
             <div>
                 <table class="table table-striped">
                     <thead>
                     <tr>
-                        <th class="col-md-2">Pedidos realizados</th>
+                        <th class="col-md-2">Número do pedido</th>
+                        <th>Cliente</th>
+                        <th>CNPJ</th>
+                        <th>Realizado em</th>
+                        <th>Há</th>
+                        <th>#</th>
                     </tr>
                     </thead>
-
-                    @foreach($pedido->cliente as $cliente)
+                    <tbody>
+                    @foreach($pedidos as $pedido)
                         <tr>
-
-                            <td>
-                                {{$cliente->nome }}
+                            <td class="text-center">
+                                {{$pedido->id_pedido }}
                             </td>
                             <td>
-                                {{$cliente->cnpj }}
+                                {{$pedido->cliente->nome_cliente }}
+                            </td>
+                            <td>
+                                {{$pedido->cliente->cnpj}}
+                            </td>
+                            <td>
+                                {{$pedido->created_at}}
+                            </td>
+                            <td>
+                                {{$pedido->cliente->created_at->diffForHumans()}}
+                            </td>
+                            <td>
+                                <a href="{{ action('PedidoController@show',array($pedido->id_produto)) }}">
+                                    <button type="button" class="btn btn-default fa fa-eye"
+                                            title="detalhes"></button>
+                                </a>
+                                <a href="{{ action('PedidoController@edit',array($pedido->id_produto)) }}">
+                                    <button type="button" class="btn btn-default fa fa-pencil-square-o "title="Editar"></button>
+                                </a>
+                                <a href="{{ action('PedidoController@destroy',array($pedido->id_produto)) }}">
+                                    <button type="button" class="fa fa-times btn btn-default"
+                                            title="Deletar"></button>
+                                </a>
                             </td>
                         </tr>
                     @endforeach

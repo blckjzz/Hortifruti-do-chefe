@@ -19,6 +19,13 @@ class PedidoController extends Controller
         $this->middleware('admin');
     }
 
+    public function consultarPedidos()
+    {
+        $title = 'Consulta de pedidos';
+        $pedidos = Pedido::all();
+        return view('painel.pedido.listagem_pedidos',compact('title','pedidos'));
+    }
+
     public function showPedidoForm()
     {
         $produtos = Produto::all();
@@ -49,18 +56,17 @@ class PedidoController extends Controller
                 $pedido->save();
             }
             $title = 'Resumo do pedido ';
-            return view('painel.pedido.resumo_pedido', compact('title','pedido'));
+            return view('painel.pedido.resumo_pedido', compact('title', 'pedido'));
         }
     }
 
 
-
-    public function store(StorePedidoRequest $request,$idPedido)
+    public function store(StorePedidoRequest $request, $idPedido)
     {
         $pedido = Pedido::find($idPedido);
         $quantidades = $request->input('quantidade');
         var_dump($quantidades);
-        foreach($pedido->produtos as $produto){
+        foreach ($pedido->produtos as $produto) {
             $produto->pivot->qtd_kg = $quantidades[$produto->id_produto]['qtd_kg'];
             $produto->pivot->qtd_caixa = $quantidades[$produto->id_produto]['qtd_caixa'];
             $produto->pivot->qtd_bandeja = $quantidades[$produto->id_produto]['qtd_bandeja'];
@@ -68,9 +74,7 @@ class PedidoController extends Controller
             $produto->pivot->qtd_unidade = $quantidades[$produto->id_produto]['qtd_unidade'];
             $pedido->save();
         }
-            dd($pedido->produtos);
-        $title = 'Pedido confirmado';
-        return view('painel.pedido.resumo_pedido', compact('title','pedido'));
+        return redirect()->action('PedidoController@consultar-pedidos')->with('sucessMessage', $pedido->cliente->nome_cliente . ' foi cadastrado com sucesso');
     }
 
 

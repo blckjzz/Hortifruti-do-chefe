@@ -43,27 +43,34 @@ Route::get('/painel', 'SiteController@painelHome')->middleware('auth');
  + ROTAS PAINEL DE ADMNISTRAÇÃO - PRODUTO +
  + ====================================== +
  */
-Route::get('/painel/listagem', 'ProdutoController@listarProdutos');
-Route::get('/painel/novoproduto', 'ProdutoController@create');
-Route::post('/painel/novoproduto', 'ProdutoController@store');
-Route::get('/painel/mostrar/{id}', 'ProdutoController@show');
-Route::get('/painel/editar/{id}', 'ProdutoController@edit');
-Route::get('/painel/deletar/{id}', 'ProdutoController@destroy');
-Route::post('/painel/atualizar/{id}', 'ProdutoController@update');
+Route::get('/painel/produto-listagem', 'ProdutoController@listarProdutos');
+Route::get('/painel/novo-produto', 'ProdutoController@create');
+Route::post('/painel/novo-produto', 'ProdutoController@store');
+Route::get('/painel/mostrar-produto/{id}', 'ProdutoController@show');
+Route::get('/painel/editar-produto/{id}', 'ProdutoController@edit');
+Route::get('/painel/deletar-produto/{id}', 'ProdutoController@destroy');
+Route::post('/painel/atualizar-produto/{id}', 'ProdutoController@update');
 
 /*
  + ==================================+
- + ROTAS PAINEL DE ORÇAMENTO         +
+ + ROTAS PAINEL - PEDIDO         +
  + ==================================+
  */
 
 Route::get('/painel/novo-pedido', 'PedidoController@showPedidoForm');
 Route::post('/painel/novo-pedido/{pedido}', 'PedidoController@store');
 Route::post('/painel/resumo-pedido', 'PedidoController@mostraResumoPedido');
+Route::get('/painel/consultar-pedidos', 'PedidoController@consultarPedidos');
+Route::get('/painel/mostrar-pedido/{id}', 'PedidoController@show');
+Route::get('/painel/editar-pedido/{id}', 'PedidoController@edit');
+Route::get('/painel/deletar-pedido/{id}', 'PedidoController@destroy');
+Route::post('/painel/atualizar-pedido/{id}', 'PedidoController@update');
+
+
 
 /*
  + ============================ +
- + ROTAS CLIENTE +
+ + ROTAS CLIENTE                +
  + ============================ +
  */
 Route::get('/painel/cadastro-cliente', 'ClienteController@create');

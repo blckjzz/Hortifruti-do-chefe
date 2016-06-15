@@ -17,15 +17,14 @@
                 <td>{{$c->telefone}}</td>
                 <td>
                     <a href="{{ action('ClienteController@show',array($c->id_cliente)) }}">
-                        <button type="button" class="btn btn-default glyphicon glyphicon-search"
+                        <button type="button" class="btn btn-default fa fa-eye"
                                 title="detalhes"></button>
                     </a>
                     <a href="{{ action('ClienteController@edit',array($c->id_cliente)) }}">
-                        <button type="button" class="btn btn-default glyphicon glyphicon-pencil"
-                                title="Editar"></button>
+                        <button type="button" class="btn btn-default fa fa-pencil-square-o "title="Editar"></button>
                     </a>
                     <a href="{{ action('ClienteController@destroy',array($c->id_cliente)) }}">
-                        <button type="button" class="btn btn-default glyphicon glyphicon-trash"
+                        <button type="button" class="fa fa-times btn btn-default"
                                 title="Deletar"></button>
                     </a>
                 </td>
