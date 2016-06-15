@@ -55,24 +55,24 @@ class PedidoController extends Controller
 
 
 
-    public function store(StorePedidoRequest $request,$pedido)
+    public function store(StorePedidoRequest $request,$idPedido)
     {
-        $p = Pedido::find($pedido);
+        $pedido = Pedido::find($idPedido);
         $quantidades = $request->input('quantidade');
-        foreach($quantidades as $qtd)
-        {
-            var_dump($quantidades);
-            $produto = Produto::find($qtd);
-            dd($quantidades[$produto->id_produto]);
-            $pedido->pivot->qtd_kg = $quantidades[$produto->id_produto];
-            $pedido->pivot->qtd_caixa = $qtd[qtd_caixa] ;
-            $pedido->pivot->qtd_bandeja = $qtd[qtd_bandeja] ;
-            $pedido->pivot->qtd_duzia = $qtd[qtd_duzia] ;
-            $pedido->pivot->qtd_unidade =  $qtd[qtd_unidade];
-            dd($produto);
-            dd($pedido);
+        var_dump($quantidades);
+        foreach($pedido->produtos as $produto){
+            $produto->pivot->qtd_kg = $quantidades[$produto->id_produto]['qtd_kg'];
+            $produto->pivot->qtd_caixa = $quantidades[$produto->id_produto]['qtd_caixa'];
+            $produto->pivot->qtd_bandeja = $quantidades[$produto->id_produto]['qtd_bandeja'];
+            $produto->pivot->qtd_duzia = $quantidades[$produto->id_produto]['qtd_duzia'];
+            $produto->pivot->qtd_unidade = $quantidades[$produto->id_produto]['qtd_unidade'];
+            $pedido->save();
         }
+            dd($pedido->produtos);
+        $title = 'Pedido confirmado';
+        return view('painel.pedido.resumo_pedido', compact('title','pedido'));
     }
+
 
     /**
      * Display the specified resource.
