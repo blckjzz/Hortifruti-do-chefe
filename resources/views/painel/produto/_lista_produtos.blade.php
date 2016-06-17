@@ -31,5 +31,6 @@
                 </tr>
             @endforeach
         </table>
+        {{ $produtos->render() }}
     </div>
 </div>

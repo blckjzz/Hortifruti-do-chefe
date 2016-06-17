@@ -8,6 +8,7 @@ use hortifruti\TipoEstabelecimento;
 use Illuminate\Http\Request;
 use hortifruti\Http\Requests\StoreClienteRequest;
 use Symfony\Component\Finder\Exception\AccessDeniedException;
+use Illuminate\Support\Facades\DB;
 
 class ClienteController extends Controller
 {
@@ -21,7 +22,7 @@ class ClienteController extends Controller
     public function listarClientes()
     {
         $title = 'Listagem de clientes';
-        $clientes = Cliente::all();
+        $clientes = DB::table('clientes')->paginate(10);
         return view('painel.cliente.listagem_clientes',compact('title','clientes'));
     }
 

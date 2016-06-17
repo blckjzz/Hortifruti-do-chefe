@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-md-10">
+    <div class="col-md-11">
         <div class="row">
             <div class="col-md-offset-1 col-md-10">
                 <h2>Pedidos realizados</h2>
@@ -10,12 +10,13 @@
                 <table class="col-sm-offset-1 table table-hover table-bordered">
                     <thead>
                     <tr>
-                        <th class="col-sm-1" >Nº</th>
+                        <th class="text-center" >Nº</th>
                         <th class="col-md-2">Cliente</th>
                         <th class="col-md-2">CNPJ</th>
-                        <th class="col-md-2">Realizado em</th>
+                        <th class="col-md-2">Data Pedido</th>
                         <th class="col-md-2">Há</th>
-                        <th class="col-sm-1">R$</th>
+                        <th>R$</th>
+                        <th class="text-center">Quantidade</th>
                         <th class="col-md-2">Ações</th>
                     </tr>
                     </thead>
@@ -38,7 +39,10 @@
                                 {{$pedido->cliente->created_at->diffForHumans()}}
                             </td>
                             <td>
-                                #
+                                {{ $pedido->total_pedido }}
+                            </td>
+                            <td>
+                                {{ $pedido->produtos()->count() }}
                             </td>
                             <td>
                                 <a href="{{ action('PedidoController@show',array($pedido->id_produto)) }}">

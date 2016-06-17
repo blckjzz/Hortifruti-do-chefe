@@ -9,9 +9,8 @@ class Pedido extends Model
 {
     protected $table = 'pedidos';
     protected $primaryKey = 'id_pedido';
-    protected $fillable = ['fk_id_cliente'];
+    protected $fillable = ['fk_id_cliente','total_pedido'];
     protected $dates = ['created_at', 'updated_at'];
-
 
     public function cliente()
     {
@@ -33,6 +32,12 @@ class Pedido extends Model
     {
         return Carbon::parse($this->attributes['updated_at'])->format('d/m/Y');
 //        return Carbon::createFromFormat('Y-m-d', $this->attributes['updated_at'])->format('d/m/Y');
+    }
+
+    public function getTotalPedidoAttribute()
+    {
+        return number_format($this->attributes['total_pedido'], 2, '.', ',');;
+
     }
 
 

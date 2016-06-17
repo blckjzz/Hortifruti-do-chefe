@@ -28,9 +28,9 @@
                                 title="Deletar"></button>
                     </a>
                 </td>
-
-
             </tr>
         @endforeach
+
     </table>
+    {{ $clientes->render() }}
 </div>

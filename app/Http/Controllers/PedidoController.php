@@ -16,6 +16,7 @@ class PedidoController extends Controller
 
     public function __construct()
     {
+        $this->middleware('auth');
         $this->middleware('admin');
     }
 
@@ -69,9 +70,16 @@ class PedidoController extends Controller
 
     public function store(StorePedidoRequest $request, $idPedido)
     {
+        $total = array([
+            'total_kg',
+            'total_caixa',
+            'total_bandeja',
+            'total_duzia',
+            'total_unidade']
+        );
+
         $pedido = Pedido::find($idPedido);
         $quantidades = $request->input('quantidade');
-
         foreach ($pedido->produtos as $produto) {
             $produto->pivot->qtd_kg = $quantidades[$produto->id_produto]['qtd_kg'];
             $produto->pivot->qtd_caixa = $quantidades[$produto->id_produto]['qtd_caixa'];
@@ -79,9 +87,17 @@ class PedidoController extends Controller
             $produto->pivot->qtd_duzia = $quantidades[$produto->id_produto]['qtd_duzia'];
             $produto->pivot->qtd_unidade = $quantidades[$produto->id_produto]['qtd_unidade'];
             $pedido->save();
+
+            $total['total_kg'] = ($quantidades[$produto->id_produto]['qtd_kg']) * ($produto->valor_kg);
+            $total['total_caixa'] = ($quantidades[$produto->id_produto]['qtd_caixa']) * ($produto->valor_caixa);
+            $total['total_bandeja'] =  ($quantidades[$produto->id_produto]['qtd_bandeja']) * ($produto->valor_bandeja);
+            $total['total_duzia'] = ($quantidades[$produto->id_produto]['qtd_unidade']) * ($produto->valor_duzia);
+            $total['total_unidade'] = ($quantidades[$produto->id_produto]['qtd_unidade']) * ($produto->valor_unidade);
         }
+            $pedido->total_pedido = array_sum($total);
+            $pedido->save();
         return redirect()->action('PedidoController@consultarPedidos')->
-        with('successMessage', 'O pedido do cliente: ' . $pedido->cliente->nome_cliente . ' foi registrado com sucesso');
+        with('successMessage','O pedido do cliente: ' . $pedido->cliente->nome_cliente . ' foi registrado com sucesso');
     }
 
 

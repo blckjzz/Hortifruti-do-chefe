@@ -6,7 +6,8 @@
     <title>Hortifruti do Cheff - Administração </title>
 
     <!-- FONTAWESOME STYLES-->
-    <link href="../../admin-panel/assets/css/font-awesome.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="{{  asset('font-awesome/css/font-awesome.css') }}">
+    {{--<link href="../../admin-panel/assets/css/font-awesome.css" rel="stylesheet"/>--}}
     <!-- CUSTOM STYLES-->
     <link href="../../admin-panel/assets/css/bootstrap.css" rel="stylesheet"/>
     <link href="../../admin-panel/assets/css/custom.css" rel="stylesheet"/>

@@ -5,7 +5,7 @@
         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
             <div class="div-square">
                 <a href="{{ action('ProdutoController@create') }}">
-                    <i class="fa fa-plus-circle fa-5x"></i>
+                    <i class="fa fa-plus-square fa-5x"></i>
                     <h4>Novo Produto</h4>
                 </a>
             </div>

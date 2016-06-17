@@ -6,6 +6,7 @@ use hortifruti\Http\Requests\StoreProdutoRequest;
 use hortifruti\Produto;
 use hortifruti\TipoProduto;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProdutoController extends Controller
 {
@@ -13,8 +14,8 @@ class ProdutoController extends Controller
     public function __construct()
     {
 
-        $this->middleware('admin',['except' => ['listarProdutos']]);
         $this->middleware('auth');
+        $this->middleware('admin',['except' => ['listarProdutos']]);
 
     }
 
@@ -33,7 +34,7 @@ class ProdutoController extends Controller
     {
 
         $title = 'Listagem de Produtos';
-        $produtos = Produto::all(); //agrupar pelo tipo 'fruta,verdura' para separar na view
+        $produtos = DB::table('produtos')->paginate(10);
         return view('painel.produto.produto_listagem', compact('produtos', 'title'));
     }
 
