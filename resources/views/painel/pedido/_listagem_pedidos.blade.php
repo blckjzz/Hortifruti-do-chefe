@@ -1,15 +1,8 @@
 <div class="row">
     <div class="col-md-10">
-        {{--{!! Form::open(array('action' => array('PedidoController@store',$pedido), 'class'=>'form')) !!}--}}
-        {{--<div class="row">--}}
-        {{--<div class="col-md-3 pull-right">--}}
-        {{--{!! Form::submit('Confirmar pedido', ['class'=>'btn btn-primary']) !!}--}}
-        {{--</div>--}}
-        {{--</div>--}}
         <div class="row">
-            <div class="col-md-11">
+            <div class="col-md-offset-1 col-md-10">
                 <h2>Pedidos realizados</h2>
-                <hr>
             </div>
         </div>
         <div id="produtos" class="row">
@@ -22,6 +15,7 @@
                         <th class="col-md-2">CNPJ</th>
                         <th class="col-md-2">Realizado em</th>
                         <th class="col-md-2">Há</th>
+                        <th class="col-sm-1">R$</th>
                         <th class="col-md-2">Ações</th>
                     </tr>
                     </thead>
@@ -42,6 +36,9 @@
                             </td>
                             <td>
                                 {{$pedido->cliente->created_at->diffForHumans()}}
+                            </td>
+                            <td>
+                                #
                             </td>
                             <td>
                                 <a href="{{ action('PedidoController@show',array($pedido->id_produto)) }}">

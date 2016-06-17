@@ -43,6 +43,7 @@ Route::get('/painel', 'SiteController@painelHome')->middleware('auth');
  + ROTAS PAINEL DE ADMNISTRAÇÃO - PRODUTO +
  + ====================================== +
  */
+Route::get('/painel/painel-produto', 'ProdutoController@home');
 Route::get('/painel/produto-listagem', 'ProdutoController@listarProdutos');
 Route::get('/painel/novo-produto', 'ProdutoController@create');
 Route::post('/painel/novo-produto', 'ProdutoController@store');
@@ -57,6 +58,7 @@ Route::post('/painel/atualizar-produto/{id}', 'ProdutoController@update');
  + ==================================+
  */
 
+Route::get('/painel/painel-pedido', 'PedidoController@home');
 Route::get('/painel/novo-pedido', 'PedidoController@showPedidoForm');
 Route::post('/painel/novo-pedido/{pedido}', 'PedidoController@store');
 Route::post('/painel/resumo-pedido', 'PedidoController@mostraResumoPedido');
@@ -73,6 +75,7 @@ Route::post('/painel/atualizar-pedido/{id}', 'PedidoController@update');
  + ROTAS CLIENTE                +
  + ============================ +
  */
+Route::get('/painel/painel-cliente', 'ClienteController@home');
 Route::get('/painel/cadastro-cliente', 'ClienteController@create');
 Route::post('/painel/cadastro-cliente', 'ClienteController@store');
 Route::get('/painel/lista-clientes', 'ClienteController@listarClientes');

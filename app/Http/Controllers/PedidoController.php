@@ -19,6 +19,12 @@ class PedidoController extends Controller
         $this->middleware('admin');
     }
 
+    public function home()
+    {
+        $title = 'Painel Pedidos' ;
+        return view('painel.pedido.home_pedido',compact('title'));
+    }
+
     public function consultarPedidos()
     {
         $title = 'Consulta de pedidos';

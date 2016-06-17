@@ -1,7 +1,6 @@
 @extends('painel.admin_panel')
 @section('title',$title)
 @section('content')
-       {{ date('h:m:s d/m/Y') }}
        <div class="row text-center pad-top">
               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                      <div class="div-square">

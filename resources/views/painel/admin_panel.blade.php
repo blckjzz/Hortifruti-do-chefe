@@ -33,17 +33,21 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 @if(Auth::user())
-                    <ul class="nav navbar-nav">
+                    <ul class="nav navbar-nav hidden-md hidden-lg hidden-sm">
+                        <li>
+                            <a href="{{ action('SiteController@painelHome') }}"><i class="fa fa-home"></i> Página Inicial
+                            </a>
+                        </li>
 
-                        {{--<li>--}}
-                        {{--<a href="{{ action('ProdutoController@listarProdutos') }}">Produtos</a>--}}
-                        {{--</li>--}}
-                        {{--<li>--}}
-                        {{--<a href=""></a>--}}
-                        {{--</li>--}}
-                        {{--<li>--}}
-                        {{--<a href="">Contato</a>--}}
-                        {{--</li>--}}
+                        <li>
+                            <a href=" {{ action('PedidoController@home') }} "><i class="fa fa-shopping-cart"></i>Pedidos</a>
+                        </li>
+                        <li>
+                            <a href=" {{ action('ProdutoController@home') }} "><i class="fa fa-table"></i>Produtos</a>
+                        </li>
+                        <li>
+                            <a href="{{ action('ClienteController@home') }}"><i class="fa fa-user-md "></i>Clientes</a>
+                        </li>
                     </ul>
                     @endif
 
@@ -75,41 +79,20 @@
     <nav class="navbar-default navbar-side" role="navigation">
         <div class="sidebar-collapse">
             <ul class="nav" id="main-menu">
-
-
                 <li>
                     <a href="{{ action('SiteController@painelHome') }}"><i class="fa fa-home"></i> Página Inicial
                     </a>
                 </li>
 
                 <li>
-                    <a href=" {{ action('PedidoController@consultarPedidos') }} "><i class="fa fa-user-md "></i>Consultar pedidos</a>
+                    <a href=" {{ action('PedidoController@home') }} "><i class="fa fa-shopping-cart"></i>Pedidos</a>
                 </li>
                 <li>
-                    <a href="{{ action('PedidoController@showPedidoForm') }}"><i class="fa fa-shopping-cart"></i>Tirar
-                        pedido</a>
-
-                </li>
-
-                <li>
-                    <a href="{{ action('ProdutoController@listarProdutos') }}"><i class="fa fa-table "></i>Listagem de
-                        Produtos </a>
-                </li>
-
-                <li>
-                    <a href="{{ action('ProdutoController@create') }}"><i class="fa fa-plus-circle "></i>Cadastrar
-                        produto </a>
-
+                    <a href=" {{ action('ProdutoController@home') }} "><i class="fa fa-table"></i>Produtos</a>
                 </li>
                 <li>
-                    <a href="{{ action('ClienteController@create') }}"><i class="fa fa-user-md "></i>Cadastrar
-                        cliente</a>
+                    <a href="{{ action('ClienteController@home') }}"><i class="fa fa-user-md "></i>Clientes</a>
                 </li>
-                <li>
-                    <a href="{{ action('ClienteController@listarClientes') }}"><i class="fa fa-users"></i>Listagem de clientes</a>
-
-                </li>
-
             </ul>
         </div>
 
@@ -182,7 +165,7 @@
     });
     $('#cnpj').mask('00.000.000/0000-00', {placeholder: "00.000.000/0000-00"});
     $('#telefone').mask('(00) 00000-0000');
-    $('#nome_cliente').mask({pattern: /[A-Za-z0-9]/},{placeholder: "Nome do cliente..."});
+    $('#nome_cliente').mask({pattern: /[A-Za-z0-9]/}, {placeholder: "Nome do cliente..."});
 </script>
 
 </body>

@@ -18,6 +18,12 @@ class ProdutoController extends Controller
 
     }
 
+    public function home()
+    {
+        $title = 'Painel Produtos';
+        return view('painel.produto.home_produto',compact('title'));
+    }
+
     /**
      * Display a listing of the resource.
      *
