@@ -7,7 +7,6 @@ use hortifruti\Http\Requests;
 use hortifruti\TipoEstabelecimento;
 use Illuminate\Http\Request;
 use hortifruti\Http\Requests\StoreClienteRequest;
-use Symfony\Component\Finder\Exception\AccessDeniedException;
 use Illuminate\Support\Facades\DB;
 
 class ClienteController extends Controller
@@ -70,4 +69,6 @@ class ClienteController extends Controller
             -> with('warningMessage','O cadastro do '. $cliente->nome_cliente . ' foi removido ');
 
     }
+
+
 }

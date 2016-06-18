@@ -6,7 +6,7 @@
             <div class="div-square">
                 <a href="{{ action('ProdutoController@create') }}">
                     <i class="fa fa-plus-square fa-5x"></i>
-                    <h4>Novo Produto</h4>
+                    <h4>Novo</h4>
                 </a>
             </div>
         </div>
@@ -14,7 +14,7 @@
             <div class="div-square">
                 <a href="{{ action('ProdutoController@listarProdutos') }}">
                     <i class="fa fa-list-ol fa-5x"></i>
-                    <h4>Listagem de Produtos</h4>
+                    <h4>Produtos</h4>
                 </a>
             </div>
         </div>
