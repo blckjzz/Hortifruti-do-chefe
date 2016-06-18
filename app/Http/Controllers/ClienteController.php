@@ -39,8 +39,7 @@ class ClienteController extends Controller
         $cliente = new Cliente($request->all());
         $cliente->tipoEstabelecimento()->associate($request->input('tipo_estabelecimento'));
         $cliente->save();
-        return redirect()->action('ClienteController@listarClientes')
-            ->with('sucessMessage', $cliente->nome_cliente .' foi cadastrado com sucesso');
+        return redirect()->action('ClienteController@listarClientes')->with('successMessage', $cliente->nome_cliente .' foi cadastrado com sucesso');
     }
 
 

@@ -169,5 +169,6 @@
     $('#nome_cliente').mask({pattern: /[A-Za-z0-9]/}, {placeholder: "Nome do cliente..."});
 </script>
 
+@yield('scripts')
 </body>
 </html>
