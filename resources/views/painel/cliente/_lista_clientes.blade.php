@@ -1,8 +1,8 @@
 <div id="clientes">
     <div class="row">
         <div class="col-md-offset-1 col-md-3">
-            {{ Form::open(array('action'=> 'BuscaController@buscaNome','method' => 'GET','id' => 'formBuscaCliente')) }}
-            {{ Form::text('nome',null,['class' => 'form-control','placeholder' => 'Informe o nome do cliente']) }}
+            {{ Form::open(array('action'=> 'BuscaController@busca','method' => 'GET','id' => 'formBuscaCliente')) }}
+            {{ Form::text('cliente',null,['class' => 'form-control','placeholder' => 'Informe o nome do cliente']) }}
         </div>
         <div class="col-md-3" style="padding-bottom: 10px;">
             {{ Form::submit('Buscar',['class' => 'btn btn-primary']) }}
@@ -17,7 +17,7 @@
                     <th>Nome</th>
                     <th>CNPJ</th>
                     <th>Telefone</th>
-                    <th>#</th>
+                    <th>Ações</th>
 
                 </tr>
                 </thead>
@@ -45,10 +45,11 @@
                 @endforeach
 
             </table>
-            {{ $clientes->render() }}
+            <div class="row">
+                <div class="text-center">
+                {{ $clientes->render() }}
+                </div>
+            </div>
         </div>
     </div>
 </div>
-@section('scripts')
-
-@endsection
