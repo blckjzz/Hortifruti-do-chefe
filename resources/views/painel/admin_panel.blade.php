@@ -7,11 +7,10 @@
 
     <!-- FONTAWESOME STYLES-->
     <link rel="stylesheet" href="{{  asset('font-awesome/css/font-awesome.css') }}">
-    {{--<link href="../../admin-panel/assets/css/font-awesome.css" rel="stylesheet"/>--}}
     <!-- CUSTOM STYLES-->
-    <link href="../../admin-panel/assets/css/bootstrap.css" rel="stylesheet"/>
-    <link href="../../admin-panel/assets/css/custom.css" rel="stylesheet"/>
-    <link href="../../css/app.css" rel="stylesheet"/>
+    <link href="{{ asset('admin-panel/assets/css/bootstrap.css') }}" rel="stylesheet"/>
+    <link href="{{ asset('admin-panel/assets/css/painel-adm.css') }}" rel="stylesheet"/>
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet"/>
 
 </head>
 <body>
@@ -145,30 +144,18 @@
 <script src="{{asset('/js/app.js')}}"></script>
 <script src="{{ asset('js/jquery.maskMoney.js')}}"></script>
 <script src="{{ asset('js/jquery.mask.js')}}"></script>
-<!--SCRIPT FORMATAR CAMPOS COM CLASSE .VALOR-->
-<script type="text/javascript">
+<script>
+    // Validação campos classe .valor
     $(".valor").maskMoney(
             {
-                prefix: 'R$ ',
+                prefix: 'R$: ',
                 allowNegative: true,
                 thousands: '.',
                 decimal: ',',
                 affixesStay: false
             });
     $().mask();
-
-    $(document).ready(function () {
-        $('#ncm').mask('9999999.999999', {placeholder: "9999999.99999"});
-    });
-
-    $(document).ready(function () {
-        $('#nome').mask({pattern: /[A-Za-z0-9]/}, {placeholder: "Nome do produto..."});
-    });
-    $('#cnpj').mask('00.000.000/0000-00', {placeholder: "00.000.000/0000-00"});
-    $('#telefone').mask('(00) 00000-0000');
-    $('#nome_cliente').mask({pattern: /[A-Za-z0-9]/}, {placeholder: "Nome do cliente..."});
 </script>
-
 @yield('scripts')
 </body>
 </html>

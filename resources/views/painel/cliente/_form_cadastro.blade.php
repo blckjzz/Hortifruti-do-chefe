@@ -48,4 +48,3 @@
 </div>
 {!! Form::close() !!}
 
-{{--protected $fillable = ['cnpj' , 'nome_cliente','telefone', 'logradouro', 'numero', 'bairro','ponto_referencia', 'fk_tipo_estabelecimento'];--}}

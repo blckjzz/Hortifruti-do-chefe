@@ -71,13 +71,7 @@ class PedidoController extends Controller
 
     public function store(StorePedidoRequest $request, $idPedido)
     {
-        $total = array([
-            'total_kg',
-            'total_caixa',
-            'total_bandeja',
-            'total_duzia',
-            'total_unidade']
-        );
+        $total = array(['total_kg','total_caixa','total_bandeja','total_duzia', 'total_unidade'] );
 
         $pedido = Pedido::find($idPedido);
         $quantidades = $request->input('quantidade');
