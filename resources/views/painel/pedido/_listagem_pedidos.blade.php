@@ -25,7 +25,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($pedidos->sortBy('created_at') as $pedido)
+                @foreach($pedidos as $pedido)
                     <tr>
                         <td>
                             {{$pedido->id_pedido }}
@@ -66,6 +66,11 @@
                 @endforeach
                 <tbody>
             </table>
+            <div class="row">
+                <div class="text-center">
+                    {{ $pedidos->render() }}
+                </div>
+            </div>
         </div>
     </div>
     {!! Form::close() !!}

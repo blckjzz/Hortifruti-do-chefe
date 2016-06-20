@@ -34,7 +34,7 @@ class ProdutoController extends Controller
     {
 
         $title = 'Listagem de Produtos';
-        $produtos = DB::table('produtos')->paginate(10);
+        $produtos = Produto::paginate(10);
         return view('painel.produto.produto_listagem', compact('produtos', 'title'));
     }
 

@@ -10,6 +10,7 @@ use hortifruti\Http\Requests;
 use hortifruti\Produto;
 use hortifruti\Http\Requests\StorePedidoRequest;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\DB;
 
 class PedidoController extends Controller
 {
@@ -29,7 +30,7 @@ class PedidoController extends Controller
     public function consultarPedidos()
     {
         $title = 'Consulta de pedidos';
-        $pedidos = Pedido::all();
+        $pedidos = Pedido::orderBy('id_pedido', 'desc')->paginate(10);
         return view('painel.pedido.listagem_pedidos', compact('title', 'pedidos'));
     }
 
