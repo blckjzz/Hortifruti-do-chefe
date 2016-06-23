@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTipoEstabelecimentoTable extends Migration
+class AddClienteDeletedAt extends Migration
 {
     /**
      * Run the migrations.
@@ -12,10 +12,8 @@ class CreateTipoEstabelecimentoTable extends Migration
      */
     public function up()
     {
-        Schema::create('tipo_estabelecimento', function (Blueprint $table) {
-            $table->increments('id_tipo_estabelecimento');
-            $table->string('nome');
-            $table->timestamps();
+        Schema::table('clientes', function (Blueprint $table) {
+            $table->softDeletes()->after('ponto_referencia');
         });
     }
 
@@ -26,6 +24,8 @@ class CreateTipoEstabelecimentoTable extends Migration
      */
     public function down()
     {
-        Schema::drop('tipo_estabelecimento');
+        Schema::drop('clientes', function (Blueprint $table) {
+            $table->dropColumn('deleted_at');
+        });
     }
 }

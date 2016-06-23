@@ -24,6 +24,8 @@ class AddCampoItemPedido extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('item_pedido', function (Blueprint $table) {
+            $table->dropColumn('qtd_unidade');
+        });
     }
 }

@@ -24,6 +24,8 @@ class AddPedidoColuna extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('pedidos', function ($table) {
+            $table->dropColumn('total_pedido');
+        });
     }
 }

@@ -9,8 +9,6 @@ use Illuminate\Http\Request;
 use hortifruti\Http\Requests;
 use hortifruti\Produto;
 use hortifruti\Http\Requests\StorePedidoRequest;
-use Illuminate\Support\Facades\Input;
-use Illuminate\Support\Facades\DB;
 
 class PedidoController extends Controller
 {

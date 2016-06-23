@@ -33,6 +33,6 @@ class CreateItemPedidoTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('item_pedido');
     }
 }

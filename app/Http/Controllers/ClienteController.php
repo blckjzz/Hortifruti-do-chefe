@@ -21,7 +21,7 @@ class ClienteController extends Controller
     public function listarClientes()
     {
         $title = 'Listagem de clientes';
-        $clientes = DB::table('clientes')->paginate(10);
+        $clientes = Cliente::paginate(10);
         return view('painel.cliente.listagem_clientes',compact('title','clientes'));
     }
 
@@ -65,7 +65,7 @@ class ClienteController extends Controller
         $cliente = Cliente::find($id);
         $cliente->delete();
         return redirect()->action('ClienteController@listarClientes')
-            -> with('warningMessage','O cadastro do '. $cliente->nome_cliente . ' foi removido ');
+            -> with('warningMessage','O cadastro do '. $cliente->nome_cliente . ' foi desativado. ');
 
     }
 

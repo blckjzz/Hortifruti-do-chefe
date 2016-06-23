@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTipoEstabelecimentoTable extends Migration
+class RemoveClienteStatus extends Migration
 {
     /**
      * Run the migrations.
@@ -12,10 +12,9 @@ class CreateTipoEstabelecimentoTable extends Migration
      */
     public function up()
     {
-        Schema::create('tipo_estabelecimento', function (Blueprint $table) {
-            $table->increments('id_tipo_estabelecimento');
-            $table->string('nome');
-            $table->timestamps();
+        Schema::table('clientes', function($table)
+        {
+            $table->dropColumn('status');
         });
     }
 
@@ -26,6 +25,8 @@ class CreateTipoEstabelecimentoTable extends Migration
      */
     public function down()
     {
-        Schema::drop('tipo_estabelecimento');
+        Schema::table('clientes', function (Blueprint $table) {
+            $table->boolean('status')->after('ponto_referencia')->default('1');
+        });
     }
 }

@@ -31,7 +31,6 @@ class Pedido extends Model
     public function getUpdatedAtAtAttribute()
     {
         return Carbon::parse($this->attributes['updated_at'])->format('d/m/Y');
-//        return Carbon::createFromFormat('Y-m-d', $this->attributes['updated_at'])->format('d/m/Y');
     }
 
     public function getTotalPedidoAttribute()

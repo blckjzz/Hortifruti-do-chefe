@@ -3,13 +3,18 @@
 namespace hortifruti;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Cliente extends Model
 {
+    use SoftDeletes;
     protected $table = 'clientes';
     protected $primaryKey = 'id_cliente';
     protected $fillable = ['cnpj' , 'nome_cliente','fk_tipo_estabelecimento','telefone',
-        'logradouro', 'numero', 'bairro','ponto_referencia'];
+        'logradouro', 'numero', 'bairro','ponto_referencia','status'];
+
+    protected $dates = ['deleted_at'];
+//    protected $casts = ['status' => 'boolean'];
 
     public function tipoEstabelecimento()
     {
@@ -19,6 +24,8 @@ class Cliente extends Model
     public function pedidos(){
         return $this->HasMany('hortifruti\Pedido');
     }
+
+
 
 
 
