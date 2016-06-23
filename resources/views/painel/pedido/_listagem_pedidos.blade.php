@@ -1,7 +1,7 @@
 <div id="pedidos">
     <div class="row">
         <div class="col-md-offset-1 col-md-3">
-            {{ Form::open(array('action'=> 'BuscaController@busca','method' => 'GET','id' => 'formBuscaProduto')) }}
+            {{ Form::open(array('action'=> 'BuscaController@buscaPedido','method' => 'GET','id' => 'formBuscaProduto')) }}
             {{ Form::text('pedido',null,['class' => 'form-control','placeholder' => 'Informe o nome do cliente']) }}
         </div>
         <div class="col-md-3" style="padding-bottom: 10px;">

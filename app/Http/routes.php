@@ -43,7 +43,6 @@ Route::get('/painel', 'SiteController@painelHome')->middleware('auth');
  + ROTAS PAINEL DE ADMNISTRAÇÃO - PRODUTO +
  + ====================================== +
  */
-//Route::get('/painel/busca-produto', 'BuscaController@buscaProduto');
 Route::get('/painel/busca', 'BuscaController@busca');
 Route::get('/painel/painel-produto', 'ProdutoController@home');
 Route::get('/painel/produto-listagem', 'ProdutoController@listarProdutos');
@@ -53,13 +52,13 @@ Route::get('/painel/mostrar-produto/{id}', 'ProdutoController@show');
 Route::get('/painel/editar-produto/{id}', 'ProdutoController@edit');
 Route::get('/painel/deletar-produto/{id}', 'ProdutoController@destroy');
 Route::post('/painel/atualizar-produto/{id}', 'ProdutoController@update');
+Route::get('/painel/busca-produto', 'BuscaController@buscaProduto');
 
 /*
  + ==================================+
  + ROTAS PAINEL - PEDIDO             +
  + ==================================+
  */
-//Route::get('/painel/busca-pedido', 'BuscaController@buscaPedido');
 Route::get('/painel/painel-pedido', 'PedidoController@home');
 Route::get('/painel/novo-pedido', 'PedidoController@showPedidoForm');
 Route::post('/painel/novo-pedido/{pedido}', 'PedidoController@store');
@@ -69,6 +68,7 @@ Route::get('/painel/mostrar-pedido/{id}', 'PedidoController@show');
 Route::get('/painel/editar-pedido/{id}', 'PedidoController@edit');
 Route::get('/painel/deletar-pedido/{id}', 'PedidoController@destroy');
 Route::post('/painel/atualizar-pedido/{id}', 'PedidoController@update');
+Route::get('/painel/busca-pedido', 'BuscaController@buscaPedido');
 
 
 
@@ -78,14 +78,14 @@ Route::post('/painel/atualizar-pedido/{id}', 'PedidoController@update');
  + ============================ +
  */
 
-//Route::get('/painel/busca-cliente', 'BuscaController@buscaClienteNome');
 Route::get('/painel/painel-cliente', 'ClienteController@home');
 Route::get('/painel/cadastro-cliente', 'ClienteController@create');
 Route::post('/painel/cadastro-cliente', 'ClienteController@store');
 Route::get('/painel/lista-clientes', 'ClienteController@listarClientes');
 Route::get('/painel/mostrar-cliente/{id}', 'ClienteController@show');
 Route::get('/painel/editar-cliente/{id}', 'ClienteController@edit');
-Route::get('/painel/apagar-cliente/{id}', 'ClienteController@destroy');
+Route::get('/painel/desativar-cliente/{id}', 'ClienteController@destroy');
+Route::get('/painel/busca-cliente', 'BuscaController@buscaCliente');
 
 
 /*

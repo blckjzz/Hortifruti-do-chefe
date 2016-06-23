@@ -1,7 +1,16 @@
 <div id="clientes">
+    {{ Form::open(array('action'=> 'BuscaController@buscaCliente','method' => 'GET','id' => 'formBuscaCliente')) }}
+    <div class="row">
+        <div class="col-md-offset-1 col-md-1">
+            {{ Form::label('filtro','Filtro:') }}
+        </div>
+        <div class="col-md-2">
+            {{ Form::select('filtro', array('1' => 'Ativo', '0' => 'Desativado'), null, ['class' => 'form-control'],1) }}
+        </div>
+
+    </div>
     <div class="row">
         <div class="col-md-offset-1 col-md-3">
-            {{ Form::open(array('action'=> 'BuscaController@busca','method' => 'GET','id' => 'formBuscaCliente')) }}
             {{ Form::text('cliente',null,['class' => 'form-control','placeholder' => 'Informe o nome do cliente']) }}
         </div>
         <div class="col-md-3" style="padding-bottom: 10px;">
@@ -30,7 +39,7 @@
                         <td>
                             <a href="{{ action('ClienteController@show',array($c->id_cliente)) }}">
                                 <button type="button" class="btn btn-default fa fa-eye"
-                                        title="detalhes"></button>
+                                        title="Detalhes"></button>
                             </a>
                             <a href="{{ action('ClienteController@edit',array($c->id_cliente)) }}">
                                 <button type="button" class="btn btn-default fa fa-pencil-square-o "
@@ -38,7 +47,7 @@
                             </a>
                             <a href="{{ action('ClienteController@destroy',array($c->id_cliente)) }}">
                                 <button type="button" class="fa fa-times btn btn-default"
-                                        title="Deletar"></button>
+                                        title="Desativar"></button>
                             </a>
                         </td>
                     </tr>
@@ -47,7 +56,7 @@
             </table>
             <div class="row">
                 <div class="text-center">
-                {{ $clientes->render() }}
+                    {{ $clientes->render() }}
                 </div>
             </div>
         </div>
