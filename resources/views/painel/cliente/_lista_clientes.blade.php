@@ -31,28 +31,29 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($clientes as $c)
-                    <tr>
-                        <td>{{$c->nome_cliente}}</td>
-                        <td>{{$c->cnpj}}</td>
-                        <td>{{$c->telefone}}</td>
-                        <td>
-                            <a href="{{ action('ClienteController@show',array($c->id_cliente)) }}">
-                                <button type="button" class="btn btn-default fa fa-eye"
-                                        title="Detalhes"></button>
-                            </a>
-                            <a href="{{ action('ClienteController@edit',array($c->id_cliente)) }}">
-                                <button type="button" class="btn btn-default fa fa-pencil-square-o "
-                                        title="Editar"></button>
-                            </a>
-                            <a href="{{ action('ClienteController@destroy',array($c->id_cliente)) }}">
-                                <button type="button" class="fa fa-times btn btn-default"
-                                        title="Desativar"></button>
-                            </a>
-                        </td>
-                    </tr>
+                @if(!Session::has('warningMessage'))
+                    @foreach($clientes as $c)
+                        <tr>
+                            <td>{{$c->nome_cliente}}</td>
+                            <td>{{$c->cnpj}}</td>
+                            <td>{{$c->telefone}}</td>
+                            <td>
+                                <a href="{{ action('ClienteController@show',array($c->id_cliente)) }}">
+                                    <button type="button" class="btn btn-default fa fa-eye"
+                                            title="Detalhes"></button>
+                                </a>
+                                <a href="{{ action('ClienteController@edit',array($c->id_cliente)) }}">
+                                    <button type="button" class="btn btn-default fa fa-pencil-square-o "
+                                            title="Editar"></button>
+                                </a>
+                                <a href="{{ action('ClienteController@destroy',array($c->id_cliente)) }}">
+                                    <button type="button" class="fa fa-times btn btn-default"
+                                            title="Desativar"></button>
+                                </a>
+                            </td>
+                        </tr>
                 @endforeach
-
+                @endif
             </table>
             <div class="row">
                 <div class="text-center">

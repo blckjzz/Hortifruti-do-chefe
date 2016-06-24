@@ -64,8 +64,7 @@ class ClienteController extends Controller
     {
         $cliente = Cliente::find($id);
         $cliente->delete();
-        return redirect()->action('ClienteController@listarClientes')
-            -> with('warningMessage','O cadastro do '. $cliente->nome_cliente . ' foi desativado. ');
+        return redirect('listarClientes')->with('warningMessage','O cadastro do '. $cliente->nome_cliente . ' foi desativado. ');
 
     }
 
