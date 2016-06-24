@@ -45,26 +45,25 @@ class ClienteController extends Controller
 
     public function show($id)
     {
-        //
+        $cliente = Cliente::find($id);
+        $title = 'Detalhe Cliente '.$cliente->nome_cliente;
+        $tipoEstabelecimento = TipoEstabelecimento::all()->pluck('nome','id_tipo_estabelecimento');
+        return view('painel.cliente.detalhe_cliente',compact('cliente','title','tipoEstabelecimento'));
     }
 
 
-    public function edit($id)
+    public function update(StoreClienteRequest $request, $id)
     {
-        //
-    }
-
-
-    public function update(Request $request, $id)
-    {
-        //
+        $cliente =  Cliente::find($id);
+        $cliente->update($request->all());
+        return redirect()->action('ClienteController@listarClientes')->with('successMessage','O cadastro do '. $cliente->nome_cliente . ' foi atualizado. ');
     }
 
     public function destroy($id)
     {
         $cliente = Cliente::find($id);
         $cliente->delete();
-        return redirect('listarClientes')->with('warningMessage','O cadastro do '. $cliente->nome_cliente . ' foi desativado. ');
+        return redirect()->action('ClienteController@listarClientes')->with('warningMessage','O cadastro do '. $cliente->nome_cliente . ' foi desativado. ');
 
     }
 

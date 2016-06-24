@@ -85,6 +85,7 @@ Route::get('/painel/lista-clientes', 'ClienteController@listarClientes');
 Route::get('/painel/mostrar-cliente/{id}', 'ClienteController@show');
 Route::get('/painel/editar-cliente/{id}', 'ClienteController@edit');
 Route::get('/painel/desativar-cliente/{id}', 'ClienteController@destroy');
+Route::post('/painel/atualizar-cliente/{id}', 'ClienteController@update');
 Route::get('/painel/busca-cliente', 'BuscaController@buscaCliente');
 
 
