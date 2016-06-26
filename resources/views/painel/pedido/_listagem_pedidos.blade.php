@@ -18,10 +18,9 @@
                     <th class="col-md-2">Cliente</th>
                     <th class="col-md-2">CNPJ</th>
                     <th class="col-md-2">Data Pedido</th>
-                    <th class="col-md-2">Há</th>
-                    <th>R$</th>
+                    <th class="text-center" >R$</th>
                     <th class="text-center">Qtd</th>
-                    <th class="col-md-2">Ações</th>
+                    <th class="text-center">Ações</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -39,27 +38,24 @@
                         <td>
                             {{$pedido->created_at}}
                         </td>
-                        <td>
-                            {{$pedido->cliente->created_at}}
-                        </td>
-                        <td>
+                        <td class="text-center">
                             {{ $pedido->total_pedido }}
                         </td>
-                        <td>
+                        <td class="text-center">
                             {{ $pedido->produtos()->count() }}
                         </td>
-                        <td>
+                        <td class="text-center">
                             <a href="{{ action('PedidoController@show',array($pedido->id_produto)) }}">
                                 <button type="button" class="btn btn-default fa fa-eye"
-                                        title="detalhes"></button>
+                                        title="Visualizar"></button>
                             </a>
                             <a href="{{ action('PedidoController@edit',array($pedido->id_produto)) }}">
                                 <button type="button" class="btn btn-default fa fa-pencil-square-o "
-                                        title="Editar"></button>
+                                        title="Alterar"></button>
                             </a>
                             <a href="{{ action('PedidoController@destroy',array($pedido->id_produto)) }}">
-                                <button type="button" class="fa fa-times btn btn-default"
-                                        title="Deletar"></button>
+                                <button class="fa fa-times btn btn-default"
+                                        title="Remover"></button>
                             </a>
                         </td>
                     </tr>

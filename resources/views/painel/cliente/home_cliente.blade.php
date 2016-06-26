@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="row text-center pad-top">
-        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-7">
             <div class="div-square">
                 <a href="{{ action('ClienteController@create') }}">
                     <i class="fa fa-user-plus fa-5x"></i>
@@ -11,7 +11,7 @@
                 </a>
             </div>
         </div>
-        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-7">
             <div class="div-square">
                 <a href="{{ action('ClienteController@listarClientes') }}">
                     <i class="fa fa-list-ol fa-5x"></i>
