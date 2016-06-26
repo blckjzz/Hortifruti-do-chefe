@@ -5,7 +5,7 @@
               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-7">
                      <div class="div-square">
                             <a href="#">
-                                   <i class="fa fa-circle-o-notch fa-5x"></i>
+                                   <i class="fa fa-money fa-5x"></i>
                                    <h4>Orçamentos</h4>
                             </a>
                      </div>

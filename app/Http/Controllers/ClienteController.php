@@ -5,9 +5,7 @@ namespace hortifruti\Http\Controllers;
 use hortifruti\Cliente;
 use hortifruti\Http\Requests;
 use hortifruti\TipoEstabelecimento;
-use Illuminate\Http\Request;
 use hortifruti\Http\Requests\StoreClienteRequest;
-use Illuminate\Support\Facades\DB;
 
 class ClienteController extends Controller
 {

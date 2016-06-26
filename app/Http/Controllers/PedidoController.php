@@ -21,13 +21,13 @@ class PedidoController extends Controller
 
     public function home()
     {
-        $title = 'Painel Pedidos' ;
-        return view('painel.pedido.home_pedido',compact('title'));
+        $title = 'Painel Pedidos';
+        return view('painel.pedido.home_pedido', compact('title'));
     }
 
     public function consultarPedidos()
     {
-        $title = 'Consulta de pedidos';
+        $title ='Consulta de pedidos';
         $pedidos = Pedido::orderBy('id_pedido', 'desc')->paginate(10);
         return view('painel.pedido.listagem_pedidos', compact('title', 'pedidos'));
     }
@@ -69,7 +69,7 @@ class PedidoController extends Controller
 
     public function store(StorePedidoRequest $request, $idPedido)
     {
-        $total = array(['total_kg','total_caixa','total_bandeja','total_duzia', 'total_unidade'] );
+        $total = array(['total_kg', 'total_caixa', 'total_bandeja', 'total_duzia', 'total_unidade']);
 
         $pedido = Pedido::find($idPedido);
         $quantidades = $request->input('quantidade');
@@ -83,14 +83,14 @@ class PedidoController extends Controller
 
             $total['total_kg'] = ($quantidades[$produto->id_produto]['qtd_kg']) * ($produto->valor_kg);
             $total['total_caixa'] = ($quantidades[$produto->id_produto]['qtd_caixa']) * ($produto->valor_caixa);
-            $total['total_bandeja'] =  ($quantidades[$produto->id_produto]['qtd_bandeja']) * ($produto->valor_bandeja);
+            $total['total_bandeja'] = ($quantidades[$produto->id_produto]['qtd_bandeja']) * ($produto->valor_bandeja);
             $total['total_duzia'] = ($quantidades[$produto->id_produto]['qtd_unidade']) * ($produto->valor_duzia);
             $total['total_unidade'] = ($quantidades[$produto->id_produto]['qtd_unidade']) * ($produto->valor_unidade);
         }
-            $pedido->total_pedido = array_sum($total);
-            $pedido->save();
+        $pedido->total_pedido = array_sum($total);
+        $pedido->save();
         return redirect()->action('PedidoController@consultarPedidos')->
-        with('successMessage','O pedido do cliente: ' . $pedido->cliente->nome_cliente . ' foi registrado com sucesso');
+        with('successMessage', 'O pedido do cliente: ' . $pedido->cliente->nome_cliente . ' foi registrado com sucesso');
     }
 
 
