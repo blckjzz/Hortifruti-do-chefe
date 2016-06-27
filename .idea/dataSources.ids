@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
   <data-source name="MySQL - hortifruti@localhost" uuid="828e08ac-393f-4c40-b815-dfab660f79be">
-    <database-info product="MySQL" version="5.7.12-0ubuntu1.1" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+    <database-info product="MySQL" version="5.6.17-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
       <extra-name-characters>#@</extra-name-characters>
       <identifier-quote-string>`</identifier-quote-string>
     </database-info>
-    <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact"/>
-    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.5">
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.4">
       <schema id="1" name="hortifruti"/>
       <table id="2" parent="1" name="cargos"/>
       <table id="3" parent="1" name="clientes"/>
@@ -24,7 +24,6 @@
       <column id="15" parent="2" name="id_cargo">
         <mandatory>1</mandatory>
         <data-type>int(10) unsigned</data-type>
-        <sequence-identity>1</sequence-identity>
       </column>
       <column id="16" parent="2" name="nome">
         <mandatory>1</mandatory>
@@ -47,7 +46,6 @@
       <column id="21" parent="3" name="id_cliente">
         <mandatory>1</mandatory>
         <data-type>int(10) unsigned</data-type>
-        <sequence-identity>1</sequence-identity>
       </column>
       <column id="22" parent="3" name="nome_cliente">
         <mandatory>1</mandatory>
@@ -107,7 +105,6 @@
       <column id="36" parent="4" name="id_funcionario">
         <mandatory>1</mandatory>
         <data-type>int(10) unsigned</data-type>
-        <sequence-identity>1</sequence-identity>
       </column>
       <column id="37" parent="4" name="nome">
         <mandatory>1</mandatory>
@@ -156,7 +153,6 @@
       <column id="48" parent="5" name="id_item_orcamento">
         <mandatory>1</mandatory>
         <data-type>int(10) unsigned</data-type>
-        <sequence-identity>1</sequence-identity>
       </column>
       <column id="49" parent="5" name="fk_orcamento">
         <mandatory>1</mandatory>
@@ -215,7 +211,6 @@
       <column id="62" parent="6" name="id_item_pedido">
         <mandatory>1</mandatory>
         <data-type>int(10) unsigned</data-type>
-        <sequence-identity>1</sequence-identity>
       </column>
       <column id="63" parent="6" name="fk_id_produto">
         <mandatory>1</mandatory>
@@ -286,7 +281,6 @@
       <column id="79" parent="8" name="id_orcamento">
         <mandatory>1</mandatory>
         <data-type>int(10) unsigned</data-type>
-        <sequence-identity>1</sequence-identity>
       </column>
       <column id="80" parent="8" name="id_cliente">
         <mandatory>1</mandatory>
@@ -311,7 +305,6 @@
       <column id="85" parent="9" name="created_at">
         <mandatory>1</mandatory>
         <data-type>timestamp</data-type>
-        <default-expression>&apos;CURRENT_TIMESTAMP&apos;</default-expression>
       </column>
       <index id="86" parent="9" name="password_resets_email_index">
         <columns>email</columns>
@@ -324,7 +317,6 @@
       <column id="88" parent="10" name="id_pedido">
         <mandatory>1</mandatory>
         <data-type>int(10) unsigned</data-type>
-        <sequence-identity>1</sequence-identity>
       </column>
       <column id="89" parent="10" name="fk_id_cliente">
         <mandatory>1</mandatory>
@@ -357,7 +349,6 @@
       <column id="96" parent="11" name="id_produto">
         <mandatory>1</mandatory>
         <data-type>int(10) unsigned</data-type>
-        <sequence-identity>1</sequence-identity>
       </column>
       <column id="97" parent="11" name="nome">
         <mandatory>1</mandatory>
@@ -414,7 +405,6 @@
       <column id="110" parent="12" name="id_tipo_estabelecimento">
         <mandatory>1</mandatory>
         <data-type>int(10) unsigned</data-type>
-        <sequence-identity>1</sequence-identity>
       </column>
       <column id="111" parent="12" name="nome">
         <mandatory>1</mandatory>
@@ -433,7 +423,6 @@
       <column id="115" parent="13" name="id_tipo_produto">
         <mandatory>1</mandatory>
         <data-type>int(10) unsigned</data-type>
-        <sequence-identity>1</sequence-identity>
       </column>
       <column id="116" parent="13" name="nome">
         <mandatory>1</mandatory>
@@ -446,7 +435,6 @@
       <column id="118" parent="14" name="id">
         <mandatory>1</mandatory>
         <data-type>int(10) unsigned</data-type>
-        <sequence-identity>1</sequence-identity>
       </column>
       <column id="119" parent="14" name="password">
         <mandatory>1</mandatory>

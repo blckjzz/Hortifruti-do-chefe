@@ -6,6 +6,7 @@ use hortifruti\Cliente;
 use hortifruti\Http\Requests;
 use hortifruti\TipoEstabelecimento;
 use hortifruti\Http\Requests\StoreClienteRequest;
+use Illuminate\Support\Facades\Redirect;
 
 class ClienteController extends Controller
 {
@@ -61,8 +62,15 @@ class ClienteController extends Controller
     {
         $cliente = Cliente::find($id);
         $cliente->delete();
-        return redirect()->action('ClienteController@listarClientes')->with('warningMessage','O cadastro do '. $cliente->nome_cliente . ' foi desativado. ');
+        return Redirect::to('/painel/lista-clientes')->with('warningMessage','O cadastro do '. $cliente->nome_cliente . ' foi desativado. ');
 
+    }
+
+    public function reativar($id)
+    {
+        $cliente = Cliente::find($id);
+        $cliente->restore();
+        return Redirect::to('/painel/lista-clientes')->with('successMessage','O cadastro do '. $cliente->nome_cliente . ' foi reativado. ');
     }
 
 

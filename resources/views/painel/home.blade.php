@@ -12,9 +12,9 @@
               </div>
               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-7">
                      <div class="div-square">
-                            <a href="#">
-                                   <i class="fa fa-users fa-5x"></i>
-                                   <h4>Colaboradores</h4>
+                            <a href="{{ action('FuncionarioController@home') }}">
+                                   <i class="fa  fa-wrench fa-5x"></i>
+                                   <h4>Funcionários</h4>
                             </a>
                      </div>
               </div>

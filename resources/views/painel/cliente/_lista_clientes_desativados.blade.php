@@ -42,9 +42,9 @@
                                     <button type="button" class="btn btn-default fa fa-eye"
                                             title="Detalhes"></button>
                                 </a>
-                                <a href="{{ action('ClienteController@destroy',array($c->id_cliente)) }}">
-                                    <button type="button" class="fa fa-times btn btn-default"
-                                            title="Desativar"></button>
+                                <a href="{{ action('ClienteController@reativar',array($c->id_cliente)) }}">
+                                    <button type="button" class="fa fa-check-circle btn btn-default"
+                                            title="Ativar"></button>
                                 </a>
                             </td>
                         </tr>

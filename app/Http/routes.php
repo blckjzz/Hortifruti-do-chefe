@@ -83,10 +83,25 @@ Route::get('/painel/cadastro-cliente', 'ClienteController@create');
 Route::post('/painel/cadastro-cliente', 'ClienteController@store');
 Route::get('/painel/lista-clientes', 'ClienteController@listarClientes');
 Route::get('/painel/mostrar-cliente/{id}', 'ClienteController@show');
-Route::get('/painel/editar-cliente/{id}', 'ClienteController@edit');
 Route::get('/painel/desativar-cliente/{id}', 'ClienteController@destroy');
 Route::post('/painel/atualizar-cliente/{id}', 'ClienteController@update');
+Route::get('/painel/reativar-cliente/{id}', 'ClienteController@reativar');
 Route::get('/painel/busca-cliente', 'BuscaController@buscaCliente');
+
+
+/*
+ + ================================= +
+ +         ROTAS FUNCIONÁRIOS        +
+ + ================================= +
+ */
+
+Route::get('/painel/painel-funcionario', 'FuncionarioController@home');
+Route::get('/painel/cadastro-funcionario', 'FuncionarioController@create');
+Route::post('/painel/cadastro-funcionario', 'FuncionarioController@store');
+Route::get('/painel/lista-funcionario', 'FuncionarioController@listarFuncionario');
+Route::get('/painel/mostrar-funcionario/{id}', 'FuncionarioController@show');
+Route::get('/painel/desativar-funcionario/{id}', 'FuncionarioController@destroy');
+Route::post('/painel/atualizar-funcionario/{id}', 'FuncionarioController@update');
 
 
 /*

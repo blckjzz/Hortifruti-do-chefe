@@ -62,10 +62,10 @@ class BuscaController extends Controller
         //busca todos desativados
         $clientes = Cliente::onlyTrashed()->where('nome_cliente', 'LIKE', '%'.$nome.'%')->paginate(10);
         if ($clientes->isEmpty()) {
-            return view('painel.cliente.listagem_clientes', compact('title', 'clientes'))->with('warningMessage', $nome . ' não foi encontrado.');
+            return view('painel.cliente.listagem_clientes_desativados', compact('title', 'clientes'))->with('warningMessage', $nome . ' não foi encontrado.');
             //MENSAGENS DE ERRO NÃO ESTÃO SENDO MOSTRADAS
         } else {
-            return view('painel.cliente.listagem_clientes', compact('title', 'clientes'));
+            return view('painel.cliente.listagem_clientes_desativados', compact('title', 'clientes'));
             //não encontrou ngm
         }
 
