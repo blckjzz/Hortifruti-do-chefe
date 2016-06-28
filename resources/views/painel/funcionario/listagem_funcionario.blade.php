@@ -1,4 +1,4 @@
-@extends('painel.admin_panel')
+@extends('layouts.admin_panel')
 @section('title',$title)
 @section('content')
     @include('painel.funcionario._listagem_funcionario')

@@ -3,7 +3,8 @@
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Hortifruti do Cheff - Administração </title>
+    <title>Hortifruti do Cheff - Administração</title>
+    <!-- PAINEL DE ADMNISTRATRAÇÃO--->
 
     <!-- FONTAWESOME STYLES-->
     <link rel="stylesheet" href="{{  asset('font-awesome/css/font-awesome.css') }}">
@@ -76,27 +77,7 @@
         </div>
     </nav>
     <!-- /. NAV TOP  -->
-    <nav class="navbar-default navbar-side" role="navigation">
-        <div class="sidebar-collapse">
-            <ul class="nav" id="main-menu">
-                <li>
-                    <a href="{{ action('SiteController@painelHome') }}"><i class="fa fa-home"></i> Página Inicial
-                    </a>
-                </li>
-
-                <li>
-                    <a href=" {{ action('PedidoController@home') }} "><i class="fa fa-shopping-cart"></i>Pedidos</a>
-                </li>
-                <li>
-                    <a href=" {{ action('ProdutoController@home') }} "><i class="fa fa-table"></i>Produtos</a>
-                </li>
-                <li>
-                    <a href="{{ action('ClienteController@home') }}"><i class="fa fa-user-md "></i>Clientes</a>
-                </li>
-            </ul>
-        </div>
-
-    </nav>
+    @include('painel.painel_admin_menu')
     <!-- /. NAV SIDE  -->
     <div id="page-wrapper">
         <div id="page-inner">
@@ -108,8 +89,6 @@
                     <a href="{{ URL::previous() }}" class="btn btn-default pull-right">Voltar</a>
                     @include('painel._message')
                     @include('errors.list')
-
-
                 </div>
             </div>
             <!-- /. ROW  -->
@@ -128,8 +107,6 @@
         </div>
     </div>
 </div>
-
-
 <!-- /. WRAPPER  -->
 <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
 <!-- JQUERY SCRIPTS -->

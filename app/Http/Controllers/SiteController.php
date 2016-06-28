@@ -16,7 +16,7 @@ class SiteController extends Controller
     public function painelHome()
     {
         $title = 'Painel de Administração';
-        return view('painel.home',compact('title'));
+        return view('painel.painel_home',compact('title'));
     }
 
     public function viewSobre ()

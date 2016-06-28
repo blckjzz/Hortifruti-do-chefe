@@ -1,4 +1,4 @@
-@extends('painel.admin_panel')
+@extends('layouts.admin_panel')
 @section('title',$title)
 @section('content')
     <div class="row text-center pad-top">

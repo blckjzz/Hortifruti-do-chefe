@@ -1,14 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
     <title>Hortifruti do Cheff - Onde o chefe é você</title>
 
     <!-- Bootstrap Core CSS -->
@@ -17,11 +12,6 @@
     <link rel="stylesheet" href="{{ URL::asset('css/app.css') }}">
 
     <link rel="stylesheet" href="{{ URL::asset('font-awesome/css/font-awesome.min.css')}} ">
-
-
-    {{--<link rel="stylesheet" href="{{ URL::asset('fullpage/javascript.fullPage.css') }}">--}}
-
-
             <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -94,7 +84,6 @@
     <h1>
         @yield('title')
     </h1>
-    @include('errors.list')
     @yield('content')
 
 
