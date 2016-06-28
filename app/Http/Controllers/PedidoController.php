@@ -28,7 +28,7 @@ class PedidoController extends Controller
     public function consultarPedidos()
     {
         $title ='Consulta de pedidos';
-        $pedidos = Pedido::orderBy('id_pedido', 'desc')->paginate(10);
+        $pedidos = Pedido::all();
         return view('painel.pedido.listagem_pedidos', compact('title', 'pedidos'));
     }
 

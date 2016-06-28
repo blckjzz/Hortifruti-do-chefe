@@ -103,6 +103,19 @@ Route::get('/painel/mostrar-funcionario/{id}', 'FuncionarioController@show');
 Route::get('/painel/desativar-funcionario/{id}', 'FuncionarioController@destroy');
 Route::post('/painel/atualizar-funcionario/{id}', 'FuncionarioController@update');
 
+/*
+ + ================================= +
+ +         ROTAS CARGO        +
+ + ================================= +
+ */
+
+Route::get('/painel/painel-cargo', 'CargoController@home');
+Route::get('/painel/cadastro-cargo', 'CargoController@create');
+Route::post('/painel/cadastro-cargo', 'CargoController@store');
+Route::get('/painel/lista-cargo', 'CargoController@listarCargo');
+Route::get('/painel/mostrar-cargo/{id}', 'CargoController@show');
+Route::get('/painel/desativar-cargo/{id}', 'CargoController@destroy');
+Route::post('/painel/atualizar-cargo/{id}', 'CargoController@update');
 
 /*
  + ================================= +
@@ -110,6 +123,6 @@ Route::post('/painel/atualizar-funcionario/{id}', 'FuncionarioController@update'
  + ================================= +
  */
 
+Route::post('/painel/registrar','Auth\AuthController@register');
 Route::get('/painel/registrar', 'Auth\AuthController@showRegistrationForm'); // remover do blade
-//Route::post('/painel/registrar','Auth\AuthController@register');
 

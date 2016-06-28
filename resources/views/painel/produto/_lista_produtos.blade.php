@@ -1,17 +1,17 @@
 <div id="produtos">
-    <div class="row">
-        <div class="col-md-offset-1 col-md-3">
-            {{ Form::open(array('action'=> 'BuscaController@buscaProduto','method' => 'GET','id' => 'formBuscaProduto')) }}
-            {{ Form::text('produto',null,['class' => 'form-control','placeholder' => 'Informe o nome do produto']) }}
-        </div>
-        <div class="col-md-3" style="padding-bottom: 10px;">
-            {{ Form::submit('Buscar',['class' => 'btn btn-primary']) }}
-            {{ Form::close() }}
-        </div>
-    </div>
+    {{--<div class="row">--}}
+        {{--<div class="col-md-offset-1 col-md-3">--}}
+            {{--{{ Form::open(array('action'=> 'BuscaController@buscaProduto','method' => 'GET','id' => 'formBuscaProduto')) }}--}}
+            {{--{{ Form::text('produto',null,['class' => 'form-control','placeholder' => 'Informe o nome do produto']) }}--}}
+        {{--</div>--}}
+        {{--<div class="col-md-3" style="padding-bottom: 10px;">--}}
+            {{--{{ Form::submit('Buscar',['class' => 'btn btn-primary']) }}--}}
+            {{--{{ Form::close() }}--}}
+        {{--</div>--}}
+    {{--</div>--}}
     <div class="row">
         <div class="col-md-offset-1 col-md-10">
-            <table class="table table-hover table-bordered">
+            <table id="tblProdutos" class="table table-hover table-bordered">
                 <thead>
                 <tr>
                     <th class="col-md-1">Nome</th>
@@ -21,7 +21,6 @@
                 </tr>
                 </thead>
                 <tbody>
-                @if(!Session::has('warningMessage'))
                     @foreach($produtos as $p)
                         <tr>
                             <td>{{$p->nome}}</td>
@@ -42,12 +41,8 @@
                             </td>
                         </tr>
                     @endforeach
-                @endif
                 </tbody>
             </table>
-            <div class="row">
-                <div class="text-center">{{ $produtos->render() }}</div>
-            </div>
         </div>
     </div>
 </div>

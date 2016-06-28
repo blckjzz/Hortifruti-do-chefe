@@ -9,10 +9,11 @@
     <!-- FONTAWESOME STYLES-->
     <link rel="stylesheet" href="{{  asset('font-awesome/css/font-awesome.css') }}">
     <!-- CUSTOM STYLES-->
-    <link href="{{ asset('admin-panel/assets/css/bootstrap.css') }}" rel="stylesheet"/>
-    <link href="{{ asset('admin-panel/assets/css/painel-adm.css') }}" rel="stylesheet"/>
+    <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet"/>
+    <link href="{{ asset('css/painel-adm.css') }}" rel="stylesheet"/>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet"/>
-
+    <!--PLUGINS-->
+    @yield('css')
 </head>
 <body>
 
@@ -77,8 +78,12 @@
         </div>
     </nav>
     <!-- /. NAV TOP  -->
-    @include('painel.painel_admin_menu')
-    <!-- /. NAV SIDE  -->
+    @if(Auth::user()->is_admin == true)
+        @include('painel.administrador.painel_admin_menu')
+    @else
+        @include('painel.administrador.painel_func_menu')
+    @endif
+            <!-- /. NAV SIDE  -->
     <div id="page-wrapper">
         <div id="page-inner">
             <div class="row">
@@ -110,17 +115,17 @@
 <!-- /. WRAPPER  -->
 <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
 <!-- JQUERY SCRIPTS -->
-<script src="{{  asset('admin-panel/assets/js/jquery-1.10.2.js') }}"></script>
+<script src="{{  asset('js/jquery.js') }}"></script>
 <!-- BOOTSTRAP SCRIPTS -->
-<script src="{{  asset('admin-panel/assets/js/bootstrap.min.js') }}"></script>
+<script src="{{  asset('js/bootstrap.min.js') }}"></script>
 <!-- CUSTOM SCRIPTS -->
 <script src="{{  asset('admin-panel/assets/js/custom.js') }}"></script>
 
 <!--vue js -->
 <script src="{{asset('js/vue.js')}}"></script>
 <script src="{{asset('/js/app.js')}}"></script>
-<script src="{{ asset('js/jquery.maskMoney.js')}}"></script>
-<script src="{{ asset('js/jquery.mask.js')}}"></script>
+<script src="{{asset('js/jquery.maskMoney.js')}}"></script>
+<script src="{{asset('js/jquery.mask.js')}}"></script>
 <script>
     // Validação campos classe .valor
     $(".valor").maskMoney(

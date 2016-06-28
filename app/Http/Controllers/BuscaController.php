@@ -14,6 +14,12 @@ use Illuminate\Support\Facades\Input;
 class BuscaController extends Controller
 {
 
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('admin');
+    }
+
     public function buscaProduto()
     {
         if (Input::has('produto')) {

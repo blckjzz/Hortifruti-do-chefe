@@ -22,7 +22,7 @@ class Cliente extends Model
     }
 
     public function pedidos(){
-        return $this->HasMany('hortifruti\Pedido');
+        return $this->hasMany('hortifruti\Pedido','fk_id_cliente','id_cliente');
     }
 
 

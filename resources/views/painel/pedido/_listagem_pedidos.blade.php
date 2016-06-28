@@ -30,7 +30,7 @@
                             {{$pedido->id_pedido }}
                         </td>
                         <td>
-                            {{$pedido->cliente->nome_cliente }}
+                            {{ $pedido->cliente->nome_cliente }}
                         </td>
                         <td>
                             {{$pedido->cliente->cnpj}}
@@ -45,15 +45,15 @@
                             {{ $pedido->produtos()->count() }}
                         </td>
                         <td class="text-center">
-                            <a href="{{ action('PedidoController@show',array($pedido->id_produto)) }}">
+                            <a href="{{ action('PedidoController@show',array($pedido->id_pedido)) }}">
                                 <button type="button" class="btn btn-default fa fa-eye"
                                         title="Visualizar"></button>
                             </a>
-                            <a href="{{ action('PedidoController@edit',array($pedido->id_produto)) }}">
+                            <a href="{{ action('PedidoController@edit',array($pedido->id_pedido)) }}">
                                 <button type="button" class="btn btn-default fa fa-pencil-square-o "
                                         title="Alterar"></button>
                             </a>
-                            <a href="{{ action('PedidoController@destroy',array($pedido->id_produto)) }}">
+                            <a href="{{ action('PedidoController@destroy',array($pedido->id_pedido)) }}">
                                 <button class="fa fa-times btn btn-default"
                                         title="Remover"></button>
                             </a>
@@ -62,11 +62,6 @@
                 @endforeach
                 <tbody>
             </table>
-            <div class="row">
-                <div class="text-center">
-                    {{ $pedidos->render() }}
-                </div>
-            </div>
         </div>
     </div>
     {!! Form::close() !!}

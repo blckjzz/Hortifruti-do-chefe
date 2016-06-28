@@ -11,6 +11,12 @@ use Illuminate\Http\Request;
 class FuncionarioController extends Controller
 {
 
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('admin');
+    }
+
     public function home()
     {
         $title = 'Painel Funcionario';

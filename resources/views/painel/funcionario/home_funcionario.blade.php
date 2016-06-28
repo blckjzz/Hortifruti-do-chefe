@@ -1,7 +1,6 @@
 @extends('layouts.admin_panel')
 @section('title',$title)
 @section('content')
-
     <div class="row text-center pad-top">
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-7">
             <div class="div-square">
@@ -19,5 +18,28 @@
                 </a>
             </div>
         </div>
+
     </div>
+    <div class="row text-center pad-top">
+
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-7">
+            <div class="div-square">
+                <a href="{{ action('CargoController@create') }}">
+                    <i class="glyphicon glyphicon-user fa-5x"></i>
+                    </i><h4>Cadastrar Cargo</h4></a>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-7">
+            <div class="div-square">
+                <a href="{{ action('CargoController@listarCargo') }}">
+                    <i class="fa fa-list-alt fa-5x"></i>
+                    </i><h4>Consultar Cargos</h4></a>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
 @endsection

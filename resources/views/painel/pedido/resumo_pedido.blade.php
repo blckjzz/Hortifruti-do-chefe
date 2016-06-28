@@ -1,7 +1,7 @@
 @extends('layouts.admin_panel')
 @section('title',$title)
 @section('content')
-        @include('painel.pedido._resumo_pedido')
+@include('painel.pedido._resumo_pedido')
 @endsection
 @section('scripts')
         <!--valida campo qtd -->

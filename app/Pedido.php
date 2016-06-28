@@ -14,7 +14,7 @@ class Pedido extends Model
 
     public function cliente()
     {
-        return $this->belongsTo('hortifruti\Cliente', 'fk_id_cliente');
+        return $this->belongsTo('hortifruti\Cliente', 'fk_id_cliente','id_cliente');
     }
 
     //    $this->belongsToMany('relacao', 'nome da tabela pivot', 'key ref. books em pivot', 'key ref. author em pivot')

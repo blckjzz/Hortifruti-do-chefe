@@ -15,7 +15,7 @@ class ProdutoController extends Controller
     {
 
         $this->middleware('auth');
-        $this->middleware('admin',['except' => ['listarProdutos']]);
+        $this->middleware('admin');
 
     }
 
@@ -34,7 +34,7 @@ class ProdutoController extends Controller
     {
 
         $title = 'Listagem de Produtos';
-        $produtos = Produto::paginate(10);
+        $produtos = Produto::all();
         return view('painel.produto.produto_listagem', compact('produtos', 'title'));
     }
 

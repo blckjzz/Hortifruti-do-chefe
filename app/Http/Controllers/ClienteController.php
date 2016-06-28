@@ -11,6 +11,12 @@ use Illuminate\Support\Facades\Redirect;
 class ClienteController extends Controller
 {
 
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('admin');
+    }
+
     public function home()
     {
         $title = 'Painel Clientes';
