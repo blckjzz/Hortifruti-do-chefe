@@ -12,6 +12,8 @@
     <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet"/>
     <link href="{{ asset('css/painel-adm.css') }}" rel="stylesheet"/>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet"/>
+    <link rel="stylesheet" href="{{  asset('plugins/semantic-ui/components/icon.min.css') }}">
+    <link rel="stylesheet" href="{{  asset('plugins/semantic-ui/components/button.min.css') }}">
     <!--PLUGINS-->
     @yield('css')
 </head>
@@ -121,6 +123,9 @@
 <!-- CUSTOM SCRIPTS -->
 <script src="{{asset('js/jquery.maskMoney.js')}}"></script>
 <script src="{{asset('js/jquery.mask.js')}}"></script>
+
+<script src="{{  asset('plugins/semantic-ui/semantic.js') }}"></script>
+
 <script>
     // Validação campos classe .valor
     $(".valor").maskMoney(

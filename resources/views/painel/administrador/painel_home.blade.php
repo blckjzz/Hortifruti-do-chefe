@@ -1,7 +1,7 @@
 @extends('layouts.admin_panel')
 @section('title',$title)
 @section('content')
-       @if(Auth::user()->is_admin)
+       @if(Auth::user()->nivel_acesso == 1)
        <div class="row text-center pad-top">
               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-7">
                      <div class="div-square">

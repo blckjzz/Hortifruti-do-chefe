@@ -31,31 +31,21 @@
                 </tr>
                 </thead>
                 <tbody>
-                @if(!Session::has('warningMessage'))
-                    @foreach($clientes as $c)
-                        <tr>
-                            <td>{{$c->nome_cliente}}</td>
-                            <td>{{$c->cnpj}}</td>
-                            <td>{{$c->telefone}}</td>
-                            <td>
-                                <a href="{{ action('ClienteController@show',array($c->id_cliente)) }}">
-                                    <button type="button" class="btn btn-default fa fa-eye"
-                                            title="Detalhes"></button>
-                                </a>
-                                <a href="{{ action('ClienteController@reativar',array($c->id_cliente)) }}">
-                                    <button type="button" class="fa fa-check-circle btn btn-default"
-                                            title="Ativar"></button>
-                                </a>
-                            </td>
-                        </tr>
+                @foreach($clientes as $c)
+                    <tr>
+                        <td>{{$c->nome_cliente}}</td>
+                        <td>{{$c->cnpj}}</td>
+                        <td>{{$c->telefone}}</td>
+                        <td>
+                        <a href="{{ action('ClienteController@reativar',$c->id_cliente) }}">
+                            <button type="button" class="fa fa-check-circle btn btn-default"
+                                    title="Ativar"></button>
+                        </a>
+                        </td>
+                    </tr>
                 @endforeach
-                @endif
+                </tbody>
             </table>
-            <div class="row">
-                <div class="text-center">
-                    {{ $clientes->render() }}
-                </div>
-            </div>
         </div>
     </div>
 </div>

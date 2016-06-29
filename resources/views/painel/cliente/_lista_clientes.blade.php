@@ -31,7 +31,6 @@
                 </tr>
                 </thead>
                 <tbody>
-                @if(!Session::has('warningMessage'))
                     @foreach($clientes as $c)
                         <tr>
                             <td>{{$c->nome_cliente}}</td>
@@ -49,13 +48,7 @@
                             </td>
                         </tr>
                 @endforeach
-                @endif
             </table>
-            <div class="row">
-                <div class="text-center">
-                    {{ $clientes->render() }}
-                </div>
-            </div>
         </div>
     </div>
 </div>

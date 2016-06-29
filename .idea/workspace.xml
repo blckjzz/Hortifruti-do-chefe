@@ -2,19 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a535e9b-a2f6-41db-b096-025a86ee4e12" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/database/migrations/2016_06_15_164400_add_campo_item_pedido.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/database/migrations/2016_06_17_182121_add_pedido_coluna.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/database/migrations/2016_06_23_174305_add_cliente_status.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/database/migrations/2016_06_23_183707_add_cliente_deleted_at.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/database/migrations/2016_06_23_184759_remove_cliente_status.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/database/migrations/2016_06_29_004647_alt_user_table_add_nv_acesso.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2016_06_06_175202__create_clientes_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_06_06_175202__create_clientes_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2016_06_06_175907_create_pedidos_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_06_06_175907_create_pedidos_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2016_06_08_193218_create_item_pedido_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_06_08_193218_create_item_pedido_table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/BuscaController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/BuscaController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/ClienteController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ClienteController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/admin_panel.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/admin_panel.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/painel/administrador/painel_home.blade.php" afterPath="$PROJECT_DIR$/resources/views/painel/administrador/painel_home.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/painel/cliente/_lista_clientes.blade.php" afterPath="$PROJECT_DIR$/resources/views/painel/cliente/_lista_clientes.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/painel/cliente/_lista_clientes_desativados.blade.php" afterPath="$PROJECT_DIR$/resources/views/painel/cliente/_lista_clientes_desativados.blade.php" />
     </list>
     <ignored path="Hortifruti-do-chefe.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -57,7 +51,28 @@
     <favorites_list name="Hortifruti-do-chefe" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="admin_panel.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/layouts/admin_panel.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-16.068966">
+              <caret line="126" column="7" selection-start-line="126" selection-start-column="7" selection-end-line="126" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_lista_clientes_desativados.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/painel/cliente/_lista_clientes_desativados.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.6997691">
+              <caret line="44" column="25" selection-start-line="44" selection-start-column="25" selection-end-line="44" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FrameworkCommandLineHistory">
     <commandsHistory>
@@ -70,9 +85,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Funcionario.php" />
-        <option value="$PROJECT_DIR$/resources/views/painel/funcionario/listagem_funcionario.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/painel/funcionario/_listagem_funcionario.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/painel/login.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/auth/old.login.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/novo_login.blade.php" />
@@ -81,10 +93,7 @@
         <option value="$PROJECT_DIR$/resources/views/painel/painel_admin_menu.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/SiteController.php" />
         <option value="$PROJECT_DIR$/resources/views/painel/administrador/painel_func_menu.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/painel/administrador/painel_home.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/OrcamentoController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/ClienteController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/BuscaController.php" />
         <option value="$PROJECT_DIR$/resources/views/painel/cargo/cadastro_cargo.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/painel/funcionario/cargo/cadastro_cargo.blade.php" />
         <option value="$PROJECT_DIR$/public/admin-panel/assets/js/custom.js" />
@@ -110,7 +119,6 @@
         <option value="$PROJECT_DIR$/resources/views/painel/pedido/_listagem_pedidos.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/painel/pedido/listagem_pedidos.blade.php" />
         <option value="$PROJECT_DIR$/app/User.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/admin_panel.blade.php" />
         <option value="$PROJECT_DIR$/resources/lang/pt-br/validation.php" />
         <option value="$PROJECT_DIR$/resources/views/auth/login.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Middleware/AdminMiddleware.php" />
@@ -121,6 +129,13 @@
         <option value="$PROJECT_DIR$/database/migrations/2016_06_08_193218_create_item_pedido_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_06_06_175907_create_pedidos_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_06_06_175202__create_clientes_table.php" />
+        <option value="$PROJECT_DIR$/resources/views/painel/administrador/painel_admin_menu.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/painel/administrador/painel_home.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/painel/cliente/_lista_clientes.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/BuscaController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/ClienteController.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/admin_panel.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/painel/cliente/_lista_clientes_desativados.blade.php" />
       </list>
     </option>
   </component>
@@ -239,6 +254,86 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hortifruti-do-chefe" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hortifruti-do-chefe" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="painel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hortifruti-do-chefe" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hortifruti-do-chefe" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="painel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="administrador" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hortifruti-do-chefe" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hortifruti-do-chefe" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hortifruti-do-chefe" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hortifruti-do-chefe" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="public" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -343,11 +438,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="database" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="migrations" />
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -361,7 +452,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
     <property name="last_opened_file_path" value="$USER_HOME$/Google Drive/Desenvolvimento Hortifruti/Documentação/Back-up tabelas/hortifruti_atualizado.sql" />
-    <property name="SearchEverywhereHistoryKey" value="/database&#9;FILE&#9;file://C:/wamp/www/Hortifruti-do-chefe/database&#10;painel&#9;FILE&#9;file://C:/wamp/www/Hortifruti-do-chefe/resources/views/painel/administrador/painel_admin_menu.blade.php&#10;routes.php&#9;FILE&#9;file://E:/laravel-projects/Hortifruti-do-chefe/app/Http/routes.php&#10;AuthC&#9;null&#9;null&#10;/lay&#9;FILE&#9;file://E:/laravel-projects/Hortifruti-do-chefe/resources/views/layouts&#10;novo&#9;FILE&#9;file://E:/laravel-projects/Hortifruti-do-chefe/resources/views/layouts/novo_login.blade.php&#10;js/&#9;FILE&#9;file://E:/laravel-projects/Hortifruti-do-chefe/public/js&#10;admin&#9;FILE&#9;file://E:/laravel-projects/Hortifruti-do-chefe/resources/views/painel/administrador/painel_admin_menu.blade.php&#10;/middle&#9;FILE&#9;file://E:/laravel-projects/Hortifruti-do-chefe/app/Http/Middleware&#10;admin.&#9;FILE&#9;file://E:/laravel-projects/Hortifruti-do-chefe/resources/views/layouts/admin_panel.blade.php&#10;user.php&#9;FILE&#9;file://E:/laravel-projects/Hortifruti-do-chefe/app/User.php&#10;/data&#9;FILE&#9;file://E:/laravel-projects/Hortifruti-do-chefe/database&#10;migra&#9;FILE&#9;dbDummy://dbtable:/82ccb825/828e08ac-393f-4c40-b815-dfab660f79be/hortifruti.migrations&#10;diagramas&#9;FILE&#9;file://E:/laravel-projects/Hortifruti-do-chefe/public/diagramas/Hortifruti - Diagramas.asta&#10;pedido&#9;FILE&#9;file://E:/laravel-projects/Hortifruti-do-chefe/resources/views/painel/pedido/_listagem_pedidos.blade.php&#10;/prod&#9;FILE&#9;file://E:/laravel-projects/Hortifruti-do-chefe/resources/views/painel/produto&#10;pedido/&#9;FILE&#9;file://E:/laravel-projects/Hortifruti-do-chefe/resources/views/painel/pedido&#10;data&#9;ACTION&#9;ActivateDatabaseToolWindow&#10;prompt&#9;null&#9;null&#10;.env&#9;FILE&#9;file://E:/laravel-projects/Hortifruti-do-chefe/.env&#10;funcio&#9;FILE&#9;file://C:/wamp/www/Hortifruti-do-chefe/resources/views/painel/funcionario/_listagem_funcionario.blade.php&#10;cargo&#9;FILE&#9;file://C:/wamp/www/Hortifruti-do-chefe/resources/views/painel/funcionario/cargo/listagem_cargo.blade.php&#10;funcionariocon&#9;FILE&#9;file://C:/wamp/www/Hortifruti-do-chefe/app/Http/Controllers/FuncionarioController.php&#10;cargocon&#9;FILE&#9;file://C:/wamp/www/Hortifruti-do-chefe/app/Http/Controllers/CargoController.php&#10;cliente.php&#9;FILE&#9;file://C:/wamp/www/Hortifruti-do-chefe/app/Cliente.php&#10;produto.php&#9;FILE&#9;file://C:/wamp/www/Hortifruti-do-chefe/app/Produto.php&#10;pedido.php&#9;FILE&#9;file://C:/wamp/www/Hortifruti-do-chefe/app/Pedido.php&#10;pedidocontro&#9;FILE&#9;file://C:/wamp/www/Hortifruti-do-chefe/app/Http/Controllers/PedidoController.php&#10;produto&#9;FILE&#9;file://C:/wamp/www/Hortifruti-do-chefe/app/Http/Controllers/ProdutoController.php&#10;lista&#9;FILE&#9;file://C:/wamp/www/Hortifruti-do-chefe/resources/views/painel/funcionario/cargo/listagem_cargo.blade.php&#10;css/&#9;FILE&#9;file://C:/wamp/www/Hortifruti-do-chefe/public/css&#10;http/&#9;FILE&#9;file://C:/wamp/www/Hortifruti-do-chefe/app/Http&#10;ROUTES.&#9;FILE&#9;file://C:/wamp/www/Hortifruti-do-chefe/app/Http/routes.php&#10;site&#9;FILE&#9;file://C:/wamp/www/Hortifruti-do-chefe/app/Http/Controllers/SiteController.php&#10;css/app&#9;FILE&#9;file://C:/wamp/www/Hortifruti-do-chefe/public/css/app.css&#10;Store&#9;null&#9;null&#10;store&#9;FILE&#9;file://C:/wamp/www/Hortifruti-do-chefe/app/Http/Requests/StoreFuncionarioRequest.php&#10;/diagra&#9;FILE&#9;file://C:/wamp/www/Hortifruti-do-chefe/public/diagramas/Hortifruti - Diagramas.asta&#10;/PAINEL&#9;FILE&#9;file://C:/wamp/www/Hortifruti-do-chefe/resources/views/painel&#10;produt&#9;FILE&#9;file://C:/wamp/www/Hortifruti-do-chefe/app/Http/Controllers/ProdutoController.php&#10;produtocontr&#9;FILE&#9;file://C:/wamp/www/Hortifruti-do-chefe/app/Http/Controllers/ProdutoController.php&#10;storefun&#9;FILE&#9;file://C:/wamp/www/Hortifruti-do-chefe/app/Http/Requests/StoreFuncionarioRequest.php&#10;routes.&#9;FILE&#9;file://C:/wamp/www/Hortifruti-do-chefe/app/Http/routes.php&#10;routes&#9;FILE&#9;file://C:/wamp/www/Hortifruti-do-chefe/app/Http/routes.php&#10;/painel&#9;FILE&#9;file://C:/wamp/www/Hortifruti-do-chefe/resources/views/painel&#10;busca&#9;FILE&#9;file://C:/wamp/www/Hortifruti-do-chefe/app/Http/Controllers/BuscaController.php&#10;clientecontr&#9;FILE&#9;file://C:/wamp/www/Hortifruti-do-chefe/app/Http/Controllers/ClienteController.php&#10;add_fu&#9;FILE&#9;file:///home/dc/laravel-projects/Hortifruti-do-chefe/database/migrations/2016_06_26_210237_add_funcionario_nome.php&#10;clientecontro&#9;FILE&#9;file://C:/wamp/www/Hortifruti-do-chefe/app/Http/Controllers/ClienteController.php&#10;cliente&#9;FILE&#9;file://C:/wamp/www/Hortifruti-do-chefe/resources/views/painel/cliente/_lista_clientes.blade.php" />
+    <property name="SearchEverywhereHistoryKey" value="plugins/&#9;FILE&#9;file://C:/wamp/www/Hortifruti-do-chefe/public/plugins&#10;pedido&#9;null&#9;null&#10;produ&#9;null&#9;null&#10;busca&#9;FILE&#9;file://C:/wamp/www/Hortifruti-do-chefe/app/Http/Controllers/BuscaController.php&#10;lista_cli&#9;FILE&#9;file://C:/wamp/www/Hortifruti-do-chefe/resources/views/painel/cliente/_lista_clientes_desativados.blade.php&#10;lista&#9;FILE&#9;file://C:/wamp/www/Hortifruti-do-chefe/resources/views/painel/cliente/listagem_clientes.blade.php&#10;routes.&#9;FILE&#9;file://C:/wamp/www/Hortifruti-do-chefe/app/Http/routes.php&#10;cliente&#9;null&#9;null&#10;site&#9;null&#9;null&#10;painel&#9;FILE&#9;file://C:/wamp/www/Hortifruti-do-chefe/resources/views/painel/administrador/painel_admin_menu.blade.php&#10;admin&#9;FILE&#9;file://C:/wamp/www/Hortifruti-do-chefe/resources/views/layouts/admin_panel.blade.php&#10;/database&#9;FILE&#9;file://C:/wamp/www/Hortifruti-do-chefe/database&#10;routes.php&#9;FILE&#9;file://E:/laravel-projects/Hortifruti-do-chefe/app/Http/routes.php&#10;AuthC&#9;null&#9;null&#10;/lay&#9;FILE&#9;file://E:/laravel-projects/Hortifruti-do-chefe/resources/views/layouts&#10;novo&#9;FILE&#9;file://E:/laravel-projects/Hortifruti-do-chefe/resources/views/layouts/novo_login.blade.php&#10;js/&#9;FILE&#9;file://E:/laravel-projects/Hortifruti-do-chefe/public/js&#10;/middle&#9;FILE&#9;file://E:/laravel-projects/Hortifruti-do-chefe/app/Http/Middleware&#10;admin.&#9;FILE&#9;file://E:/laravel-projects/Hortifruti-do-chefe/resources/views/layouts/admin_panel.blade.php&#10;user.php&#9;FILE&#9;file://E:/laravel-projects/Hortifruti-do-chefe/app/User.php&#10;/data&#9;FILE&#9;file://E:/laravel-projects/Hortifruti-do-chefe/database&#10;migra&#9;FILE&#9;dbDummy://dbtable:/82ccb825/828e08ac-393f-4c40-b815-dfab660f79be/hortifruti.migrations&#10;diagramas&#9;FILE&#9;file://E:/laravel-projects/Hortifruti-do-chefe/public/diagramas/Hortifruti - Diagramas.asta&#10;/prod&#9;FILE&#9;file://E:/laravel-projects/Hortifruti-do-chefe/resources/views/painel/produto&#10;pedido/&#9;FILE&#9;file://E:/laravel-projects/Hortifruti-do-chefe/resources/views/painel/pedido&#10;data&#9;ACTION&#9;ActivateDatabaseToolWindow&#10;prompt&#9;null&#9;null&#10;.env&#9;FILE&#9;file://E:/laravel-projects/Hortifruti-do-chefe/.env&#10;funcio&#9;FILE&#9;file://C:/wamp/www/Hortifruti-do-chefe/resources/views/painel/funcionario/_listagem_funcionario.blade.php&#10;cargo&#9;FILE&#9;file://C:/wamp/www/Hortifruti-do-chefe/resources/views/painel/funcionario/cargo/listagem_cargo.blade.php&#10;funcionariocon&#9;FILE&#9;file://C:/wamp/www/Hortifruti-do-chefe/app/Http/Controllers/FuncionarioController.php&#10;cargocon&#9;FILE&#9;file://C:/wamp/www/Hortifruti-do-chefe/app/Http/Controllers/CargoController.php&#10;cliente.php&#9;FILE&#9;file://C:/wamp/www/Hortifruti-do-chefe/app/Cliente.php&#10;produto.php&#9;FILE&#9;file://C:/wamp/www/Hortifruti-do-chefe/app/Produto.php&#10;pedido.php&#9;FILE&#9;file://C:/wamp/www/Hortifruti-do-chefe/app/Pedido.php&#10;pedidocontro&#9;FILE&#9;file://C:/wamp/www/Hortifruti-do-chefe/app/Http/Controllers/PedidoController.php&#10;produto&#9;FILE&#9;file://C:/wamp/www/Hortifruti-do-chefe/app/Http/Controllers/ProdutoController.php&#10;css/&#9;FILE&#9;file://C:/wamp/www/Hortifruti-do-chefe/public/css&#10;http/&#9;FILE&#9;file://C:/wamp/www/Hortifruti-do-chefe/app/Http&#10;ROUTES.&#9;FILE&#9;file://C:/wamp/www/Hortifruti-do-chefe/app/Http/routes.php&#10;css/app&#9;FILE&#9;file://C:/wamp/www/Hortifruti-do-chefe/public/css/app.css&#10;Store&#9;null&#9;null&#10;store&#9;FILE&#9;file://C:/wamp/www/Hortifruti-do-chefe/app/Http/Requests/StoreFuncionarioRequest.php&#10;/diagra&#9;FILE&#9;file://C:/wamp/www/Hortifruti-do-chefe/public/diagramas/Hortifruti - Diagramas.asta&#10;/PAINEL&#9;FILE&#9;file://C:/wamp/www/Hortifruti-do-chefe/resources/views/painel&#10;produt&#9;FILE&#9;file://C:/wamp/www/Hortifruti-do-chefe/app/Http/Controllers/ProdutoController.php&#10;produtocontr&#9;FILE&#9;file://C:/wamp/www/Hortifruti-do-chefe/app/Http/Controllers/ProdutoController.php&#10;storefun&#9;FILE&#9;file://C:/wamp/www/Hortifruti-do-chefe/app/Http/Requests/StoreFuncionarioRequest.php&#10;routes&#9;FILE&#9;file://C:/wamp/www/Hortifruti-do-chefe/app/Http/routes.php&#10;/painel&#9;FILE&#9;file://C:/wamp/www/Hortifruti-do-chefe/resources/views/painel" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Font" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
@@ -442,18 +533,18 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="32" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24520256" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17750533" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32792208" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.50292826" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15778251" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15778251" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19645733" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3347779" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34236187" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32719395" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -508,76 +599,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FuncionarioController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="29" column="49" selection-start-line="29" selection-start-column="49" selection-end-line="29" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CargoController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="93" column="38" selection-start-line="93" selection-start-column="38" selection-end-line="93" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/symfony/console/Question/ChoiceQuestion.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="12" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/painel/produto/produto_listagem.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="47" column="11" selection-start-line="9" selection-start-column="11" selection-end-line="47" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/painel/pedido/resumo_pedido.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="30" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/painel/pedido/montar_pedido.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="39" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/painel/pedido/_selecionar_produtos.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="25" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/painel/pedido/_listagem_pedidos.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="42" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/painel/pedido/listagem_pedidos.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="28" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2016_06_26_184012_create_item_orcamento_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -610,13 +631,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="133" column="1" selection-start-line="133" selection-start-column="1" selection-end-line="133" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/admin_panel.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="120" column="23" selection-start-line="120" selection-start-column="23" selection-end-line="120" selection-end-column="23" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -687,6 +702,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -703,16 +719,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
           <folding>
-            <element signature="e#47#92#0#PHP" expanded="true" />
+            <element signature="e#47#92#0#PHP" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8535179">
-          <caret line="59" column="25" selection-start-line="59" selection-start-column="25" selection-end-line="59" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -744,14 +752,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/painel/administrador/painel_admin_menu.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.58181816">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -789,32 +789,6 @@
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/c8272fbd/828e08ac-393f-4c40-b815-dfab660f79be/hortifruti.cargos">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/c8272fbd/828e08ac-393f-4c40-b815-dfab660f79be/hortifruti.clientes">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/c8272fbd/828e08ac-393f-4c40-b815-dfab660f79be/hortifruti.funcionarios">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
@@ -892,19 +866,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/c8272fbd/828e08ac-393f-4c40-b815-dfab660f79be/hortifruti.users">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="dbDummy://dbtable:/c8272fbd/828e08ac-393f-4c40-b815-dfab660f79be/hortifruti.orcamentos">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -953,6 +914,149 @@
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/plugins/semantic-ui/semantic.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.40524435">
+          <caret line="10" column="1426" selection-start-line="10" selection-start-column="1426" selection-end-line="10" selection-end-column="1426" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/painel/administrador/painel_admin_menu.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34642032">
+          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/painel/cliente/listagem_clientes.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.06928407">
+          <caret line="3" column="38" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/c8272fbd/828e08ac-393f-4c40-b815-dfab660f79be/hortifruti.users">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/c8272fbd/828e08ac-393f-4c40-b815-dfab660f79be/hortifruti.funcionarios">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/painel/cliente/_lista_clientes.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7690531">
+          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.59272724">
+          <caret line="96" column="37" selection-start-line="96" selection-start-column="37" selection-end-line="96" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/painel/administrador/painel_home.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.4894837">
+          <caret line="40" column="13" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SiteController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/c8272fbd/828e08ac-393f-4c40-b815-dfab660f79be/hortifruti.clientes">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Pedido.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4609929">
+          <caret line="20" column="30" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Produto.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7092199">
+          <caret line="20" column="5" selection-start-line="17" selection-start-column="4" selection-end-line="20" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ClienteController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5744681">
+          <caret line="78" column="28" selection-start-line="78" selection-start-column="28" selection-end-line="78" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/admin_panel.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.068966">
+          <caret line="126" column="7" selection-start-line="126" selection-start-column="7" selection-end-line="126" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BuscaController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.81524247">
+          <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/painel/cliente/_lista_clientes_desativados.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6997691">
+          <caret line="44" column="25" selection-start-line="44" selection-start-column="25" selection-end-line="44" selection-end-column="25" />
           <folding />
         </state>
       </provider>

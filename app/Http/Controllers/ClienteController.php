@@ -26,7 +26,7 @@ class ClienteController extends Controller
     public function listarClientes()
     {
         $title = 'Listagem de clientes';
-        $clientes = Cliente::paginate(10);
+        $clientes = Cliente::all();
         return view('painel.cliente.listagem_clientes',compact('title','clientes'));
     }
 
@@ -74,9 +74,10 @@ class ClienteController extends Controller
 
     public function reativar($id)
     {
-        $cliente = Cliente::find($id);
+//        $cliente = Cliente::onlyTrashed()->where('id_cliente',$id)->restore();
+        $cliente = Cliente::onlyTrashed($id);
         $cliente->restore();
-        return Redirect::to('/painel/lista-clientes')->with('successMessage','O cadastro do '. $cliente->nome_cliente . ' foi reativado. ');
+        return Redirect::to('/painel/lista-clientes')->with('successMessage','O cliente foi reativado. ');
     }
 
 
