@@ -18,6 +18,7 @@ class CreateItemPedidoTable extends Migration
             $table->foreign('fk_id_produto')->references('id_produto')->on('produtos');
             $table->integer('fk_id_pedido')->unsigned();
             $table->foreign('fk_id_pedido')->references('id_pedido')->on('pedidos');
+            $table->double('qtd_unidade');
             $table->double('qtd_kg');
             $table->double('qtd_caixa');
             $table->double('qtd_bandeja');

@@ -23,6 +23,7 @@ class CreateClientesTable extends Migration
             $table->string('ponto_referencia');
             $table->integer('fk_tipo_estabelecimento')->unsigned();
             $table->foreign('fk_tipo_estabelecimento')->references('id_tipo_estabelecimento')->on('tipo_estabelecimento');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

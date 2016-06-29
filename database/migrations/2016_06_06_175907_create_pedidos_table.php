@@ -16,6 +16,7 @@ class CreatePedidosTable extends Migration
             $table->increments('id_pedido');
             $table->integer('fk_id_cliente')->unsigned();
             $table->foreign('fk_id_cliente')->references('id_cliente')->on('clientes');
+            $table->double('total_pedido');
             $table->timestamps();
         });
     }
