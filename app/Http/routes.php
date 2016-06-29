@@ -39,6 +39,15 @@ Route::get('/painel/sair', 'Auth\AuthController@logout');
 Route::get('/painel', 'SiteController@painelHome')->middleware('auth');
 
 /*
+ + ================================= +
+ + ROTAS CADASTRO                    +
+ + ================================= +
+ */
+Route::get('/painel/registrar', 'Auth\AuthController@showRegistrationForm');
+Route::post('/painel/registrar','Auth\AuthController@register');
+
+
+/*
  + ====================================== +
  + ROTAS PAINEL DE ADMNISTRAÇÃO - PRODUTO +
  + ====================================== +
@@ -91,7 +100,7 @@ Route::get('/painel/busca-cliente', 'BuscaController@buscaCliente');
 
 /*
  + ================================= +
- +         ROTAS FUNCIONÁRIOS        +
+ + ROTAS FUNCIONÁRIOS                +
  + ================================= +
  */
 
@@ -105,7 +114,7 @@ Route::post('/painel/atualizar-funcionario/{id}', 'FuncionarioController@update'
 
 /*
  + ================================= +
- +         ROTAS CARGO        +
+ + ROTAS CARGOS                      +
  + ================================= +
  */
 
@@ -119,10 +128,6 @@ Route::post('/painel/atualizar-cargo/{id}', 'CargoController@update');
 
 /*
  + ================================= +
- + ROTAS CADASTRO DE DEFAULT LARAVEL +
+ +                                   +
  + ================================= +
  */
-
-Route::post('/painel/registrar','Auth\AuthController@register');
-Route::get('/painel/registrar', 'Auth\AuthController@showRegistrationForm'); // remover do blade
-

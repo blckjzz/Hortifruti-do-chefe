@@ -66,12 +66,25 @@ class AuthController extends Controller
     protected function create(array $data)
     {
         return User::create([
-            // adicionar campo do nome do usuario
-            //'usuario' => $data['usuario']
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password'])
             ,
         ]);
     }
+
+
+    /*
+     * Reescrito para desativar opções de registro do laravel
+     */
+    public function showRegistrationForm()
+    {
+        return redirect('/painel');
+    }
+
+    public function register()
+    {
+
+    }
+
 }

@@ -17,10 +17,9 @@ class AdminMiddleware
     public function handle($request, Closure $next)
     {
 
+        //redirecionar para painel de admin
         if(Auth::user()->nivelAcesso() == 1){
             return $next($request);
-            //redirecionar para painel de admin
-            //redirecionar para painel de usuario comum
         }else{
             abort(403,'Acesso não permitido');
         }

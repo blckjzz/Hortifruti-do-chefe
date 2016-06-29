@@ -1,6 +1,6 @@
 @extends('layouts.novo_login')
 @section('content')
-    <div class="container" style="margin-top:40px">
+    <div class="container">
         <div class="row">
             <div class="col-sm-6 col-md-4 col-md-offset-4">
                 <div class="panel panel-default">
@@ -14,8 +14,7 @@
                                 <div class="row">
                                     <div class="center-block">
                                         <img class="profile-img"
-                                             src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120"
-                                             alt="">
+                                             src="{{ asset('images/logo.png') }}">
                                     </div>
                                 </div>
                                 <div class="row">

@@ -97,6 +97,10 @@ return [
         'senha' => [
             'required' => 'o campo senha é obrigatório.',
         ],
+        'password' => [
+            'required' => 'o campo senha é obrigatório.',
+        ],
+
 
     ],
 
