@@ -78,9 +78,9 @@
         </div>
     </nav>
     <!-- /. NAV TOP  -->
-    @if(Auth::user()->is_admin == true)
+    @if(Auth::user()->nivelAcesso() == 1)
         @include('painel.administrador.painel_admin_menu')
-    @else
+    @elseif(Auth::user()->nivelAcesso() == 0)
         @include('painel.administrador.painel_func_menu')
     @endif
             <!-- /. NAV SIDE  -->
