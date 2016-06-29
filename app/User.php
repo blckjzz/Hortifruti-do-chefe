@@ -12,7 +12,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','is_admin'
+        'name', 'email', 'password','nivel_acesso'
     ];
 
     /**
@@ -24,13 +24,10 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    protected $casts = [
-        'is_admin' => 'boolean',
-    ];
 
-    public function isAdmin()
+    public function nivelAcesso()
     {
-        return $this->is_admin;
+        return $this->nivel_acesso;
     }
 
 }

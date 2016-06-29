@@ -12,9 +12,8 @@
                 {!! Form::submit('Realizar pedido', ['class'=>'btn btn-primary']) !!}
             </div>
         </div>
-        <div id="produtos" class="row">
-            <div>
-                <table class="table table-bordered table-hover">
+        <div class="row">
+                <table id="tblItensPedido" class="table table-bordered table-hover">
                     <thead>
                     <tr>
                         <th class="col-md-3">Nome</th>
@@ -33,8 +32,8 @@
                             </td>
                         </tr>
                     @endforeach
+                    </tbody>
                 </table>
-            </div>
         </div>
         {!! Form::close() !!}
     </div>

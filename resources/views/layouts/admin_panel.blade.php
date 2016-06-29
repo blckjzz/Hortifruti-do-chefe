@@ -119,11 +119,11 @@
 <!-- BOOTSTRAP SCRIPTS -->
 <script src="{{  asset('js/bootstrap.min.js') }}"></script>
 <!-- CUSTOM SCRIPTS -->
-<script src="{{  asset('admin-panel/assets/js/custom.js') }}"></script>
+{{--<script src="{{  asset('admin-panel/assets/js/custom.js') }}"></script>--}}
 
-<!--vue js -->
-<script src="{{asset('js/vue.js')}}"></script>
-<script src="{{asset('/js/app.js')}}"></script>
+{{--<!--vue js -->--}}
+{{--<script src="{{asset('js/vue.js')}}"></script>--}}
+{{--<script src="{{asset('/js/app.js')}}"></script>--}}
 <script src="{{asset('js/jquery.maskMoney.js')}}"></script>
 <script src="{{asset('js/jquery.mask.js')}}"></script>
 <script>
