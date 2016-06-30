@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Hortifruti do Cheff - Administração</title>
+    <title>Administração</title>
     <!-- PAINEL DE ADMNISTRATRAÇÃO--->
 
     <!-- FONTAWESOME STYLES-->
@@ -11,7 +11,7 @@
     <!-- CUSTOM STYLES-->
     <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet"/>
     <link href="{{ asset('css/painel-adm.css') }}" rel="stylesheet"/>
-    {{--<link href="{{ asset('css/app.css') }}" rel="stylesheet"/>--}}
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet"/>
     <link rel="stylesheet" href="{{  asset('plugins/semantic-ui/components/icon.min.css') }}">
     <link rel="stylesheet" href="{{  asset('plugins/semantic-ui/components/button.min.css') }}">
     <!--PLUGINS-->
@@ -30,28 +30,28 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{ url('/painel') }}">Hortifruti do cheff - Administração</a>
+                <a class="navbar-brand" href="{{ url('/painel') }}">Administração - Hortifruti do cheff </a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                @if(Auth::user())
-                    <ul class="nav navbar-nav hidden-md hidden-lg hidden-sm">
-                        <li>
-                            <a href="{{ action('SiteController@painelHome') }}"><i class="fa fa-home"></i> Página Inicial
-                            </a>
-                        </li>
+                {{--@if(Auth::user()->nivel_acesso == 1)--}}
+                    {{--<ul class="nav navbar-nav hidden-md hidden-lg hidden-sm">--}}
+                        {{--<li>--}}
+                            {{--<a href="{{ action('SiteController@painelHome') }}"><i class="fa fa-home"></i> Página Inicial--}}
+                            {{--</a>--}}
+                        {{--</li>--}}
 
-                        <li>
-                            <a href=" {{ action('PedidoController@home') }} "><i class="fa fa-shopping-cart"></i>Pedidos</a>
-                        </li>
-                        <li>
-                            <a href=" {{ action('ProdutoController@home') }} "><i class="fa fa-table"></i>Produtos</a>
-                        </li>
-                        <li>
-                            <a href="{{ action('ClienteController@home') }}"><i class="fa fa-user-md "></i>Clientes</a>
-                        </li>
-                    </ul>
-                    @endif
+                        {{--<li>--}}
+                            {{--<a href=" {{ action('PedidoController@home') }} "><i class="fa fa-shopping-cart"></i>Pedidos</a>--}}
+                        {{--</li>--}}
+                        {{--<li>--}}
+                            {{--<a href=" {{ action('ProdutoController@home') }} "><i class="fa fa-table"></i>Produtos</a>--}}
+                        {{--</li>--}}
+                        {{--<li>--}}
+                            {{--<a href="{{ action('ClienteController@home') }}"><i class="fa fa-user-md "></i>Clientes</a>--}}
+                        {{--</li>--}}
+                    {{--</ul>--}}
+                    {{--@endif--}}
 
                             <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
