@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Hortifruti do Cheff - Onde o chefe é você</title>
+    <title>Hortifruti do Chef, Onde o chefe é você</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="{{ URL::asset('css/bootstrap.css') }}">
@@ -19,16 +19,24 @@
     <link rel="stylesheet" href="{{ URL::asset('font-awesome/css/font-awesome.min.css')}} ">
 
 
-    {{--<link rel="stylesheet" href="{{ URL::asset('fullpage/javascript.fullPage.css') }}">--}}
+{{--<link rel="stylesheet" href="{{ URL::asset('fullpage/javascript.fullPage.css') }}">--}}
 
 
-            <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <style>
+        #fullpage .section {
+            width: 100%;
+            height: 100%;
+            display: table;
+            table-layout: fixed;
+        }
+    </style>
 </head>
 
 <body>
@@ -45,11 +53,11 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{ url('/') }}">Hortifruti do chefe</a>
+            <a class="navbar-brand" href="{{ url('/') }}">Hortifruti do cheff</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
+            <ul class="nav navbar-nav pull-right">
                 <li>
                     <a href="">Sobre o Cheff</a>
                 </li>
@@ -65,6 +73,7 @@
     </div>
     <!-- /.container -->
 </nav>
+<div class="background-image"></div>
 <div id="fullpage">
     <div class="section">
         @include('site.section1')
@@ -79,19 +88,20 @@
     <div class="section">
         @include('site.section4')
     </div>
+</div>
 
-    <!-- jQuery -->
-    <script src="{{ URL::asset('js/jquery.js')}}"></script>
-    <!-- Bootstrap Core JavaScript -->
-    <script src="{{ URL::asset('js/bootstrap.min.js')}}"></script>
-    <script src="{{ URL::asset('fullpage/javascript.fullPage.js') }}"></script>
-    <script>
-        fullpage.initialize('#fullpage', {
-            anchors: ['inicio', 'sobre', 'orcamento', 'contato', 'rodape'],
-            menu: '#menu',
-            css3: true
-        });
-    </script>
+<!-- jQuery -->
+<script src="{{ URL::asset('js/jquery.js')}}"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="{{ URL::asset('js/bootstrap.min.js')}}"></script>
+<script src="{{ URL::asset('fullpage/javascript.fullPage.js') }}"></script>
+<script>
+    fullpage.initialize('#fullpage', {
+        anchors: ['inicio', 'sobre', 'orcamento', 'contato', 'rodape'],
+        menu: '#menu',
+        css3: true
+    });
+</script>
 </div>
 
 </body>

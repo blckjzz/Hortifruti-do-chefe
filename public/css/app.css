@@ -5,15 +5,26 @@
  */
 @import url(https://fonts.googleapis.com/css?family=Poiret+One);
 @import url(https://fonts.googleapis.com/css?family=Quicksand);
+@import url(https://fonts.googleapis.com/css?family=Righteous);
+@import url(https://fonts.googleapis.com/css?family=Fredoka+One|Marck+Script|Bad+Script|Paytone+One);
+
+.navbar-inverse {
+    background-color: #4cae4c;
+    border-color: transparent;
+}
 
 .navbar-inverse .navbar-brand{
     font-family: 'Poiret One', cursive;
     color: #FFFFFF;
-    padding-top: 20px;
+    font-size: 150%;
+}
+.container .navbar-header{
+   color: #4cae4c;
 }
 
 .navbar-inverse .navbar-nav > li > a{
     color: #FFFFFF;
+    font-family: 'Poiret One', cursive;
 }
 
 .panel-default {
@@ -21,10 +32,37 @@
 }
 
 body {
-    margin-top: 50px; /* Required margin for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
-    font-family: 'Quicksand', sans-serif;
+    margin-top: 50px;
+
+    font-family: 'Fredoka One', cursive;
+
+    /*font-family: 'Marck Script', cursive;*/
+
+    /*font-family: 'Bad Script', cursive;*/
+
+    /*font-family: 'Paytone One', sans-serif;*/
+
+
+    /*font-family: 'Quick Sand', cursive;*/
+    /*font-family: 'Righteous', cursive;*/
     font-weight: bolder;
 }
+
+.background-image {
+    position: fixed;
+    z-index: -1;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/vegetais_3nv.jpg');
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(8px);
+}
+
+
 .section-heading {
     font-size: 40px;
 }
@@ -37,16 +75,14 @@ body {
     font-size: 25px;
 }
 
-a{
-    color:#4cae4c;
-}
+
 
 footer{
     border-top:1px dashed #4cae4c;
     padding-top: 20px;
 }
 
-.image-bg-fluid-height,
+
 .image-bg-fixed-height {
     text-align: center;
     -webkit-background-size: cover;
@@ -55,32 +91,34 @@ footer{
     -o-background-size: cover;
 }
 
-.image-bg-fluid-height {
-	background: url('../images/logo.png') center no-repeat;
-    background-size: cover;
-    padding: 50px 0;
-    border-bottom: 1px dashed #4cae4c;
-}
+/*.image-bg-fluid-height {*/
+    /*background: #ffffff;*/
+	/*!*background: url('../images/logo.png');*!*/
+    /*background-size: cover;*/
+    /*padding: 50px 0;*/
+    /*border-bottom: 1px dashed #4cae4c;*/
+    /*!*height: 60%;*!*/
+/*}*/
 
-.image-bg-fixed-height-1 { 
+.image-bg-fixed-height-1 {
 	/*background: url('../images/tomates.jpg') no-repeat -765px -556px scroll;*/
-    background-color: #4cae4c;
-    height: 400px;
+    /*background-color: #4cae4c;*/
+    height: 150%;
 }
-.image-bg-fixed-height-2 { 
+.image-bg-fixed-height-2 {
     /*background: url('../images/vegetais_3nv.jpg') no-repeat center center scroll;*/
-    background-color: #FFCC00;
-    height: 400px;
+    /*background-color: #FFCC00;*/
+    height: 150%;
 }
-.image-bg-fixed-height-3 { 
+.image-bg-fixed-height-3 {
     /*background: url('../images/laranja-inteira.jpg') no-repeat center center scroll;*/
-    background-color: #3333FF;
-    height: 400px;
+    /*background-color: #3333FF;*/
+    height: 150%;
 }
 .image-bg-fixed-height-4 {
     /*background: url('../images/laranja-inteira.jpg') no-repeat center center scroll;*/
-    background-color: #ff8000;
-    height: 400px;
+    /*background-color: #ff8000;*/
+    height: 150%;
 }
 
 .img-center {
@@ -131,12 +169,12 @@ footer {
     color: #A0A0A0;
 }
 
-.profile-img {
-    width: 96px;
-    height: 96px;
-    margin: 0 auto 10px;
-    display: block;
-    -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
-    border-radius: 50%;
-}
+/*.profile-img {*/
+    /*width: 96px;*/
+    /*height: 96px;*/
+    /*margin: 0 auto 10px;*/
+    /*display: block;*/
+    /*-moz-border-radius: 50%;*/
+    /*-webkit-border-radius: 50%;*/
+    /*border-radius: 50%;*/
+/*}*/
