@@ -13,8 +13,11 @@
     GENERAL  STYLES    
     =============================================*/
 body {
-    font-family: 'Open Sans', sans-serif;
+
     line-height:30px;
+    margin-top: 50px;
+    font-weight: bolder;
+
 }
 
  #wrapper {
