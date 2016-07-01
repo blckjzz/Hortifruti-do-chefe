@@ -18,7 +18,7 @@ class AdminMiddleware
     {
 
         //redirecionar para painel de admin
-        if(Auth::user()->nivelAcesso() == 1){
+        if(Auth::user()->cargo->nivel_acesso == 1){
             return $next($request);
         }else{
             abort(403,'Acesso não permitido');

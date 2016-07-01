@@ -8,12 +8,13 @@ class Cargo extends Model
 {
     protected $table = 'cargos';
     protected $primaryKey = 'id_cargo';
-    protected $fillable = ['nome','descricao'];
+    protected $fillable = ['nome','descricao','nivel_acesso'];
 
 
-    public function funcionarios()
+    public function users()
     {
-        return $this->hasMany('hortifruti\Funcionario','fk_cargo', 'id_cargo');
+        return $this->hasMany('hortifruti\User','fk_cargo', 'id_cargo');
     }
+    
 
 }

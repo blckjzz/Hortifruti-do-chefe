@@ -78,9 +78,10 @@
         </div>
     </nav>
     <!-- /. NAV TOP  -->
-    @if(Auth::user()->nivelAcesso() == 1)
+    {{--{{ dd(Auth::user()->cargo->nivel_acesso == 1) }}--}}
+    @if(Auth::user()->cargo->nivel_acesso == 1)
         @include('painel.administrador.painel_admin_menu')
-    @elseif(Auth::user()->nivelAcesso() == 0)
+    @elseif(Auth::user()->cargo->nivel_acesso == 4)
         @include('painel.administrador.painel_func_menu')
     @endif
             <!-- /. NAV SIDE  -->

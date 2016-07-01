@@ -6,5 +6,11 @@
       <user-name>root</user-name>
       <schema-pattern>hortifruti.*</schema-pattern>
     </data-source>
+    <data-source name="MySQL - novo_ht@localhost" uuid="28e29715-7355-4617-bd22-de02f7e2982b">
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <schema-pattern>novo_ht.*</schema-pattern>
+      <default-schemas>novo_ht.*</default-schemas>
+    </data-source>
   </component>
 </project>

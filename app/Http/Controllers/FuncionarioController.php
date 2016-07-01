@@ -6,6 +6,7 @@ use hortifruti\Cargo;
 use hortifruti\Funcionario;
 use hortifruti\Http\Requests;
 use hortifruti\Http\Requests\StoreFuncionarioRequest;
+use hortifruti\User;
 use Illuminate\Http\Request;
 
 class FuncionarioController extends Controller
@@ -27,7 +28,7 @@ class FuncionarioController extends Controller
     {
         $title = 'Listagem de Funcionários';
         $cargos = Cargo::all()->pluck('nome','id_cargo');
-        $funcionarios =  Funcionario::paginate(10);
+        $funcionarios =  User::paginate(10);
         return view('painel.funcionario.listagem_funcionario',compact('title','funcionarios','cargos'));
     }
 
@@ -51,9 +52,17 @@ class FuncionarioController extends Controller
      */
     public function store(StoreFuncionarioRequest $request)
     {
-        $funcionario = new Funcionario($request->all());
-        $funcionario->cargo()->associate($request->input('cargo'));
-        $funcionario->save();
+
+        $funcionario = User::create([
+            'name' => $request->input('nome'),
+            'email' => $request->input('email'),
+            'fk_cargo' => $request->input('cargo'),
+            'cpf' => $request->input('cpf'),
+            'data_nascimento' => $request->input('data_nascimento'),
+            'telefone' => $request->input('telefone'),
+            'password' => bcrypt($request->input('senha'))
+            ,
+        ]);
         return $funcionario->toArray();
     }
 

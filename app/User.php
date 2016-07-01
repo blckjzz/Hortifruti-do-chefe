@@ -12,7 +12,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','nivel_acesso'
+        'name', 'email', 'password','telefone','data_nascimento','fk_cargo'
     ];
 
     /**
@@ -24,11 +24,9 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-
-    public function nivelAcesso()
-    {
-        return $this->nivel_acesso;
+    public function cargo(){
+        return $this->belongsTo('hortifruti\Cargo','fk_cargo','id_cargo');
     }
+    
 
 }
-
