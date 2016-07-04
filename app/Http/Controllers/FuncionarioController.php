@@ -3,7 +3,7 @@
 namespace hortifruti\Http\Controllers;
 
 use hortifruti\Cargo;
-use hortifruti\Funcionario;
+use hortifruti\Http\Requests\StoreUserRequest;
 use hortifruti\Http\Requests;
 use hortifruti\Http\Requests\StoreFuncionarioRequest;
 use hortifruti\User;
@@ -44,23 +44,17 @@ class FuncionarioController extends Controller
         return view('painel.funcionario.cadastrar_funcionario',compact('title','cargo'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param StoreFuncionarioRequest $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(StoreFuncionarioRequest $request)
-    {
 
+    public function store(StoreUserRequest $request)
+    {
         $funcionario = User::create([
             'name' => $request->input('nome'),
             'email' => $request->input('email'),
+            'password' => bcrypt($request->input('senha')),
             'fk_cargo' => $request->input('cargo'),
             'cpf' => $request->input('cpf'),
             'data_nascimento' => $request->input('data_nascimento'),
-            'telefone' => $request->input('telefone'),
-            'password' => bcrypt($request->input('senha'))
+            'telefone' => $request->input('telefone')
             ,
         ]);
         return $funcionario->toArray();

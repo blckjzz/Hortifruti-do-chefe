@@ -94,7 +94,9 @@
                     </h1>
                     <a href="{{ URL::previous() }}" class="btn btn-default pull-right">Voltar</a>
                     @include('painel._message')
-                    @include('errors.list')
+                    {{--@section('errrors')--}}
+                         @include('errors.list')
+                    {{--@stop--}}
                 </div>
             </div>
             <!-- /. ROW  -->
