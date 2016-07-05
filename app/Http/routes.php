@@ -11,7 +11,6 @@
 |
 */
 
-
 /*
  + ============================ +
  + ROTAS SITE                   +
@@ -68,16 +67,15 @@ Route::get('/painel/busca-produto', 'BuscaController@buscaProduto');
  + ROTAS PAINEL - PEDIDO             +
  + ==================================+
  */
-Route::get('/painel/painel-pedido', 'PedidoController@home');
-Route::get('/painel/novo-pedido', 'PedidoController@showPedidoForm');
-Route::post('/painel/novo-pedido/{pedido}', 'PedidoController@store');
-Route::post('/painel/resumo-pedido', 'PedidoController@mostraResumoPedido');
-Route::get('/painel/consultar-pedidos', 'PedidoController@consultarPedidos');
-Route::get('/painel/mostrar-pedido/{id}', 'PedidoController@show');
-Route::get('/painel/editar-pedido/{id}', 'PedidoController@edit');
-Route::get('/painel/deletar-pedido/{id}', 'PedidoController@destroy');
-Route::post('/painel/atualizar-pedido/{id}', 'PedidoController@update');
-Route::get('/painel/busca-pedido', 'BuscaController@buscaPedido');
+Route::get('/painel/pedido/', 'PedidoController@home');
+Route::get('/painel/pedido/novo', 'PedidoController@showPedidoForm');
+Route::post('/painel/pedido/adicionar-quantidades', 'PedidoController@adicionarQuantidades');
+Route::post('/painel/pedido/salvar/{id}', 'PedidoController@store');
+Route::get('/painel/pedido/consultar', 'PedidoController@consultarPedidos');
+Route::get('/painel/pedido/mostrar/{id}', 'PedidoController@show');
+Route::get('/painel/pedido/editar/{id}', 'PedidoController@edit');
+Route::get('/painel/pedido/deletar/{id}', 'PedidoController@destroy');
+Route::post('/painel/pedido/atualizar/{id}', 'PedidoController@update');
 
 
 
@@ -88,14 +86,13 @@ Route::get('/painel/busca-pedido', 'BuscaController@buscaPedido');
  */
 
 Route::get('/painel/painel-cliente', 'ClienteController@home');
-Route::get('/painel/cadastro-cliente', 'ClienteController@create');
-Route::post('/painel/cadastro-cliente', 'ClienteController@store');
-Route::get('/painel/lista-clientes', 'ClienteController@listarClientes');
-Route::get('/painel/mostrar-cliente/{id}', 'ClienteController@show');
-Route::get('/painel/desativar-cliente/{id}', 'ClienteController@destroy');
-Route::post('/painel/atualizar-cliente/{id}', 'ClienteController@update');
-Route::get('/painel/reativar-cliente/{id}', 'ClienteController@reativar');
-Route::get('/painel/busca-cliente', 'BuscaController@buscaCliente');
+Route::get('/painel/cliente/cadastro', 'ClienteController@create');
+Route::post('/painel/cliente/cadastro', 'ClienteController@store');
+Route::get('/painel/cliente/lista', 'ClienteController@listarClientes');
+Route::get('/painel/cliente/mostrar/{id}', 'ClienteController@show');
+Route::get('/painel/cliente/desativar/{id}', 'ClienteController@destroy');
+Route::post('/painel/cliente/atualizar/{id}', 'ClienteController@update');
+Route::get('/painel/cliente/reativar/{id}', 'ClienteController@reativar');
 
 
 /*
@@ -104,13 +101,13 @@ Route::get('/painel/busca-cliente', 'BuscaController@buscaCliente');
  + ================================= +
  */
 
-Route::get('/painel/painel-funcionario', 'FuncionarioController@home');
-Route::get('/painel/cadastro-funcionario', 'FuncionarioController@create');
-Route::post('/painel/cadastro-funcionario', 'FuncionarioController@store');
-Route::get('/painel/lista-funcionario', 'FuncionarioController@listarFuncionario');
-Route::get('/painel/mostrar-funcionario/{id}', 'FuncionarioController@show');
-Route::get('/painel/desativar-funcionario/{id}', 'FuncionarioController@destroy');
-Route::post('/painel/atualizar-funcionario/{id}', 'FuncionarioController@update');
+Route::get('/painel/funcionario/painel', 'FuncionarioController@home');
+Route::get('/painel/funcionario/cadastro', 'FuncionarioController@create');
+Route::post('/painel/funcionario/cadastro', 'FuncionarioController@store');
+Route::get('/painel/funcionario/lista', 'FuncionarioController@listarFuncionario');
+Route::get('/painel/funcionario/mostrar/{id}', 'FuncionarioController@show');
+Route::get('/painel/funcionario/desativar/{id}', 'FuncionarioController@destroy');
+Route::post('/painel/funcionario/atualizar/{id}', 'FuncionarioController@update');
 
 /*
  + ================================= +
@@ -118,13 +115,13 @@ Route::post('/painel/atualizar-funcionario/{id}', 'FuncionarioController@update'
  + ================================= +
  */
 
-Route::get('/painel/painel-cargo', 'CargoController@home');
-Route::get('/painel/cadastro-cargo', 'CargoController@create');
-Route::post('/painel/cadastro-cargo', 'CargoController@store');
-Route::get('/painel/lista-cargo', 'CargoController@listarCargo');
-Route::get('/painel/mostrar-cargo/{id}', 'CargoController@show');
-Route::get('/painel/desativar-cargo/{id}', 'CargoController@destroy');
-Route::post('/painel/atualizar-cargo/{id}', 'CargoController@update');
+Route::get('/painel/cargo/painel', 'CargoController@home');
+Route::get('/painel/cargo/cadastro', 'CargoController@create');
+Route::post('/painel/cargo/cadastro', 'CargoController@store');
+Route::get('/painel/cargo/lista', 'CargoController@listarCargo');
+Route::get('/painel/cargo/mostrar/{id}', 'CargoController@show');
+Route::get('/painel/cargo/desativar/{id}', 'CargoController@destroy');
+Route::post('/painel/cargo/atualizar/{id}', 'CargoController@update');
 
 /*
  + ================================= +

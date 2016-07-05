@@ -1,6 +1,7 @@
 <div class="row">
     <div class="col-md-9 col-sm-offset-1">
-    {!! Form::open(array('action' => array('PedidoController@store',$pedido), 'class'=>'form')) !!}
+        {{--//Form::open(array('action' => array('Controller@method', $user->id)))--}}
+    {!! Form::open(array('action' => array('PedidoController@store', $pedido->id_pedido))) !!}
         <div class="row">
             <div class="col-md-3 pull-right">
                 {!! Form::submit('Confirmar pedido', ['class'=>'btn btn-primary']) !!}

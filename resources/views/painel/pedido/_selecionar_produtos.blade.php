@@ -1,4 +1,4 @@
-{!! Form::open(array('action' => 'PedidoController@mostraResumoPedido', 'method' => 'POST')) !!}
+{!! Form::open(array('action' => 'PedidoController@adicionarQuantidades', 'method' => 'POST')) !!}
 <div class="row">
     <div class="col-md-10 col-sm-offset-1">
         <div class="row">

@@ -25,8 +25,13 @@ class RouteServiceProvider extends ServiceProvider
     public function boot(Router $router)
     {
         //
-
         parent::boot($router);
+//      $router->model('pedidos','\hortifruti\Pedido');
+        $router->bind('pedido',function($id)
+        {
+            return \hortifruti\Pedido::find($id);
+        });
+
     }
 
     /**

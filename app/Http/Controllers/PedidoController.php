@@ -42,10 +42,10 @@ class PedidoController extends Controller
     }
 
 
-    public function mostraResumoPedido(StorePedidoRequest $request)
+    public function adicionarQuantidades(Request $request)
     {
-        //todos produtos recuperados via post
-        $todosProdutos = $request->input('produto');
+//        //todos produtos recuperados via post
+//        $todosProdutos = $request->input('produto');
         //produtrar dentro do array produtos o indice equivalente ao id dos produtos selecionados
         $idProdutosSelecionados = $request->input("selecionados");
 
@@ -67,11 +67,11 @@ class PedidoController extends Controller
     }
 
 
-    public function store(StorePedidoRequest $request, $idPedido)
+    public function store($id, Request $request)
     {
         $total = array(['total_kg', 'total_caixa', 'total_bandeja', 'total_duzia', 'total_unidade']);
 
-        $pedido = Pedido::find($idPedido);
+        $pedido = Pedido::find($id);
         $quantidades = $request->input('quantidade');
         foreach ($pedido->produtos as $produto) {
             $produto->pivot->qtd_kg = $quantidades[$produto->id_produto]['qtd_kg'];
@@ -136,6 +136,9 @@ class PedidoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $pedido = Pedido::find($id);
+        $pedido->produtos()->detach();
+        return redirecT()->action('PedidoController@consultarPedidos')->with('warningMessage',
+            "O pedido de numero: ". $pedido->id_pedido . " do cliente ". $pedido->cliente->nome_cliente ." removido.");
     }
 }

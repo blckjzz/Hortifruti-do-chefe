@@ -11,6 +11,12 @@
     </div>
 </div>
 <div class="row">
+    <div class="col-md-3 form-group">
+        {!! Form::label('nivel_acesso','Nivel de acesso')  !!}
+        {!! Form::select('nivel_acesso',array('1' => 'Administrador','0' => 'Funcionario Comum','2' => 'Cargo de Gerência') , null, ['class'=>'form-control','placeholder' => 'Selecione']) !!}
+    </div>
+</div>
+<div class="row">
     <div class="col-md-6 form-group">
         {!! Form::label('descricao', 'Descrição')  !!}
         {!! Form::textarea('descricao', null , ['class'=>'form-control','rows' => 2]) !!}
