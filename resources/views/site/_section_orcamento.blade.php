@@ -5,9 +5,9 @@
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="section-heading">Orçamento</h1>
-                <h2>
-                    <a href="{{url('/orcamento')}}"> Solicite seu orçamento online clicando aqui. </a>
-                </h2>
+                <p class="section-paragraph">
+                    <a href="{{url('/orcamento')}}"> Solicite seu orçamento aqui </a>
+                </p>
             </div>
         </div>
         <!-- /.row -->

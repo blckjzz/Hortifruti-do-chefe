@@ -35,12 +35,7 @@ class BuscaController extends Controller
 
     }
 
-
-    /**
-     * @param $title
-     * @param $nome
-     * @return $this|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
+    
     public function buscaDesativados()
     {
         $title = 'Desativados';

@@ -36,17 +36,17 @@ Route::get('/painel/sair', 'Auth\AuthController@logout');
  + ================================= +
  */
 
-Route::get('/painel/admin/home',   function(){
+Route::get('/painel/admin/home', function () {
     $title = 'Painel - Visão Administrador';
-    return view('layouts.home.admin_home',compact('title'));
+    return view('layouts.home.admin_home', compact('title'));
 });
-Route::get('/painel/gerente/home', function(){
+Route::get('/painel/gerente/home', function () {
     $title = 'Painel - Visão Gerente';
-    return view('layouts.home.gerente_home',compact('title'));
+    return view('layouts.home.gerente_home', compact('title'));
 });
-Route::get('/painel/funcionario/home', function(){
+Route::get('/painel/funcionario/home', function () {
     $title = 'Painel - Visão Funcionário comum';
-    return view('layouts.home.funcionario_home',compact('title'));
+    return view('layouts.home.funcionario_home', compact('title'));
 });
 
 
@@ -63,7 +63,7 @@ Route::get('/painel', 'SiteController@painelHome')->middleware('auth');
  + ================================= +
  */
 Route::get('/painel/registrar', 'Auth\AuthController@showRegistrationForm');
-Route::post('/painel/registrar','Auth\AuthController@register');
+Route::post('/painel/registrar', 'Auth\AuthController@register');
 
 
 /*
@@ -97,7 +97,6 @@ Route::get('/painel/pedido/deletar/{id}', 'PedidoController@destroy');
 Route::post('/painel/pedido/atualizar/{id}', 'PedidoController@update');
 
 
-
 /*
  + ============================ +
  + ROTAS CLIENTE                +
@@ -112,6 +111,7 @@ Route::get('/painel/cliente/mostrar/{id}', 'ClienteController@show');
 Route::get('/painel/cliente/desativar/{id}', 'ClienteController@destroy');
 Route::post('/painel/cliente/atualizar/{id}', 'ClienteController@update');
 Route::get('/painel/cliente/reativar/{id}', 'ClienteController@reativar');
+Route::get('/painel/cliente/busca', 'BuscaController@buscaCliente');
 
 
 /*
@@ -119,15 +119,15 @@ Route::get('/painel/cliente/reativar/{id}', 'ClienteController@reativar');
  + ROTAS FUNCIONÁRIOS                +
  + ================================= +
  */
-
-Route::get('/painel/funcionario/', 'FuncionarioController@home');
-Route::get('/painel/funcionario/cadastro', 'FuncionarioController@create');
-Route::post('/painel/funcionario/cadastro', 'FuncionarioController@store');
-Route::get('/painel/funcionario/lista', 'FuncionarioController@listarFuncionario');
-Route::get('/painel/funcionario/mostrar/{id}', 'FuncionarioController@show');
-Route::get('/painel/funcionario/desativar/{id}', 'FuncionarioController@destroy');
-Route::post('/painel/funcionario/atualizar/{id}', 'FuncionarioController@update');
-
+Route::group(['middleware' => ['auth','admin']], function () {
+    Route::get('/painel/funcionario/', 'FuncionarioController@home');
+    Route::get('/painel/funcionario/cadastro', 'FuncionarioController@create');
+    Route::post('/painel/funcionario/cadastro', 'FuncionarioController@store');
+    Route::get('/painel/funcionario/lista', 'FuncionarioController@listarFuncionario');
+    Route::get('/painel/funcionario/mostrar/{id}', 'FuncionarioController@show');
+    Route::get('/painel/funcionario/desativar/{id}', 'FuncionarioController@destroy');
+    Route::post('/painel/funcionario/atualizar/{id}', 'FuncionarioController@update');
+});
 /*
  + ================================= +
  + ROTAS CARGOS                      +

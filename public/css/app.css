@@ -31,12 +31,38 @@
     margin-top: 50px;
 }
 
-body {
+
+#bg-blur {
+    /* Put this on top of the blurred layer */
+    position: relative;
+    /*z-index: 0;*/
+    padding: 20px;
+    background: rgb(34,34,34); /* for IE */
+    background: rgba(34,34,34,0.75);
+    height: 100%;
+}
+
+a {
+    color: #4cae4c;
+}
+
+a:hover {
+    color: #0ea432;
+}
+
+body#site {
     margin-top: 50px;
     font-weight: bolder;
     font-family: 'Poiret One', cursive;
-
+    color: #000000;
 }
+
+
+footer{
+    border-top:1px solid #4cae4c;
+    padding-top: 20px;
+}
+
 
 .background-image {
     position: fixed;
@@ -44,7 +70,7 @@ body {
     display: block;
     width: 100%;
     height: 100%;
-    background-image: url('../images/banca.jpg');
+    background-image: url('../images/vegetais_3nv.jpg');
     background-repeat: no-repeat;
     background-attachment: inherit;
     background-position:50% 50%;
@@ -75,13 +101,6 @@ body {
 }
 
 
-
-footer{
-    border-top:1px dashed #4cae4c;
-    padding-top: 20px;
-}
-
-
 .image-bg-fixed-height {
     text-align: center;
     -webkit-background-size: cover;
@@ -90,34 +109,34 @@ footer{
     -o-background-size: cover;
 }
 
-/*.image-bg-fluid-height {*/
+.image-bg-fluid-height {
     /*background: #ffffff;*/
 	/*!*background: url('../images/logo.png');*!*/
     /*background-size: cover;*/
     /*padding: 50px 0;*/
     /*border-bottom: 1px dashed #4cae4c;*/
     /*!*height: 60%;*!*/
-/*}*/
+}
 
 .image-bg-fixed-height-1 {
 	/*background: url('../images/tomates.jpg') no-repeat -765px -556px scroll;*/
     /*background-color: #4cae4c;*/
-    height: 150%;
+    /*height: 150%;*/
 }
 .image-bg-fixed-height-2 {
     /*background: url('../images/vegetais_3nv.jpg') no-repeat center center scroll;*/
     /*background-color: #FFCC00;*/
-    height: 150%;
+    /*height: 150%;*/
 }
 .image-bg-fixed-height-3 {
     /*background: url('../images/laranja-inteira.jpg') no-repeat center center scroll;*/
     /*background-color: #3333FF;*/
-    height: 150%;
+    /*height: 150%;*/
 }
 .image-bg-fixed-height-4 {
     /*background: url('../images/laranja-inteira.jpg') no-repeat center center scroll;*/
     /*background-color: #ff8000;*/
-    height: 150%;
+    /*height: 150%;*/
 }
 
 .img-center {
@@ -177,3 +196,5 @@ footer {
     -webkit-border-radius: 50%;
     border-radius: 50%;
 }
+
+

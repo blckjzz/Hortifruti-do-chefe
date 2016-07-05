@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="{{ URL::asset('css/app.css') }}">
 
     <link rel="stylesheet" href="{{ URL::asset('font-awesome/css/font-awesome.min.css')}} ">
+    <link rel="stylesheet" href="{{  asset('plugins/semantic-ui/components/icon.min.css') }}">
+    <link rel="stylesheet" href="{{  asset('plugins/semantic-ui/components/button.min.css') }}">
 
 
 {{--<link rel="stylesheet" href="{{ URL::asset('fullpage/javascript.fullPage.css') }}">--}}
@@ -31,7 +33,7 @@
 
 </head>
 
-<body>
+<body id="site">
 
 <!-- Navigation -->
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -51,13 +53,16 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav pull-right">
                 <li>
-                    <a href="">Sobre o Cheff</a>
+                    <a href="/">Inicio</a>
                 </li>
                 <li>
-                    <a href="">Solicite seu Orçamento</a>
+                    <a href="">Sobre o cheff</a>
                 </li>
                 <li>
-                    <a href="">Contato</a>
+                    <a href="{{ action('SiteController@viewOrcamento') }}">Solicite seu orçamento</a>
+                </li>
+                <li>
+                    <a href="#contato">Contato</a>
                 </li>
             </ul>
         </div>
@@ -66,19 +71,21 @@
     <!-- /.container -->
 </nav>
 <div class="background-image"></div>
-<div id="fullpage">
-    <div class="section">
-        @include('site.section1')
-    </div>
+<div id="bg-blur">
+    <div id="fullpage" class="text-center">
+        <div class="section">
+            @include('site._section_home')
+        </div>
 
-    <div class="section">
-        @include('site.section2')
-    </div>
-    <div class="section">
-        @include('site.section3')
-    </div>
-    <div class="section">
-        @include('site.section4')
+        <div class="section">
+            @include('site._section_sobre')
+        </div>
+        <div class="section">
+            @include('site._section_orcamento')
+        </div>
+        <div class="section">
+            @include('site._section_contato')
+        </div>
     </div>
 </div>
 
@@ -89,7 +96,7 @@
 <script src="{{ URL::asset('fullpage/javascript.fullPage.js') }}"></script>
 <script>
     fullpage.initialize('#fullpage', {
-        anchors: ['inicio', 'sobre', 'orcamento', 'contato', 'rodape'],
+        anchors: ['inicio', 'sobre', 'orcamento', 'contato'],
         menu: '#menu',
         css3: true
     });
