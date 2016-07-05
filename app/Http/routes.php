@@ -31,6 +31,26 @@ Route::post('/painel/entrar', 'Auth\AuthController@login');
 Route::get('/painel/sair', 'Auth\AuthController@logout');
 
 /*
+ + ================================= +
+ + ROTAS HOME                      +
+ + ================================= +
+ */
+
+Route::get('/painel/admin/home',   function(){
+    $title = 'Painel - Visão Administrador';
+    return view('layouts.home.admin_home',compact('title'));
+});
+Route::get('/painel/gerente/home', function(){
+    $title = 'Painel - Visão Gerente';
+    return view('layouts.home.gerente_home',compact('title'));
+});
+Route::get('/painel/funcionario/home', function(){
+    $title = 'Painel - Visão Funcionário comum';
+    return view('layouts.home.funcionario_home',compact('title'));
+});
+
+
+/*
  + ============================ +
  + EXIBE HOME DO PAINEL         +
  + ============================ +
@@ -51,16 +71,15 @@ Route::post('/painel/registrar','Auth\AuthController@register');
  + ROTAS PAINEL DE ADMNISTRAÇÃO - PRODUTO +
  + ====================================== +
  */
-Route::get('/painel/busca', 'BuscaController@busca');
-Route::get('/painel/painel-produto', 'ProdutoController@home');
-Route::get('/painel/produto-listagem', 'ProdutoController@listarProdutos');
-Route::get('/painel/novo-produto', 'ProdutoController@create');
-Route::post('/painel/novo-produto', 'ProdutoController@store');
-Route::get('/painel/mostrar-produto/{id}', 'ProdutoController@show');
-Route::get('/painel/editar-produto/{id}', 'ProdutoController@edit');
-Route::get('/painel/deletar-produto/{id}', 'ProdutoController@destroy');
-Route::post('/painel/atualizar-produto/{id}', 'ProdutoController@update');
-Route::get('/painel/busca-produto', 'BuscaController@buscaProduto');
+
+Route::get('/painel/produto/', 'ProdutoController@home');
+Route::get('/painel/produto/lista', 'ProdutoController@listarProdutos');
+Route::get('/painel/produto/novo', 'ProdutoController@create');
+Route::post('/painel/produto/novo', 'ProdutoController@store');
+Route::get('/painel/produto/mostrar/{id}', 'ProdutoController@show');
+Route::get('/painel/produto/editar/{id}', 'ProdutoController@edit');
+Route::get('/painel/produto/deletar/{id}', 'ProdutoController@destroy');
+Route::post('/painel/produto/atualizar/{id}', 'ProdutoController@update');
 
 /*
  + ==================================+
@@ -85,7 +104,7 @@ Route::post('/painel/pedido/atualizar/{id}', 'PedidoController@update');
  + ============================ +
  */
 
-Route::get('/painel/painel-cliente', 'ClienteController@home');
+Route::get('/painel/cliente/', 'ClienteController@home');
 Route::get('/painel/cliente/cadastro', 'ClienteController@create');
 Route::post('/painel/cliente/cadastro', 'ClienteController@store');
 Route::get('/painel/cliente/lista', 'ClienteController@listarClientes');
@@ -101,7 +120,7 @@ Route::get('/painel/cliente/reativar/{id}', 'ClienteController@reativar');
  + ================================= +
  */
 
-Route::get('/painel/funcionario/painel', 'FuncionarioController@home');
+Route::get('/painel/funcionario/', 'FuncionarioController@home');
 Route::get('/painel/funcionario/cadastro', 'FuncionarioController@create');
 Route::post('/painel/funcionario/cadastro', 'FuncionarioController@store');
 Route::get('/painel/funcionario/lista', 'FuncionarioController@listarFuncionario');
@@ -115,7 +134,7 @@ Route::post('/painel/funcionario/atualizar/{id}', 'FuncionarioController@update'
  + ================================= +
  */
 
-Route::get('/painel/cargo/painel', 'CargoController@home');
+Route::get('/painel/cargo/', 'CargoController@home');
 Route::get('/painel/cargo/cadastro', 'CargoController@create');
 Route::post('/painel/cargo/cadastro', 'CargoController@store');
 Route::get('/painel/cargo/lista', 'CargoController@listarCargo');
@@ -123,8 +142,3 @@ Route::get('/painel/cargo/mostrar/{id}', 'CargoController@show');
 Route::get('/painel/cargo/desativar/{id}', 'CargoController@destroy');
 Route::post('/painel/cargo/atualizar/{id}', 'CargoController@update');
 
-/*
- + ================================= +
- +                                   +
- + ================================= +
- */

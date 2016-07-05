@@ -78,12 +78,7 @@
         </div>
     </nav>
     <!-- /. NAV TOP  -->
-    {{--{{ dd(Auth::user()->cargo->nivel_acesso == 1) }}--}}
-    @if(Auth::user()->cargo->nivel_acesso == 1)
-        @include('painel.administrador.painel_admin_menu')
-    @elseif(Auth::user()->cargo->nivel_acesso == 4)
-        @include('painel.administrador.painel_func_menu')
-    @endif
+    @include('layouts._sidebar')
             <!-- /. NAV SIDE  -->
     <div id="page-wrapper">
         <div id="page-inner">

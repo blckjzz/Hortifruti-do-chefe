@@ -5,6 +5,7 @@ namespace hortifruti\Http\Controllers;
 use Illuminate\Http\Request;
 
 use hortifruti\Http\Requests;
+use Illuminate\Support\Facades\Auth;
 
 class SiteController extends Controller
 {
@@ -15,19 +16,31 @@ class SiteController extends Controller
 
     public function painelHome()
     {
-        $title = 'Seja bem vindo';
-        return view('painel.administrador.painel_home',compact('title'));
+        switch (Auth::user()->cargo->nivel_acesso) {
+            case 0:
+                return redirect('/painel/funcionario/home');
+                break;
+            case 1:
+                return redirect('/painel/admin/home');
+                break;
+            case 3:
+                return redirect('/painel/gerente/home');
+                break;
+        }
+
     }
 
-    public function viewSobre ()
+    public function viewSobre()
     {
         return 'viewSobre';
     }
-    public function viewOrcamento ()
+
+    public function viewOrcamento()
     {
         return 'viewOrcamento';
     }
-    public function viewContato ()
+
+    public function viewContato()
     {
         return 'viewContato';
     }
