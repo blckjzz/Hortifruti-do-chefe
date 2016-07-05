@@ -71,8 +71,8 @@
     <!-- /.container -->
 </nav>
 <div class="background-image"></div>
-<div id="bg-blur">
-    <div id="fullpage" class="text-center">
+<div class="container text-center" id="bg-blur">
+    <div id="fullpage" >
         <div class="section">
             @include('site._section_home')
         </div>
@@ -96,7 +96,7 @@
 <script src="{{ URL::asset('fullpage/javascript.fullPage.js') }}"></script>
 <script>
     fullpage.initialize('#fullpage', {
-        anchors: ['inicio', 'sobre', 'orcamento', 'contato'],
+        anchors: ['inicio', 'sobre', 'orcamento', 'contato','rodape'],
         menu: '#menu',
         css3: true
     });
