@@ -71,7 +71,7 @@
     <!-- /.container -->
 </nav>
 <div class="background-image"></div>
-<div class="container text-center" id="bg-blur">
+<div class="" id="bg-blur">
     <div id="fullpage" >
         <div class="section">
             @include('site._section_home')

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="MySQL - novo_ht@localhost" uuid="28e29715-7355-4617-bd22-de02f7e2982b">
+    <data-source name="MySQL - homestead@192.168.10.10" uuid="65076e81-f519-444a-a93c-4e93d1c7f0ce">
       <secret-storage>master_key</secret-storage>
-      <user-name>root</user-name>
-      <schema-pattern>novo_ht.*</schema-pattern>
-      <default-schemas>novo_ht.*</default-schemas>
+      <user-name>homestead</user-name>
+      <schema-pattern>homestead.*</schema-pattern>
+      <default-schemas>homestead.*</default-schemas>
     </data-source>
   </component>
 </project>

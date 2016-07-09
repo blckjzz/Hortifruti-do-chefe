@@ -6,23 +6,24 @@
 @import url(https://fonts.googleapis.com/css?family=Poiret+One);
 @import url(https://fonts.googleapis.com/css?family=Work+Sans:400,700);
 
+
 .navbar-inverse {
     background-color: #4cae4c;
     border-color: transparent;
 }
 
-.navbar-inverse .navbar-brand{
+.navbar-inverse .navbar-brand {
     vertical-align: middle;
     font-family: 'Poiret One', cursive;
     color: #FFFFFF;
     font-size: 150%;
 }
 
-.container .navbar-header{
-   color: #4cae4c;
+.container .navbar-header {
+    color: #4cae4c;
 }
 
-.navbar-inverse .navbar-nav > li > a{
+.navbar-inverse .navbar-nav > li > a {
     color: #FFFFFF;
     font-family: 'Poiret One', cursive;
 }
@@ -31,14 +32,13 @@
     margin-top: 50px;
 }
 
-
 #bg-blur {
     /* Put this on top of the blurred layer */
     position: relative;
     /*z-index: 0;*/
     /*padding: 20px;*/
-    background: rgb(34,34,34); /* for IE */
-    background: rgba(34,34,34,0.70);
+    background: rgb(34, 34, 34); /* for IE */
+    background: rgba(76, 173, 76, 0.50);
     height: 100%;
 }
 
@@ -54,15 +54,51 @@ body#site {
     margin-top: 50px;
     font-weight: bolder;
     font-family: 'Poiret One', cursive;
-    color: #000000;
+    /*font-family: 'Josefin Sans', sans-serif;*/
+    color: #FFFFFF;
+    /*Hard shadow*/
+    text-shadow: 1px 1px 0px rgba(0,0,0,0.2);
+    /*text-shadow: 0px 4px 3px rgba(0,0,0,0.4),*/
+    /*0px 8px 13px rgba(0,0,0,0.1),*/
+    /*0px 18px 23px rgba(0,0,0,0.1);*/
+
+
+
+    /*Multiple Light Sources*/
+    /*text-shadow: 0px 0px 6px rgba(255,255,255,0.7);*/
+
+    /*text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.1);*/
+
+    /* glow effect*/
+    /*text-shadow: 0px 0px 6px rgba(255,255,255,0.7);*/
+
+}
+
+hr.hr {
+    background-color: inherit;
+    border-top: 1px solid #ffffff;
+    text-align: center;
+}
+hr.hr:after {
+    content: url('../images/108-512.png') ;
+    z-index: 0;
+    display: inline-block;
+    position: relative;
+    top: -24px;
+    padding: 0 10px;
+    background: none;
+    color: #4cae4c;
+    font-size: 11px;
+    /*-webkit-transform: rotate(60deg);*/
+    /*-moz-transform: rotate(60deg);*/
+    /*transform: rotate(60deg);*/
 }
 
 
-footer{
-    border-top:1px solid #4cae4c;
+footer {
+    border-top: 1px dashed #4cae4c;
     padding-top: 20px;
 }
-
 
 .background-image {
     position: fixed;
@@ -73,7 +109,7 @@ footer{
     background-image: url('../images/vegetais_3nv.jpg');
     background-repeat: no-repeat;
     background-attachment: inherit;
-    background-position:50% 50%;
+    background-position: 50% 50%;
     /*-webkit-filter: blur(5px);*/
     /*-moz-filter: blur(10px);*/
     /*-o-filter: blur(10px);*/
@@ -92,14 +128,13 @@ footer{
     font-size: 40px;
 }
 
-.lead section-lead{
+.lead section-lead {
     font-size: 30px;
 }
 
-.section-paragraph{
+.section-paragraph {
     font-size: 25px;
 }
-
 
 .image-bg-fixed-height {
     text-align: center;
@@ -111,7 +146,7 @@ footer{
 
 .image-bg-fluid-height {
     /*background: #ffffff;*/
-	/*!*background: url('../images/logo.png');*!*/
+    /*!*background: url('../images/logo.png');*!*/
     /*background-size: cover;*/
     /*padding: 50px 0;*/
     /*border-bottom: 1px dashed #4cae4c;*/
@@ -119,20 +154,23 @@ footer{
 }
 
 .image-bg-fixed-height-1 {
-	/*background: url('../images/tomates.jpg') no-repeat -765px -556px scroll;*/
+    /*background: url('../images/tomates.jpg') no-repeat -765px -556px scroll;*/
     /*background-color: #4cae4c;*/
     /*height: 150%;*/
 }
+
 .image-bg-fixed-height-2 {
     /*background: url('../images/vegetais_3nv.jpg') no-repeat center center scroll;*/
     /*background-color: #FFCC00;*/
     /*height: 150%;*/
 }
+
 .image-bg-fixed-height-3 {
     /*background: url('../images/laranja-inteira.jpg') no-repeat center center scroll;*/
     /*background-color: #3333FF;*/
     /*height: 150%;*/
 }
+
 .image-bg-fixed-height-4 {
     /*background: url('../images/laranja-inteira.jpg') no-repeat center center scroll;*/
     /*background-color: #ff8000;*/
@@ -140,7 +178,7 @@ footer{
 }
 
 .img-center {
-	margin: 0 auto;
+    margin: 0 auto;
 }
 
 section {
@@ -164,7 +202,7 @@ footer {
     margin: 50px 0;
 }
 
-@media(max-width:768px) {
+@media (max-width: 768px) {
     section {
         padding-top: 25px;
         padding-bottom: 25px;
