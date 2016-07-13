@@ -1,23 +1,14 @@
 <section>
-    <div class="container-fluid">
-        <footer>
-            <div class="row">
-                <div class="text-center">
-                    <p> Hortifruti do Chef {{ date('Y') }} &copy; Todos direitos reservados </p>
-                    <p>
-                        <i class="fa fa-facebook-official" aria-hidden="true"></i>
-                        <a href="{{ URL::to('http://facebook.com/HortifrutiDoChef') }}" target="_blank">
-                            facebook
-                        </a>
-                    </p>
-                    <p>
-                        <i class="fa fa-twitter" aria-hidden="true"></i>
-                        <a href="{{ URL::to('http://twitter.com/HortifrutidoChef') }}">
-                            Twitter
-                        </a>
-                    </p>
-                </div>
-            </div>
-        </footer>
+    <div class="container">
+        <div class="row">
+            <p class="text-center"> Hortifruti do Chef {{ date('Y') }} &copy;
+                <a class="pull-right" href="{{ URL::to('http://facebook.com/HortifrutiDoChef') }}" target="_blank">
+                    <i class="facebook big icon" aria-hidden="true"></i>
+                </a>
+                <a class="pull-right" href="{{ URL::to('http://twitter.com/HortifrutidoChef') }}">
+                    <i class="twitter big icon" aria-hidden="true"></i>
+                </a>
+            </p>
+        </div>
     </div>
 </section>

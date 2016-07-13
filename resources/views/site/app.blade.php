@@ -72,7 +72,7 @@
 </nav>
 <div class="background-image"></div>
 <div class="" id="bg-blur">
-    <div id="fullpage" >
+    <div id="fullpage">
         <div class="section">
             @include('site._section_home')
         </div>
@@ -87,8 +87,12 @@
             @include('site._section_contato')
         </div>
     </div>
+
 </div>
 
+<div class="footer navbar-fixed-bottom">
+    @include('site._footer')
+</div>
 <!-- jQuery -->
 <script src="{{ URL::asset('js/jquery.js')}}"></script>
 <!-- Bootstrap Core JavaScript -->
@@ -96,7 +100,7 @@
 <script src="{{ URL::asset('fullpage/javascript.fullPage.js') }}"></script>
 <script>
     fullpage.initialize('#fullpage', {
-        anchors: ['inicio', 'sobre', 'orcamento', 'contato','rodape'],
+        anchors: ['inicio', 'sobre', 'orcamento', 'contato', 'rodape'],
         menu: '#menu',
         css3: true
     });

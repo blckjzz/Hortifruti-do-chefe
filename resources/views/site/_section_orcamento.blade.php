@@ -1,17 +1,22 @@
-
 <!-- Content Section -->
 <section>
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="section-heading">Orçamento</h1>
-                <div>  <hr class="hr"/></div>
+                <div class="hr">
+                    <hr/>
+                </div>
                 <p class="section-paragraph">
                     <a href="{{url('/orcamento')}}"> Solicite seu orçamento aqui </a>
                 </p>
                 <p class="section-paragraph">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias animi asperiores aut consequuntur corporis culpa cupiditate ducimus, earum eligendi eos explicabo in neque nostrum placeat porro quis saepe voluptate!
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aspernatur cumque dolor enim laudantium omnis quo, sit veritatis! Aspernatur delectus excepturi iure nam repellat? Aspernatur facere inventore numquam obcaecati pariatur.
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias animi asperiores aut consequuntur
+                    corporis culpa cupiditate ducimus, earum eligendi eos explicabo in neque nostrum placeat porro quis
+                    saepe voluptate!
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aspernatur cumque dolor enim
+                    laudantium omnis quo, sit veritatis! Aspernatur delectus excepturi iure nam repellat? Aspernatur
+                    facere inventore numquam obcaecati pariatur.
                 </p>
             </div>
         </div>
