@@ -3,10 +3,10 @@
 namespace hortifruti\Http\Controllers;
 
 use hortifruti\Cliente;
+use hortifruti\Http\Requests\Request;
 use hortifruti\ItemPedido;
 use hortifruti\Pedido;
-use Illuminate\Http\Request;
-use hortifruti\Http\Requests;
+
 use hortifruti\Produto;
 use hortifruti\Http\Requests\StorePedidoRequest;
 
@@ -44,9 +44,6 @@ class PedidoController extends Controller
 
     public function adicionarQuantidades(Request $request)
     {
-//        //todos produtos recuperados via post
-//        $todosProdutos = $request->input('produto');
-        //produtrar dentro do array produtos o indice equivalente ao id dos produtos selecionados
         $idProdutosSelecionados = $request->input("selecionados");
 
         if (empty($idProdutosSelecionados)) {
@@ -70,7 +67,6 @@ class PedidoController extends Controller
     public function store($id, Request $request)
     {
         $total = array(['total_kg', 'total_caixa', 'total_bandeja', 'total_duzia', 'total_unidade']);
-
         $pedido = Pedido::find($id);
         $quantidades = $request->input('quantidade');
         foreach ($pedido->produtos as $produto) {

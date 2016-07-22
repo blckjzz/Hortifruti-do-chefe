@@ -4,8 +4,8 @@
     <data-source name="MySQL - homestead@192.168.10.10" uuid="65076e81-f519-444a-a93c-4e93d1c7f0ce">
       <secret-storage>master_key</secret-storage>
       <user-name>homestead</user-name>
-      <schema-pattern>homestead.*</schema-pattern>
-      <default-schemas>homestead.*</default-schemas>
+      <introspection-scope>homestead:*</introspection-scope>
+      <resolve-scope>homestead:*</resolve-scope>
     </data-source>
   </component>
 </project>

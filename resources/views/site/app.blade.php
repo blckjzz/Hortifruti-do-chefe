@@ -97,12 +97,11 @@
 <script src="{{ URL::asset('js/jquery.js')}}"></script>
 <!-- Bootstrap Core JavaScript -->
 <script src="{{ URL::asset('js/bootstrap.min.js')}}"></script>
-<script src="{{ URL::asset('fullpage/javascript.fullPage.js') }}"></script>
+<script src="{{ URL::asset('fullpage/vendors/jquery.easings.min.js') }}"></script>
+<script src="{{ URL::asset('fullpage/jquery.fullPage.js') }}"></script>
 <script>
-    fullpage.initialize('#fullpage', {
-        anchors: ['inicio', 'sobre', 'orcamento', 'contato', 'rodape'],
-        menu: '#menu',
-        css3: true
+    $(document).ready(function() {
+        $('#fullpage').fullpage();
     });
 </script>
 </div>
