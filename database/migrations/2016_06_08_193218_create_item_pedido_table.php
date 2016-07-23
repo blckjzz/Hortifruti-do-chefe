@@ -14,15 +14,12 @@ class CreateItemPedidoTable extends Migration
     {
         Schema::create('item_pedido', function (Blueprint $table) {
             $table->increments('id_item_pedido');
-            $table->integer('fk_id_produto')->unsigned();
-            $table->foreign('fk_id_produto')->references('id_produto')->on('produtos');
-            $table->integer('fk_id_pedido')->unsigned();
-            $table->foreign('fk_id_pedido')->references('id_pedido')->on('pedidos');
-            $table->double('qtd_unidade');
-            $table->double('qtd_kg');
-            $table->double('qtd_caixa');
-            $table->double('qtd_bandeja');
-            $table->double('qtd_duzia');
+            $table->integer('fk_pedido')->unsigned();
+            $table->integer('fk_produto')->unsigned();
+            $table->integer('fk_unidade')->unsigned();
+            $table->integer('quantidade');
+            $table->foreign('fk_pedido')->references('id_pedido')->on('pedidos');
+            $table->foreign('fk_produto')->references('id_produto')->on('produtos');
             $table->timestamps();
         });
     }

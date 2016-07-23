@@ -26,9 +26,10 @@
                 <table class="table table-striped">
                     <thead>
                     <tr>
-                        <th class="col-md-2">Produto</th>
-                        <th>Ncm</th>
-                        <th>Tipo</th>
+                        <th class="col-md-3">Produto</th>
+                        <th class="col-md-2">Ncm</th>
+                        <th class="col-md-2">Unidade de medida</th>
+                        <th class="col-md-1">Quantidade</th>
                     </tr>
                     </thead>
 
@@ -42,27 +43,10 @@
                                 {{$produto->ncm }}
                             </td>
                             <td>
-                                {{$produto->tipo->nome }}
+                                {!! Form::select("produto[$produto->id_produto][tipo_unidade]", $unidades,  null , ['class'=> 'form-control','placeholder' => 'Selecione']) !!}
                             </td>
                             <td>
-                                {!!  Form::label("$produto->id_produto[qtd_unidade]",'Unidades') !!}
-                                {!!  Form::number("quantidade[$produto->id_produto][qtd_unidade]", null , ['class'=> 'form-control qtd' ,'min' => 0]) !!}
-                            </td>
-                            <td>
-                                {!! Form::label("$produto->id_produto[qtd_kg]",'Quilos') !!}
-                                {!!  Form::number("quantidade[$produto->id_produto][qtd_kg]", null , ['class'=> 'form-control qtd','min' => 0]) !!}
-                            </td>
-                            <td>
-                                {!! Form::label("$produto->id_produto[qtd_caixa]",'Caixas') !!}
-                                {!!  Form::number("quantidade[$produto->id_produto][qtd_caixa]", null , ['class'=> 'form-control qtd ', 'min' => 0]) !!}
-                            </td>
-                            <td>
-                                {!! Form::label("$produto->id_produto[qtd_bandeja]",'Bandejas') !!}
-                                {!!  Form::number("quantidade[$produto->id_produto][qtd_bandeja]", null , ['class'=> 'form-control qtd', 'min' => 0]) !!}
-                            </td>
-                            <td>
-                                {!! Form::label("$produto->id_produto[qtd_duzia]",'Duzias') !!}
-                                {!! Form::number("quantidade[$produto->id_produto][qtd_duzia]", null , ['class'=> 'form-control qtd', 'min' => 0]) !!}
+                                {!!  Form::number("produto[$produto->id_produto][quantidade]", null , ['class'=> 'form-control']) !!}
                             </td>
                         </tr>
                     @endforeach

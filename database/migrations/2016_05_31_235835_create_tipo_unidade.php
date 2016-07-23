@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateNivelAcessoTable extends Migration
+class CreateTipoUnidade extends Migration
 {
     /**
      * Run the migrations.
@@ -12,11 +12,10 @@ class CreateNivelAcessoTable extends Migration
      */
     public function up()
     {
-//        Schema::create('nivel_acesso', function (Blueprint $table) {
-//            $table->increments('id_nivel_acesso');
-//            $table->string('descricao', 45);
-//            $table->timestamps();
-//        });
+        Schema::create('tipo_unidade', function (Blueprint $table) {
+            $table->increments('id_unidade');
+            $table->string('descricao_unidade');
+        });
     }
 
     /**
@@ -26,6 +25,6 @@ class CreateNivelAcessoTable extends Migration
      */
     public function down()
     {
-        Schema::drop('nivel_acesso');
+        Schema::drop('tipo_unidade');
     }
 }

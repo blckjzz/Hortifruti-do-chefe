@@ -3,12 +3,12 @@
 namespace hortifruti\Http\Controllers;
 
 use hortifruti\Cliente;
+use hortifruti\Http\Requests\PedidoRequest;
 use hortifruti\Http\Requests\Request;
-use hortifruti\ItemPedido;
 use hortifruti\Pedido;
-
 use hortifruti\Produto;
 use hortifruti\Http\Requests\StorePedidoRequest;
+use hortifruti\TipoUnidade;
 
 class PedidoController extends Controller
 {
@@ -27,7 +27,7 @@ class PedidoController extends Controller
 
     public function consultarPedidos()
     {
-        $title ='Consulta de pedidos';
+        $title = 'Consulta de pedidos';
         $pedidos = Pedido::all();
         return view('painel.pedido.listagem_pedidos', compact('title', 'pedidos'));
     }
@@ -42,9 +42,10 @@ class PedidoController extends Controller
     }
 
 
-    public function adicionarQuantidades(Request $request)
+    public function adicionarQuantidades(StorePedidoRequest $request)
     {
         $idProdutosSelecionados = $request->input("selecionados");
+
 
         if (empty($idProdutosSelecionados)) {
             return redirect()->back()->with('warningMessage', 'Favor, selecionar ao menos um produto');
@@ -58,33 +59,25 @@ class PedidoController extends Controller
                 $pedido->produtos()->attach($produto);
                 $pedido->save();
             }
+
+            $unidades = TipoUnidade::all()->pluck('descricao_unidade', 'id_unidade');
             $title = 'Resumo do pedido ';
-            return view('painel.pedido.resumo_pedido', compact('title', 'pedido'));
+            return view('painel.pedido.resumo_pedido', compact('title', 'pedido', 'unidades'));
         }
     }
 
 
-    public function store($id, Request $request)
+    public function store($id, PedidoRequest $request)
     {
-        $total = array(['total_kg', 'total_caixa', 'total_bandeja', 'total_duzia', 'total_unidade']);
         $pedido = Pedido::find($id);
-        $quantidades = $request->input('quantidade');
+        $qtds = $request->input('produto');
         foreach ($pedido->produtos as $produto) {
-            $produto->pivot->qtd_kg = $quantidades[$produto->id_produto]['qtd_kg'];
-            $produto->pivot->qtd_caixa = $quantidades[$produto->id_produto]['qtd_caixa'];
-            $produto->pivot->qtd_bandeja = $quantidades[$produto->id_produto]['qtd_bandeja'];
-            $produto->pivot->qtd_duzia = $quantidades[$produto->id_produto]['qtd_duzia'];
-            $produto->pivot->qtd_unidade = $quantidades[$produto->id_produto]['qtd_unidade'];
-            $pedido->save();
+            $produto->pivot->quantidade = $qtds[$produto->id_produto]['quantidade'];
+            $produto->pivot->fk_tipo_unidade = $qtds[$produto->id_produto]['tipo_unidade'];
+            $produto->pivot->save();
 
-            $total['total_kg'] = ($quantidades[$produto->id_produto]['qtd_kg']) * ($produto->valor_kg);
-            $total['total_caixa'] = ($quantidades[$produto->id_produto]['qtd_caixa']) * ($produto->valor_caixa);
-            $total['total_bandeja'] = ($quantidades[$produto->id_produto]['qtd_bandeja']) * ($produto->valor_bandeja);
-            $total['total_duzia'] = ($quantidades[$produto->id_produto]['qtd_unidade']) * ($produto->valor_duzia);
-            $total['total_unidade'] = ($quantidades[$produto->id_produto]['qtd_unidade']) * ($produto->valor_unidade);
+            dd($pedido->getTotalPrice());
         }
-        $pedido->total_pedido = array_sum($total);
-        $pedido->save();
         return redirect()->action('PedidoController@consultarPedidos')->
         with('successMessage', 'O pedido do cliente: ' . $pedido->cliente->nome_cliente . ' foi registrado com sucesso');
     }
@@ -135,6 +128,6 @@ class PedidoController extends Controller
         $pedido = Pedido::find($id);
         $pedido->produtos()->detach();
         return redirecT()->action('PedidoController@consultarPedidos')->with('warningMessage',
-            "O pedido de numero: ". $pedido->id_pedido . " do cliente ". $pedido->cliente->nome_cliente ." removido.");
+            "O pedido de numero: " . $pedido->id_pedido . " do cliente " . $pedido->cliente->nome_cliente . " removido.");
     }
 }

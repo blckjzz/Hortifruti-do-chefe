@@ -12,6 +12,7 @@ class Pedido extends Model
     protected $fillable = ['fk_id_cliente','total_pedido'];
     protected $dates = ['created_at', 'updated_at'];
 
+
     public function cliente()
     {
         return $this->belongsTo('hortifruti\Cliente', 'fk_id_cliente','id_cliente');
@@ -20,7 +21,7 @@ class Pedido extends Model
     //    $this->belongsToMany('relacao', 'nome da tabela pivot', 'key ref. books em pivot', 'key ref. author em pivot')
     public function produtos()
     {
-        return $this->belongsToMany('hortifruti\Produto', 'item_pedido', 'fk_id_pedido', 'fk_id_produto')->withPivot('qtd_kg', 'qtd_caixa', 'qtd_bandeja', 'qtd_duzia');
+        return $this->belongsToMany('hortifruti\Produto', 'item_pedido', 'fk_pedido', 'fk_produto')->withPivot('fk_tipo_unidade','quantidade');
     }
 
     public function getCreatedAtAttribute()
