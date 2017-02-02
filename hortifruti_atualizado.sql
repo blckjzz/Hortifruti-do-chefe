@@ -162,3 +162,6 @@ INSERT INTO `produtos` (`id_produto`, `nome`, `ncm`, `valor_unidade`, `valor_kg`
 
 
 
+INSERT INTO `users` (`id`, `password`, `name`, `email`, `is_admin`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, '$2y$10$/17qe3wktvYdcudtIvSaI.2456LHXa3X3YA72zsmbHoW18gkvGA/W', 'Diego', 'diego@exemplo.com', 1, 'Zdaq29o9bnxv2YzbThx20V0EevCeNrK3ObcCQrkMex5gBHLy7fkdHHor56yY', '2016-06-02 20:41:10', '2016-06-08 20:08:44');
+

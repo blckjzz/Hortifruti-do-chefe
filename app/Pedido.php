@@ -21,7 +21,7 @@ class Pedido extends Model
     //    $this->belongsToMany('relacao', 'nome da tabela pivot', 'key ref. books em pivot', 'key ref. author em pivot')
     public function produtos()
     {
-        return $this->belongsToMany('hortifruti\Produto', 'item_pedido', 'fk_pedido', 'fk_produto')->withPivot('fk_tipo_unidade','quantidade');
+        return $this->belongsToMany('hortifruti\Produto', 'item_pedido', 'fk_pedido', 'fk_produto')->withPivot('fk_unidade','quantidade');
     }
 
     public function getCreatedAtAttribute()
